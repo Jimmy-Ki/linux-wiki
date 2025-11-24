@@ -1,0 +1,48 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://linux.wiki/sitemap.xml
+
+# Prioritize important content
+Allow: /docs/
+Allow: /blog/
+Allow: /static/
+
+# Block unnecessary crawling of build/internal files
+Disallow: /build/
+Disallow: /__/
+Disallow: /search/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Popular search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# AI/ML crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /

@@ -10,20 +10,17 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Linux Wiki',
-  tagline: 'The Ultimate Linux Knowledge Base',
+  title: 'Linux Wiki - Complete Linux Command Reference & Knowledge Base',
+  tagline: 'The Ultimate Linux Knowledge Base with 600+ Commands, Tutorials & Best Practices',
   favicon: 'img/linux.png',
+  url: 'https://linux.wiki',
+  baseUrl: '/',
 
+  
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
-
-  // Set the production url of your site here
-  url: 'https://linux.wiki',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -78,10 +75,40 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/linux-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
+
+      // SEO metadata
+      metadata: [
+        {name: 'keywords', content: 'Linux, Linux commands, command reference, system administration, shell scripting, Ubuntu, CentOS, Debian, Arch Linux, Linux tutorial, sysadmin, DevOps, CLI, terminal, bash, Linux distributions'},
+        {name: 'description', content: 'Comprehensive Linux knowledge base with 600+ commands, tutorials, and best practices. Complete Linux command reference with examples, syntax, and usage guides for beginners and experts.'},
+        {name: 'author', content: 'Jimmy Ki'},
+        {name: 'robots', content: 'index, follow'},
+        {name: 'googlebot', content: 'index, follow'},
+        {name: 'bingbot', content: 'index, follow'},
+        {property: 'og:type', content: 'website'},
+        {property: 'og:site_name', content: 'Linux Wiki'},
+        {property: 'og:title', content: 'Linux Wiki - Complete Linux Command Reference'},
+        {property: 'og:description', content: 'Comprehensive Linux knowledge base with 600+ commands, tutorials, and best practices'},
+        {property: 'og:image', content: 'https://linux.wiki/img/linux-social-card.jpg'},
+        {property: 'og:url', content: 'https://linux.wiki'},
+        {property: 'og:locale', content: 'en_US'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {name: 'twitter:title', content: 'Linux Wiki - Complete Linux Command Reference'},
+        {name: 'twitter:description', content: 'Comprehensive Linux knowledge base with 600+ commands, tutorials, and best practices'},
+        {name: 'twitter:image', content: 'https://linux.wiki/img/linux-social-card.jpg'},
+        {name: 'twitter:creator', content: '@LinuxWiki'},
+        {name: 'twitter:site', content: '@LinuxWiki'},
+        {property: 'article:author', content: 'Jimmy Ki'},
+        {property: 'article:section', content: 'Technology'},
+        {property: 'article:tag', content: 'Linux'},
+        {name: 'application-name', content: 'Linux Wiki'},
+        {name: 'msapplication-TileColor', content: '#336791'},
+        {name: 'theme-color', content: '#336791'},
+        {name: 'manifest', content: '/manifest.json'},
+      ],
       navbar: {
         title: 'Linux Wiki',
         logo: {
