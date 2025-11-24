@@ -1,14 +1,13 @@
 ---
-slug: hello-world
 title: Hello World - Linux Wiki Launch
-authors: [jimmyki]
+authors: jimmyki
 tags: [announcement, linux, wiki]
 date: 2025-11-24
 ---
 
-# Hello World - Linux Wiki Launch
-
 Welcome to the Linux Wiki! Today marks the launch of our comprehensive Linux knowledge base, designed to be your go-to resource for everything Linux.
+
+<!-- truncate -->
 
 ## What is Linux Wiki?
 
