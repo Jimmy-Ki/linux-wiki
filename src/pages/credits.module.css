@@ -1,0 +1,116 @@
+.creditBox {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.creditBox h3 {
+  color: white !important;
+  margin-bottom: 0.5rem;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.licenseInfo {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.techItem {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.techItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.techItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.techItem a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.techItem a:hover {
+  text-decoration: underline;
+}
+
+.contributeWays {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.contributeItem {
+  text-align: center;
+  padding: 1rem;
+}
+
+.contributeItem .icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contributeItem h4 {
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.footerNote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .techItem {
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .footerNote {
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projectLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contributeWays {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

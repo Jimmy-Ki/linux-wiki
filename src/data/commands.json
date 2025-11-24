@@ -1,0 +1,4370 @@
+[
+  {
+    "name": "ping",
+    "description": "Test network connectivity between hosts using ICMP echo requests",
+    "category": "networking",
+    "path": "/docs/commands/networking/ping",
+    "source": "linux-command"
+  },
+  {
+    "name": "wget",
+    "description": "Retrieve files from web servers using HTTP, HTTPS, and FTP protocols",
+    "category": "networking",
+    "path": "/docs/commands/networking/wget",
+    "source": "linux-command"
+  },
+  {
+    "name": "curl",
+    "description": "Versatile tool for transferring data with URL syntax supporting multiple protocols",
+    "category": "networking",
+    "path": "/docs/commands/networking/curl",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh",
+    "description": "Secure remote login and command execution client for encrypted communication",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh",
+    "source": "linux-command"
+  },
+  {
+    "name": "scp",
+    "description": "Secure file transfer between local and remote systems using SSH protocol",
+    "category": "networking",
+    "path": "/docs/commands/networking/scp",
+    "source": "linux-command"
+  },
+  {
+    "name": "useradd",
+    "description": "Create new system user accounts with configurable options and settings",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/useradd",
+    "source": "linux-command"
+  },
+  {
+    "name": "passwd",
+    "description": "Change user passwords and manage password settings",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/passwd",
+    "source": "linux-command"
+  },
+  {
+    "name": "sudo",
+    "description": "Execute commands as another user, typically root, with security controls",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/sudo",
+    "source": "linux-command"
+  },
+  {
+    "name": "chmod",
+    "description": "Change file access permissions for users, groups, and others",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "chown",
+    "description": "Change file owner and group for files and directories",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chown",
+    "source": "linux-command"
+  },
+  {
+    "name": "groupadd",
+    "description": "Create new user groups for organizing users and managing permissions",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/groupadd",
+    "source": "linux-command"
+  },
+  {
+    "name": "7z",
+    "description": "7-Zip file archiver with high compression ratio",
+    "category": "compression",
+    "path": "/docs/commands/compression/7z",
+    "source": "linux-command"
+  },
+  {
+    "name": "ab",
+    "description": "Apache HTTP server benchmarking tool",
+    "category": "other",
+    "path": "/docs/commands/other/ab",
+    "source": "linux-command"
+  },
+  {
+    "name": "accept",
+    "description": "Accept or reject print jobs",
+    "category": "other",
+    "path": "/docs/commands/other/accept",
+    "source": "linux-command"
+  },
+  {
+    "name": "ack",
+    "description": "A grep-like tool for programmers",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ack",
+    "source": "linux-command"
+  },
+  {
+    "name": "ag",
+    "description": "The Silver Searcher - fast code search tool",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ag",
+    "source": "linux-command"
+  },
+  {
+    "name": "alias",
+    "description": "Create command aliases",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/alias",
+    "source": "linux-command"
+  },
+  {
+    "name": "apachectl",
+    "description": "Apache HTTP server control interface",
+    "category": "other",
+    "path": "/docs/commands/other/apachectl",
+    "source": "linux-command"
+  },
+  {
+    "name": "apk",
+    "description": "Alpine Linux package manager",
+    "category": "other",
+    "path": "/docs/commands/other/apk",
+    "source": "linux-command"
+  },
+  {
+    "name": "apropos",
+    "description": "Search manual pages for keywords",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/apropos",
+    "source": "linux-command"
+  },
+  {
+    "name": "apt-get",
+    "description": "Debian package handling utility",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/apt-get",
+    "source": "linux-command"
+  },
+  {
+    "name": "apt-key",
+    "description": "APT key management utility",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/apt-key",
+    "source": "linux-command"
+  },
+  {
+    "name": "apt-sortpkgs",
+    "description": "Sort package index files",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/apt-sortpkgs",
+    "source": "linux-command"
+  },
+  {
+    "name": "aptitude",
+    "description": "Text-based package management interface",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/aptitude",
+    "source": "linux-command"
+  },
+  {
+    "name": "ar",
+    "description": "Create, modify, and extract archives",
+    "category": "other",
+    "path": "/docs/commands/other/ar",
+    "source": "linux-command"
+  },
+  {
+    "name": "arch",
+    "description": "Display system architecture",
+    "category": "other",
+    "path": "/docs/commands/other/arch",
+    "source": "linux-command"
+  },
+  {
+    "name": "arj",
+    "description": "ARJ archive manager",
+    "category": "compression",
+    "path": "/docs/commands/compression/arj",
+    "source": "linux-command"
+  },
+  {
+    "name": "arp",
+    "description": "Display and manipulate ARP cache",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/arp",
+    "source": "linux-command"
+  },
+  {
+    "name": "arpd",
+    "description": "ARP daemon",
+    "category": "networking",
+    "path": "/docs/commands/networking/arpd",
+    "source": "linux-command"
+  },
+  {
+    "name": "arping",
+    "description": "Send ARP REQUEST to a host",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/arping",
+    "source": "linux-command"
+  },
+  {
+    "name": "arptables",
+    "description": "ARP table administration",
+    "category": "networking",
+    "path": "/docs/commands/networking/arptables",
+    "source": "linux-command"
+  },
+  {
+    "name": "arpwatch",
+    "description": "ARP monitoring tool",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/arpwatch",
+    "source": "linux-command"
+  },
+  {
+    "name": "as",
+    "description": "Portable GNU Assembler",
+    "category": "other",
+    "path": "/docs/commands/other/as",
+    "source": "linux-command"
+  },
+  {
+    "name": "at",
+    "description": "Schedule command execution",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/at",
+    "source": "linux-command"
+  },
+  {
+    "name": "atop",
+    "description": "Advanced system monitor",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/atop",
+    "source": "linux-command"
+  },
+  {
+    "name": "atq",
+    "description": "List jobs queued by at",
+    "category": "other",
+    "path": "/docs/commands/other/atq",
+    "source": "linux-command"
+  },
+  {
+    "name": "atrm",
+    "description": "Delete jobs queued by at",
+    "category": "other",
+    "path": "/docs/commands/other/atrm",
+    "source": "linux-command"
+  },
+  {
+    "name": "awk",
+    "description": "Pattern scanning and processing language",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/awk",
+    "source": "linux-command"
+  },
+  {
+    "name": "axel",
+    "description": "Light download accelerator",
+    "category": "other",
+    "path": "/docs/commands/other/axel",
+    "source": "linux-command"
+  },
+  {
+    "name": "badblocks",
+    "description": "Search for bad blocks on device",
+    "category": "other",
+    "path": "/docs/commands/other/badblocks",
+    "source": "linux-command"
+  },
+  {
+    "name": "base64",
+    "description": "Encode and decode base64 data",
+    "category": "other",
+    "path": "/docs/commands/other/base64",
+    "source": "linux-command"
+  },
+  {
+    "name": "basename",
+    "description": "Remove directory suffix from filenames",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/basename",
+    "source": "linux-command"
+  },
+  {
+    "name": "batch",
+    "description": "Execute commands when system load permits",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/batch",
+    "source": "linux-command"
+  },
+  {
+    "name": "bc",
+    "description": "Arbitrary precision calculator language",
+    "category": "other",
+    "path": "/docs/commands/other/bc",
+    "source": "linux-command"
+  },
+  {
+    "name": "bg",
+    "description": "Resume job in background",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/bg",
+    "source": "linux-command"
+  },
+  {
+    "name": "bind",
+    "description": "Bind name to socket",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/bind",
+    "source": "linux-command"
+  },
+  {
+    "name": "blkid",
+    "description": "Locate block device attributes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/blkid",
+    "source": "linux-command"
+  },
+  {
+    "name": "blockdev",
+    "description": "Block device utilities",
+    "category": "compression",
+    "path": "/docs/commands/compression/blockdev",
+    "source": "linux-command"
+  },
+  {
+    "name": "break",
+    "description": "Exit from for, while, or until loops",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/break",
+    "source": "linux-command"
+  },
+  {
+    "name": "builtin",
+    "description": "Execute shell builtins",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/builtin",
+    "source": "linux-command"
+  },
+  {
+    "name": "bunzip2",
+    "description": "Decompress bzip2 files",
+    "category": "compression",
+    "path": "/docs/commands/compression/bunzip2",
+    "source": "linux-command"
+  },
+  {
+    "name": "bye",
+    "description": "Terminate ftp session and exit",
+    "category": "other",
+    "path": "/docs/commands/other/bye",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzcat",
+    "description": "Decompress bzip2 files to stdout",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/bzcat",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzcmp",
+    "description": "Compare bzip2 compressed files",
+    "category": "other",
+    "path": "/docs/commands/other/bzcmp",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzdiff",
+    "description": "Compare bzip2 compressed files",
+    "category": "other",
+    "path": "/docs/commands/other/bzdiff",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzgrep",
+    "description": "Search bzip2 compressed files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/bzgrep",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzip2",
+    "description": "Block-sorting file compressor",
+    "category": "compression",
+    "path": "/docs/commands/compression/bzip2",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzip2recover",
+    "description": "Recover data from damaged bzip2 files",
+    "category": "other",
+    "path": "/docs/commands/other/bzip2recover",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzless",
+    "description": "View bzip2 compressed files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/bzless",
+    "source": "linux-command"
+  },
+  {
+    "name": "bzmore",
+    "description": "View bzip2 compressed files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/bzmore",
+    "source": "linux-command"
+  },
+  {
+    "name": "cal",
+    "description": "Display calendar",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/cal",
+    "source": "linux-command"
+  },
+  {
+    "name": "cancel",
+    "description": "Cancel print jobs",
+    "category": "other",
+    "path": "/docs/commands/other/cancel",
+    "source": "linux-command"
+  },
+  {
+    "name": "cat",
+    "description": "Display file contents",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cat",
+    "source": "linux-command"
+  },
+  {
+    "name": "cd",
+    "description": "Change directory",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cd",
+    "source": "linux-command"
+  },
+  {
+    "name": "cdrecord",
+    "description": "Record data to CD/DVD",
+    "category": "other",
+    "path": "/docs/commands/other/cdrecord",
+    "source": "linux-command"
+  },
+  {
+    "name": "chage",
+    "description": "Change user password expiry information",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chage",
+    "source": "linux-command"
+  },
+  {
+    "name": "chattr",
+    "description": "Change file attributes on Linux",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/chattr",
+    "source": "linux-command"
+  },
+  {
+    "name": "chcon",
+    "description": "Change SELinux security context",
+    "category": "permission",
+    "path": "/docs/commands/permission/chcon",
+    "source": "linux-command"
+  },
+  {
+    "name": "chfn",
+    "description": "Change real user name",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chfn",
+    "source": "linux-command"
+  },
+  {
+    "name": "chgrp",
+    "description": "Change group ownership",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/chgrp",
+    "source": "linux-command"
+  },
+  {
+    "name": "chkconfig",
+    "description": "Manage system services",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/chkconfig",
+    "source": "linux-command"
+  },
+  {
+    "name": "chmod",
+    "description": "Change file permissions",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/chmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "chown",
+    "description": "Change file owner and group",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/chown",
+    "source": "linux-command"
+  },
+  {
+    "name": "chpasswd",
+    "description": "Update passwords in batch",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chpasswd",
+    "source": "linux-command"
+  },
+  {
+    "name": "chroot",
+    "description": "Run command with different root directory",
+    "category": "permission",
+    "path": "/docs/commands/permission/chroot",
+    "source": "linux-command"
+  },
+  {
+    "name": "chsh",
+    "description": "Change login shell",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/chsh",
+    "source": "linux-command"
+  },
+  {
+    "name": "cksum",
+    "description": "Output CRC checksum and byte counts",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cksum",
+    "source": "linux-command"
+  },
+  {
+    "name": "clear",
+    "description": "Clear terminal screen",
+    "category": "other",
+    "path": "/docs/commands/other/clear",
+    "source": "linux-command"
+  },
+  {
+    "name": "clock",
+    "description": "Get time and date",
+    "category": "other",
+    "path": "/docs/commands/other/clock",
+    "source": "linux-command"
+  },
+  {
+    "name": "clockdiff",
+    "description": "Measure clock difference between hosts",
+    "category": "other",
+    "path": "/docs/commands/other/clockdiff",
+    "source": "linux-command"
+  },
+  {
+    "name": "cmp",
+    "description": "Compare two files byte by byte",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cmp",
+    "source": "linux-command"
+  },
+  {
+    "name": "col",
+    "description": "Filter reverse line feeds",
+    "category": "other",
+    "path": "/docs/commands/other/col",
+    "source": "linux-command"
+  },
+  {
+    "name": "colrm",
+    "description": "Remove columns from input lines",
+    "category": "other",
+    "path": "/docs/commands/other/colrm",
+    "source": "linux-command"
+  },
+  {
+    "name": "column",
+    "description": "Columnate lists",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/column",
+    "source": "linux-command"
+  },
+  {
+    "name": "comm",
+    "description": "Compare sorted files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/comm",
+    "source": "linux-command"
+  },
+  {
+    "name": "command",
+    "description": "Execute command without shell function lookup",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/command",
+    "source": "linux-command"
+  },
+  {
+    "name": "compress",
+    "description": "Compress files using Unix compress",
+    "category": "compression",
+    "path": "/docs/commands/compression/compress",
+    "source": "linux-command"
+  },
+  {
+    "name": "consoletype",
+    "description": "Print type of console",
+    "category": "other",
+    "path": "/docs/commands/other/consoletype",
+    "source": "linux-command"
+  },
+  {
+    "name": "continue",
+    "description": "Resume loop execution",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/continue",
+    "source": "linux-command"
+  },
+  {
+    "name": "convertquota",
+    "description": "Convert quota files",
+    "category": "other",
+    "path": "/docs/commands/other/convertquota",
+    "source": "linux-command"
+  },
+  {
+    "name": "cp",
+    "description": "Copy files and directories",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cp",
+    "source": "linux-command"
+  },
+  {
+    "name": "cpio",
+    "description": "Copy files to and from archives",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cpio",
+    "source": "linux-command"
+  },
+  {
+    "name": "createrepo",
+    "description": "Create RPM repository metadata",
+    "category": "other",
+    "path": "/docs/commands/other/createrepo",
+    "source": "linux-command"
+  },
+  {
+    "name": "crontab",
+    "description": "Manage cron jobs",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/crontab",
+    "source": "linux-command"
+  },
+  {
+    "name": "csplit",
+    "description": "Split files based on context",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/csplit",
+    "source": "linux-command"
+  },
+  {
+    "name": "cu",
+    "description": "Call up another UNIX system",
+    "category": "other",
+    "path": "/docs/commands/other/cu",
+    "source": "linux-command"
+  },
+  {
+    "name": "cupsdisable",
+    "description": "Disable CUPS printers",
+    "category": "other",
+    "path": "/docs/commands/other/cupsdisable",
+    "source": "linux-command"
+  },
+  {
+    "name": "cupsenable",
+    "description": "Enable CUPS printers",
+    "category": "other",
+    "path": "/docs/commands/other/cupsenable",
+    "source": "linux-command"
+  },
+  {
+    "name": "curl",
+    "description": "Transfer data with URLs",
+    "category": "networking",
+    "path": "/docs/commands/networking/curl",
+    "source": "linux-command"
+  },
+  {
+    "name": "cut",
+    "description": "Remove sections from each line",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/cut",
+    "source": "linux-command"
+  },
+  {
+    "name": "date",
+    "description": "Display system date and time",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/date",
+    "source": "linux-command"
+  },
+  {
+    "name": "dc",
+    "description": "Arbitrary precision calculator",
+    "category": "other",
+    "path": "/docs/commands/other/dc",
+    "source": "linux-command"
+  },
+  {
+    "name": "dd",
+    "description": "Convert and copy files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/dd",
+    "source": "linux-command"
+  },
+  {
+    "name": "declare",
+    "description": "Declare shell variables",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/declare",
+    "source": "linux-command"
+  },
+  {
+    "name": "depmod",
+    "description": "Generate modules.dep and map files",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/depmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "df",
+    "description": "Display disk space usage",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/df",
+    "source": "linux-command"
+  },
+  {
+    "name": "dhclient",
+    "description": "Dynamic Host Configuration Protocol client",
+    "category": "other",
+    "path": "/docs/commands/other/dhclient",
+    "source": "linux-command"
+  },
+  {
+    "name": "dhcpd",
+    "description": "Dynamic Host Configuration Protocol server",
+    "category": "other",
+    "path": "/docs/commands/other/dhcpd",
+    "source": "linux-command"
+  },
+  {
+    "name": "dhcrelay",
+    "description": "DHCP relay agent",
+    "category": "other",
+    "path": "/docs/commands/other/dhcrelay",
+    "source": "linux-command"
+  },
+  {
+    "name": "diff",
+    "description": "Compare files line by line",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/diff",
+    "source": "linux-command"
+  },
+  {
+    "name": "diff3",
+    "description": "Compare three files line by line",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/diff3",
+    "source": "linux-command"
+  },
+  {
+    "name": "diffstat",
+    "description": "Show statistics from diff output",
+    "category": "other",
+    "path": "/docs/commands/other/diffstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "dig",
+    "description": "DNS lookup utility",
+    "category": "networking",
+    "path": "/docs/commands/networking/dig",
+    "source": "linux-command"
+  },
+  {
+    "name": "dircolors",
+    "description": "Color setup for ls",
+    "category": "other",
+    "path": "/docs/commands/other/dircolors",
+    "source": "linux-command"
+  },
+  {
+    "name": "dirname",
+    "description": "Strip directory from filename",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/dirname",
+    "source": "linux-command"
+  },
+  {
+    "name": "dirs",
+    "description": "Display directory stack",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/dirs",
+    "source": "linux-command"
+  },
+  {
+    "name": "disown",
+    "description": "Remove job from shell job table",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/disown",
+    "source": "linux-command"
+  },
+  {
+    "name": "dmesg",
+    "description": "Display kernel ring buffer",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/dmesg",
+    "source": "linux-command"
+  },
+  {
+    "name": "dmidecode",
+    "description": "DMI table decoder",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/dmidecode",
+    "source": "linux-command"
+  },
+  {
+    "name": "dnf",
+    "description": "Dandified YUM package manager",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dnf",
+    "source": "linux-command"
+  },
+  {
+    "name": "dnsdomainname",
+    "description": "Show DNS domain name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/dnsdomainname",
+    "source": "linux-command"
+  },
+  {
+    "name": "docker",
+    "description": "Container platform CLI",
+    "category": "development",
+    "path": "/docs/commands/development/docker",
+    "source": "linux-command"
+  },
+  {
+    "name": "domainname",
+    "description": "Show or set system NIS/YP domain name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/domainname",
+    "source": "linux-command"
+  },
+  {
+    "name": "dos2unix",
+    "description": "Convert DOS line endings to Unix format",
+    "category": "other",
+    "path": "/docs/commands/other/dos2unix",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg",
+    "description": "Debian package manager",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-deb",
+    "description": "dpkg-deb package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-deb",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-divert",
+    "description": "dpkg-divert package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-divert",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-preconfigure",
+    "description": "dpkg-preconfigure package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-preconfigure",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-query",
+    "description": "dpkg-query package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-query",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-reconfigure",
+    "description": "dpkg-reconfigure package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-reconfigure",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-split",
+    "description": "dpkg-split package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-split",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-statoverride",
+    "description": "dpkg-statoverride package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-statoverride",
+    "source": "linux-command"
+  },
+  {
+    "name": "dpkg-trigger",
+    "description": "dpkg-trigger package management tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/dpkg-trigger",
+    "source": "linux-command"
+  },
+  {
+    "name": "dris",
+    "description": "Device resource information system",
+    "category": "other",
+    "path": "/docs/commands/other/dris",
+    "source": "linux-command"
+  },
+  {
+    "name": "dstat",
+    "description": "Versatile resource statistics tool",
+    "category": "other",
+    "path": "/docs/commands/other/dstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "du",
+    "description": "Display directory space usage",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/du",
+    "source": "linux-command"
+  },
+  {
+    "name": "dump",
+    "description": "Backup filesystems",
+    "category": "compression",
+    "path": "/docs/commands/compression/dump",
+    "source": "linux-command"
+  },
+  {
+    "name": "e2fsck",
+    "description": "Check ext2/ext3/ext4 filesystems",
+    "category": "compression",
+    "path": "/docs/commands/compression/e2fsck",
+    "source": "linux-command"
+  },
+  {
+    "name": "e2label",
+    "description": "Change ext2/ext3/ext4 filesystem label",
+    "category": "compression",
+    "path": "/docs/commands/compression/e2label",
+    "source": "linux-command"
+  },
+  {
+    "name": "echo",
+    "description": "Display text messages",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/echo",
+    "source": "linux-command"
+  },
+  {
+    "name": "ed",
+    "description": "Line-oriented text editor",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ed",
+    "source": "linux-command"
+  },
+  {
+    "name": "edquota",
+    "description": "Edit user quotas",
+    "category": "other",
+    "path": "/docs/commands/other/edquota",
+    "source": "linux-command"
+  },
+  {
+    "name": "egrep",
+    "description": "Search text patterns with extended regex",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/egrep",
+    "source": "linux-command"
+  },
+  {
+    "name": "eject",
+    "description": "Eject removable media",
+    "category": "other",
+    "path": "/docs/commands/other/eject",
+    "source": "linux-command"
+  },
+  {
+    "name": "elinks",
+    "description": "Text web browser",
+    "category": "other",
+    "path": "/docs/commands/other/elinks",
+    "source": "linux-command"
+  },
+  {
+    "name": "elm",
+    "description": "Terminal-based email client",
+    "category": "development",
+    "path": "/docs/commands/development/elm",
+    "source": "linux-command"
+  },
+  {
+    "name": "emacs",
+    "description": "Extensible text editor",
+    "category": "development",
+    "path": "/docs/commands/development/emacs",
+    "source": "linux-command"
+  },
+  {
+    "name": "enable",
+    "description": "Enable and disable shell builtins",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/enable",
+    "source": "linux-command"
+  },
+  {
+    "name": "env",
+    "description": "Run command in modified environment",
+    "category": "other",
+    "path": "/docs/commands/other/env",
+    "source": "linux-command"
+  },
+  {
+    "name": "ethtool",
+    "description": "Display and modify network device settings",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ethtool",
+    "source": "linux-command"
+  },
+  {
+    "name": "ex",
+    "description": "Line-editor mode of vi",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ex",
+    "source": "linux-command"
+  },
+  {
+    "name": "exec",
+    "description": "Replace shell with command",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/exec",
+    "source": "linux-command"
+  },
+  {
+    "name": "exit",
+    "description": "Exit shell",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/exit",
+    "source": "linux-command"
+  },
+  {
+    "name": "expand",
+    "description": "Convert tabs to spaces",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/expand",
+    "source": "linux-command"
+  },
+  {
+    "name": "export",
+    "description": "Set environment variables",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/export",
+    "source": "linux-command"
+  },
+  {
+    "name": "exportfs",
+    "description": "Control NFS filesystem exports",
+    "category": "other",
+    "path": "/docs/commands/other/exportfs",
+    "source": "linux-command"
+  },
+  {
+    "name": "expr",
+    "description": "Evaluate expressions",
+    "category": "other",
+    "path": "/docs/commands/other/expr",
+    "source": "linux-command"
+  },
+  {
+    "name": "false",
+    "description": "Return unsuccessful exit status",
+    "category": "other",
+    "path": "/docs/commands/other/false",
+    "source": "linux-command"
+  },
+  {
+    "name": "fc",
+    "description": "List or edit commands in history",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/fc",
+    "source": "linux-command"
+  },
+  {
+    "name": "fdisk",
+    "description": "Disk partitioning utility",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/fdisk",
+    "source": "linux-command"
+  },
+  {
+    "name": "fg",
+    "description": "Bring job to foreground",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/fg",
+    "source": "linux-command"
+  },
+  {
+    "name": "fgrep",
+    "description": "Search text patterns (fixed strings)",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/fgrep",
+    "source": "linux-command"
+  },
+  {
+    "name": "figlet",
+    "description": "Display text in large letters",
+    "category": "other",
+    "path": "/docs/commands/other/figlet",
+    "source": "linux-command"
+  },
+  {
+    "name": "file",
+    "description": "Determine file type",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/file",
+    "source": "linux-command"
+  },
+  {
+    "name": "find",
+    "description": "Search for files and directories",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/find",
+    "source": "linux-command"
+  },
+  {
+    "name": "findfs",
+    "description": "Find filesystem by label or UUID",
+    "category": "compression",
+    "path": "/docs/commands/compression/findfs",
+    "source": "linux-command"
+  },
+  {
+    "name": "finger",
+    "description": "User information lookup program",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/finger",
+    "source": "linux-command"
+  },
+  {
+    "name": "firewall-cmd",
+    "description": "Firewalld command line client",
+    "category": "networking",
+    "path": "/docs/commands/networking/firewall-cmd",
+    "source": "linux-command"
+  },
+  {
+    "name": "fishshell",
+    "description": "Friendly interactive shell",
+    "category": "other",
+    "path": "/docs/commands/other/fishshell",
+    "source": "linux-command"
+  },
+  {
+    "name": "fmt",
+    "description": "Optimize text formatting",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/fmt",
+    "source": "linux-command"
+  },
+  {
+    "name": "fold",
+    "description": "Wrap input lines to fit width",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/fold",
+    "source": "linux-command"
+  },
+  {
+    "name": "fping",
+    "description": "Send ICMP echo requests",
+    "category": "networking",
+    "path": "/docs/commands/networking/fping",
+    "source": "linux-command"
+  },
+  {
+    "name": "free",
+    "description": "Display memory usage",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/free",
+    "source": "linux-command"
+  },
+  {
+    "name": "fsck",
+    "description": "Check and repair filesystems",
+    "category": "compression",
+    "path": "/docs/commands/compression/fsck",
+    "source": "linux-command"
+  },
+  {
+    "name": "ftp",
+    "description": "File Transfer Protocol client",
+    "category": "networking",
+    "path": "/docs/commands/networking/ftp",
+    "source": "linux-command"
+  },
+  {
+    "name": "ftpcount",
+    "description": "ftpcount networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ftpcount",
+    "source": "linux-command"
+  },
+  {
+    "name": "ftpshut",
+    "description": "ftpshut networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ftpshut",
+    "source": "linux-command"
+  },
+  {
+    "name": "ftptop",
+    "description": "ftptop networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ftptop",
+    "source": "linux-command"
+  },
+  {
+    "name": "ftpwho",
+    "description": "ftpwho networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ftpwho",
+    "source": "linux-command"
+  },
+  {
+    "name": "fuser",
+    "description": "fuser system information utility",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/fuser",
+    "source": "linux-command"
+  },
+  {
+    "name": "gcc",
+    "description": "GNU C compiler",
+    "category": "development",
+    "path": "/docs/commands/development/gcc",
+    "source": "linux-command"
+  },
+  {
+    "name": "gcov",
+    "description": "gcov Linux utility",
+    "category": "other",
+    "path": "/docs/commands/other/gcov",
+    "source": "linux-command"
+  },
+  {
+    "name": "gdb",
+    "description": "GNU Debugger",
+    "category": "development",
+    "path": "/docs/commands/development/gdb",
+    "source": "linux-command"
+  },
+  {
+    "name": "get_module",
+    "description": "get_module permission management tool",
+    "category": "permission",
+    "path": "/docs/commands/permission/get_module",
+    "source": "linux-command"
+  },
+  {
+    "name": "getcap",
+    "description": "Get file capabilities",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/getcap",
+    "source": "linux-command"
+  },
+  {
+    "name": "getenforce",
+    "description": "Get current SELinux mode",
+    "category": "permission",
+    "path": "/docs/commands/permission/getenforce",
+    "source": "linux-command"
+  },
+  {
+    "name": "getent",
+    "description": "Get entries from administrative database",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/getent",
+    "source": "linux-command"
+  },
+  {
+    "name": "getfacl",
+    "description": "Get file access control lists",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/getfacl",
+    "source": "linux-command"
+  },
+  {
+    "name": "getsebool",
+    "description": "Get SELinux boolean value",
+    "category": "permission",
+    "path": "/docs/commands/permission/getsebool",
+    "source": "linux-command"
+  },
+  {
+    "name": "git",
+    "description": "Version control system",
+    "category": "development",
+    "path": "/docs/commands/development/git",
+    "source": "linux-command"
+  },
+  {
+    "name": "gpasswd",
+    "description": "Administer /etc/group and /etc/gshadow",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/gpasswd",
+    "source": "linux-command"
+  },
+  {
+    "name": "gpg",
+    "description": "GNU Privacy Guard encryption tool",
+    "category": "security",
+    "path": "/docs/commands/security/gpg",
+    "source": "linux-command"
+  },
+  {
+    "name": "gpm",
+    "description": "General Purpose Mouse interface",
+    "category": "other",
+    "path": "/docs/commands/other/gpm",
+    "source": "linux-command"
+  },
+  {
+    "name": "grep",
+    "description": "Search text patterns",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/grep",
+    "source": "linux-command"
+  },
+  {
+    "name": "groupadd",
+    "description": "Create new group",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/groupadd",
+    "source": "linux-command"
+  },
+  {
+    "name": "groupdel",
+    "description": "Delete group",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/groupdel",
+    "source": "linux-command"
+  },
+  {
+    "name": "groupmems",
+    "description": "Administer members of a user's primary group",
+    "category": "other",
+    "path": "/docs/commands/other/groupmems",
+    "source": "linux-command"
+  },
+  {
+    "name": "groupmod",
+    "description": "Modify group",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/groupmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "groups",
+    "description": "Display group membership",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/groups",
+    "source": "linux-command"
+  },
+  {
+    "name": "grpck",
+    "description": "Verify integrity of group files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/grpck",
+    "source": "linux-command"
+  },
+  {
+    "name": "grpconv",
+    "description": "Convert to shadow group files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/grpconv",
+    "source": "linux-command"
+  },
+  {
+    "name": "grpunconv",
+    "description": "Convert back from shadow group files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/grpunconv",
+    "source": "linux-command"
+  },
+  {
+    "name": "grub",
+    "description": "GRUB boot loader setup",
+    "category": "other",
+    "path": "/docs/commands/other/grub",
+    "source": "linux-command"
+  },
+  {
+    "name": "grub2-mkconfig",
+    "description": "Generate GRUB2 configuration file",
+    "category": "other",
+    "path": "/docs/commands/other/grub2-mkconfig",
+    "source": "linux-command"
+  },
+  {
+    "name": "grub2-set-default",
+    "description": "Set default boot entry for GRUB2",
+    "category": "other",
+    "path": "/docs/commands/other/grub2-set-default",
+    "source": "linux-command"
+  },
+  {
+    "name": "gunzip",
+    "description": "Decompress gzip files",
+    "category": "compression",
+    "path": "/docs/commands/compression/gunzip",
+    "source": "linux-command"
+  },
+  {
+    "name": "gzexe",
+    "description": "Compress executable files in place",
+    "category": "compression",
+    "path": "/docs/commands/compression/gzexe",
+    "source": "linux-command"
+  },
+  {
+    "name": "gzip",
+    "description": "Compress and decompress files",
+    "category": "compression",
+    "path": "/docs/commands/compression/gzip",
+    "source": "linux-command"
+  },
+  {
+    "name": "halt",
+    "description": "Stop the system",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/halt",
+    "source": "linux-command"
+  },
+  {
+    "name": "hcitool",
+    "description": "Bluetooth HCI utility",
+    "category": "other",
+    "path": "/docs/commands/other/hcitool",
+    "source": "linux-command"
+  },
+  {
+    "name": "hdparm",
+    "description": "Get/set SATA/IDE device parameters",
+    "category": "other",
+    "path": "/docs/commands/other/hdparm",
+    "source": "linux-command"
+  },
+  {
+    "name": "head",
+    "description": "Display first lines of a file",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/head",
+    "source": "linux-command"
+  },
+  {
+    "name": "help",
+    "description": "Display help for shell builtins",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/help",
+    "source": "linux-command"
+  },
+  {
+    "name": "hexdump",
+    "description": "Display file contents in hexadecimal",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/hexdump",
+    "source": "linux-command"
+  },
+  {
+    "name": "history",
+    "description": "Display command history",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/history",
+    "source": "linux-command"
+  },
+  {
+    "name": "host",
+    "description": "DNS lookup utility",
+    "category": "networking",
+    "path": "/docs/commands/networking/host",
+    "source": "linux-command"
+  },
+  {
+    "name": "hostid",
+    "description": "Display numeric host identifier",
+    "category": "other",
+    "path": "/docs/commands/other/hostid",
+    "source": "linux-command"
+  },
+  {
+    "name": "hostname",
+    "description": "Show or set system hostname",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/hostname",
+    "source": "linux-command"
+  },
+  {
+    "name": "hostnamectl",
+    "description": "Control system hostname",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/hostnamectl",
+    "source": "linux-command"
+  },
+  {
+    "name": "hping3",
+    "description": "Network scanning and packet crafting tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/hping3",
+    "source": "linux-command"
+  },
+  {
+    "name": "htdigest",
+    "description": "Create and update user authentication files",
+    "category": "other",
+    "path": "/docs/commands/other/htdigest",
+    "source": "linux-command"
+  },
+  {
+    "name": "htop",
+    "description": "Interactive process viewer",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/htop",
+    "source": "linux-command"
+  },
+  {
+    "name": "htpasswd",
+    "description": "Create and update user authentication files",
+    "category": "other",
+    "path": "/docs/commands/other/htpasswd",
+    "source": "linux-command"
+  },
+  {
+    "name": "hwclock",
+    "description": "Query and set hardware clock",
+    "category": "other",
+    "path": "/docs/commands/other/hwclock",
+    "source": "linux-command"
+  },
+  {
+    "name": "iconv",
+    "description": "Convert character encoding",
+    "category": "other",
+    "path": "/docs/commands/other/iconv",
+    "source": "linux-command"
+  },
+  {
+    "name": "id",
+    "description": "Display user and group IDs",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/id",
+    "source": "linux-command"
+  },
+  {
+    "name": "ifcfg",
+    "description": "ifcfg Linux utility",
+    "category": "other",
+    "path": "/docs/commands/other/ifcfg",
+    "source": "linux-command"
+  },
+  {
+    "name": "ifconfig",
+    "description": "Configure network interfaces",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ifconfig",
+    "source": "linux-command"
+  },
+  {
+    "name": "ifdown",
+    "description": "Disable network interface",
+    "category": "networking",
+    "path": "/docs/commands/networking/ifdown",
+    "source": "linux-command"
+  },
+  {
+    "name": "ifstat",
+    "description": "Report network interface statistics",
+    "category": "other",
+    "path": "/docs/commands/other/ifstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "iftop",
+    "description": "Display bandwidth usage",
+    "category": "networking",
+    "path": "/docs/commands/networking/iftop",
+    "source": "linux-command"
+  },
+  {
+    "name": "ifup",
+    "description": "Enable network interface",
+    "category": "networking",
+    "path": "/docs/commands/networking/ifup",
+    "source": "linux-command"
+  },
+  {
+    "name": "indent",
+    "description": "Change appearance of C source code",
+    "category": "other",
+    "path": "/docs/commands/other/indent",
+    "source": "linux-command"
+  },
+  {
+    "name": "info",
+    "description": "Read Info documents",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/info",
+    "source": "linux-command"
+  },
+  {
+    "name": "init",
+    "description": "System initialization",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/init",
+    "source": "linux-command"
+  },
+  {
+    "name": "inotifywait",
+    "description": "Wait for filesystem events",
+    "category": "other",
+    "path": "/docs/commands/other/inotifywait",
+    "source": "linux-command"
+  },
+  {
+    "name": "insmod",
+    "description": "Insert module into Linux kernel",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/insmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "install",
+    "description": "Copy files and set attributes",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/install",
+    "source": "linux-command"
+  },
+  {
+    "name": "iostat",
+    "description": "Report CPU and I/O statistics",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/iostat",
+    "source": "linux-command"
+  },
+  {
+    "name": "iotop",
+    "description": "Simple top-like I/O monitor",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/iotop",
+    "source": "linux-command"
+  },
+  {
+    "name": "ip",
+    "description": "Show routing and network devices",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ip",
+    "source": "linux-command"
+  },
+  {
+    "name": "ip6tables",
+    "description": "ip6tables networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ip6tables",
+    "source": "linux-command"
+  },
+  {
+    "name": "ip6tables-restore",
+    "description": "ip6tables-restore networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ip6tables-restore",
+    "source": "linux-command"
+  },
+  {
+    "name": "ip6tables-save",
+    "description": "ip6tables-save networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/ip6tables-save",
+    "source": "linux-command"
+  },
+  {
+    "name": "ipcalc",
+    "description": "Calculate IP network information",
+    "category": "other",
+    "path": "/docs/commands/other/ipcalc",
+    "source": "linux-command"
+  },
+  {
+    "name": "ipcrm",
+    "description": "Remove IPC resources",
+    "category": "other",
+    "path": "/docs/commands/other/ipcrm",
+    "source": "linux-command"
+  },
+  {
+    "name": "ipcs",
+    "description": "Show IPC status",
+    "category": "other",
+    "path": "/docs/commands/other/ipcs",
+    "source": "linux-command"
+  },
+  {
+    "name": "iperf",
+    "description": "Network bandwidth measurement tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/iperf",
+    "source": "linux-command"
+  },
+  {
+    "name": "iptables",
+    "description": "Packet filtering and NAT administration",
+    "category": "networking",
+    "path": "/docs/commands/networking/iptables",
+    "source": "linux-command"
+  },
+  {
+    "name": "iptables-restore",
+    "description": "Restore iptables configuration",
+    "category": "networking",
+    "path": "/docs/commands/networking/iptables-restore",
+    "source": "linux-command"
+  },
+  {
+    "name": "iptables-save",
+    "description": "Save iptables configuration",
+    "category": "networking",
+    "path": "/docs/commands/networking/iptables-save",
+    "source": "linux-command"
+  },
+  {
+    "name": "iptraf",
+    "description": "IP network monitoring software",
+    "category": "networking",
+    "path": "/docs/commands/networking/iptraf",
+    "source": "linux-command"
+  },
+  {
+    "name": "iptstate",
+    "description": "Display iptables state table information",
+    "category": "other",
+    "path": "/docs/commands/other/iptstate",
+    "source": "linux-command"
+  },
+  {
+    "name": "iscsiadm",
+    "description": "Open-iSCSI administration utility",
+    "category": "other",
+    "path": "/docs/commands/other/iscsiadm",
+    "source": "linux-command"
+  },
+  {
+    "name": "ispell",
+    "description": "Interactive spelling checker",
+    "category": "other",
+    "path": "/docs/commands/other/ispell",
+    "source": "linux-command"
+  },
+  {
+    "name": "jed",
+    "description": "Text editor",
+    "category": "development",
+    "path": "/docs/commands/development/jed",
+    "source": "linux-command"
+  },
+  {
+    "name": "jobs",
+    "description": "Display background jobs",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/jobs",
+    "source": "linux-command"
+  },
+  {
+    "name": "joe",
+    "description": "WordStar-like text editor",
+    "category": "development",
+    "path": "/docs/commands/development/joe",
+    "source": "linux-command"
+  },
+  {
+    "name": "join",
+    "description": "Join lines of two files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/join",
+    "source": "linux-command"
+  },
+  {
+    "name": "journalctl",
+    "description": "Query systemd journal",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/journalctl",
+    "source": "linux-command"
+  },
+  {
+    "name": "jq",
+    "description": "Command-line JSON processor",
+    "category": "other",
+    "path": "/docs/commands/other/jq",
+    "source": "linux-command"
+  },
+  {
+    "name": "jwhois",
+    "description": "Intelligent WHOIS client",
+    "category": "networking",
+    "path": "/docs/commands/networking/jwhois",
+    "source": "linux-command"
+  },
+  {
+    "name": "kernelversion",
+    "description": "Display kernel version",
+    "category": "other",
+    "path": "/docs/commands/other/kernelversion",
+    "source": "linux-command"
+  },
+  {
+    "name": "kexec",
+    "description": "Boot into new kernel",
+    "category": "other",
+    "path": "/docs/commands/other/kexec",
+    "source": "linux-command"
+  },
+  {
+    "name": "kill",
+    "description": "Terminate processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/kill",
+    "source": "linux-command"
+  },
+  {
+    "name": "killall",
+    "description": "Kill processes by name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/killall",
+    "source": "linux-command"
+  },
+  {
+    "name": "last",
+    "description": "Show listing of last logged in users",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/last",
+    "source": "linux-command"
+  },
+  {
+    "name": "lastb",
+    "description": "Show listing of last logged in users",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lastb",
+    "source": "linux-command"
+  },
+  {
+    "name": "lastlog",
+    "description": "Reports the most recent login of all users",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lastlog",
+    "source": "linux-command"
+  },
+  {
+    "name": "ld",
+    "description": "GNU linker",
+    "category": "other",
+    "path": "/docs/commands/other/ld",
+    "source": "linux-command"
+  },
+  {
+    "name": "ldconfig",
+    "description": "Configure dynamic linker run-time bindings",
+    "category": "other",
+    "path": "/docs/commands/other/ldconfig",
+    "source": "linux-command"
+  },
+  {
+    "name": "ldd",
+    "description": "Print shared library dependencies",
+    "category": "other",
+    "path": "/docs/commands/other/ldd",
+    "source": "linux-command"
+  },
+  {
+    "name": "less",
+    "description": "View file content page by page",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/less",
+    "source": "linux-command"
+  },
+  {
+    "name": "let",
+    "description": "Evaluate arithmetic expressions",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/let",
+    "source": "linux-command"
+  },
+  {
+    "name": "lftp",
+    "description": "Sophisticated file transfer program",
+    "category": "networking",
+    "path": "/docs/commands/networking/lftp",
+    "source": "linux-command"
+  },
+  {
+    "name": "lftpget",
+    "description": "Download file with lftp",
+    "category": "other",
+    "path": "/docs/commands/other/lftpget",
+    "source": "linux-command"
+  },
+  {
+    "name": "lha",
+    "description": "Archive and extract files from LHA archives",
+    "category": "compression",
+    "path": "/docs/commands/compression/lha",
+    "source": "linux-command"
+  },
+  {
+    "name": "lilo",
+    "description": "LInux LOader",
+    "category": "other",
+    "path": "/docs/commands/other/lilo",
+    "source": "linux-command"
+  },
+  {
+    "name": "ln",
+    "description": "Make links between files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ln",
+    "source": "linux-command"
+  },
+  {
+    "name": "lnstat",
+    "description": "Linux network statistics",
+    "category": "other",
+    "path": "/docs/commands/other/lnstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "local",
+    "description": "Create local variables",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/local",
+    "source": "linux-command"
+  },
+  {
+    "name": "locate",
+    "description": "Find files by name using database",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/locate",
+    "source": "linux-command"
+  },
+  {
+    "name": "logger",
+    "description": "Add entries to system log",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/logger",
+    "source": "linux-command"
+  },
+  {
+    "name": "login",
+    "description": "Sign into system",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/login",
+    "source": "linux-command"
+  },
+  {
+    "name": "logname",
+    "description": "Print user login name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/logname",
+    "source": "linux-command"
+  },
+  {
+    "name": "logout",
+    "description": "Exit login shell",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/logout",
+    "source": "linux-command"
+  },
+  {
+    "name": "logrotate",
+    "description": "Rotate, compress, and mail system logs",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/logrotate",
+    "source": "linux-command"
+  },
+  {
+    "name": "logsave",
+    "description": "Save output of a command to a log file",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/logsave",
+    "source": "linux-command"
+  },
+  {
+    "name": "logwatch",
+    "description": "System log analyzer and reporter",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/logwatch",
+    "source": "linux-command"
+  },
+  {
+    "name": "look",
+    "description": "Display lines beginning with a given string",
+    "category": "other",
+    "path": "/docs/commands/other/look",
+    "source": "linux-command"
+  },
+  {
+    "name": "losetup",
+    "description": "Set up and control loop devices",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/losetup",
+    "source": "linux-command"
+  },
+  {
+    "name": "lp",
+    "description": "Send files to printer",
+    "category": "other",
+    "path": "/docs/commands/other/lp",
+    "source": "linux-command"
+  },
+  {
+    "name": "lpadmin",
+    "description": "Configure CUPS printers",
+    "category": "other",
+    "path": "/docs/commands/other/lpadmin",
+    "source": "linux-command"
+  },
+  {
+    "name": "lpc",
+    "description": "Line printer control program",
+    "category": "other",
+    "path": "/docs/commands/other/lpc",
+    "source": "linux-command"
+  },
+  {
+    "name": "lpq",
+    "description": "Show printer queue status",
+    "category": "other",
+    "path": "/docs/commands/other/lpq",
+    "source": "linux-command"
+  },
+  {
+    "name": "lpr",
+    "description": "Off-line print",
+    "category": "other",
+    "path": "/docs/commands/other/lpr",
+    "source": "linux-command"
+  },
+  {
+    "name": "lprm",
+    "description": "Cancel print jobs",
+    "category": "other",
+    "path": "/docs/commands/other/lprm",
+    "source": "linux-command"
+  },
+  {
+    "name": "lpstat",
+    "description": "Print status information",
+    "category": "other",
+    "path": "/docs/commands/other/lpstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "ls",
+    "description": "List directory contents",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/ls",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsattr",
+    "description": "List file attributes on Linux",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/lsattr",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsb_release",
+    "description": "Print distribution-specific information",
+    "category": "other",
+    "path": "/docs/commands/other/lsb_release",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsblk",
+    "description": "List block devices",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lsblk",
+    "source": "linux-command"
+  },
+  {
+    "name": "lscpu",
+    "description": "Display CPU architecture information",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lscpu",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsmod",
+    "description": "Show loaded kernel modules",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lsmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsof",
+    "description": "List open files",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lsof",
+    "source": "linux-command"
+  },
+  {
+    "name": "lspci",
+    "description": "List PCI devices",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lspci",
+    "source": "linux-command"
+  },
+  {
+    "name": "lsusb",
+    "description": "List USB devices",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/lsusb",
+    "source": "linux-command"
+  },
+  {
+    "name": "ltrace",
+    "description": "Trace library calls",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ltrace",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvcreate",
+    "description": "Create logical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvcreate",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvdisplay",
+    "description": "Display information about logical volumes",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvdisplay",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvextend",
+    "description": "Extend logical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvextend",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvreduce",
+    "description": "Reduce logical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvreduce",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvremove",
+    "description": "Remove logical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvremove",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvresize",
+    "description": "Resize logical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvresize",
+    "source": "linux-command"
+  },
+  {
+    "name": "lvscan",
+    "description": "Scan for logical volumes",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/lvscan",
+    "source": "linux-command"
+  },
+  {
+    "name": "lynx",
+    "description": "General purpose distributed information browser",
+    "category": "development",
+    "path": "/docs/commands/development/lynx",
+    "source": "linux-command"
+  },
+  {
+    "name": "mail",
+    "description": "Send and receive mail",
+    "category": "other",
+    "path": "/docs/commands/other/mail",
+    "source": "linux-command"
+  },
+  {
+    "name": "mailq",
+    "description": "Print mail queue",
+    "category": "other",
+    "path": "/docs/commands/other/mailq",
+    "source": "linux-command"
+  },
+  {
+    "name": "mailstat",
+    "description": "Show mail statistics",
+    "category": "other",
+    "path": "/docs/commands/other/mailstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "make",
+    "description": "Build automation tool",
+    "category": "development",
+    "path": "/docs/commands/development/make",
+    "source": "linux-command"
+  },
+  {
+    "name": "man",
+    "description": "Display manual pages for commands",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/man",
+    "source": "linux-command"
+  },
+  {
+    "name": "mapfile",
+    "description": "Read lines from standard input into array",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/mapfile",
+    "source": "linux-command"
+  },
+  {
+    "name": "md5sum",
+    "description": "Compute and check MD5 message digest",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/md5sum",
+    "source": "linux-command"
+  },
+  {
+    "name": "mesg",
+    "description": "Control write access to terminal",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/mesg",
+    "source": "linux-command"
+  },
+  {
+    "name": "mii-tool",
+    "description": "Media Independent Interface tool",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/mii-tool",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkbootdisk",
+    "description": "Creates a bootable floppy disk",
+    "category": "other",
+    "path": "/docs/commands/other/mkbootdisk",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkcert",
+    "description": "Generate local development certificates",
+    "category": "other",
+    "path": "/docs/commands/other/mkcert",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkdir",
+    "description": "Create directories",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/mkdir",
+    "source": "linux-command"
+  },
+  {
+    "name": "mke2fs",
+    "description": "Create ext2/ext3/ext4 filesystem",
+    "category": "compression",
+    "path": "/docs/commands/compression/mke2fs",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkfs",
+    "description": "Build a Linux filesystem",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/mkfs",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkinitrd",
+    "description": "Creates initial ramdisk images",
+    "category": "other",
+    "path": "/docs/commands/other/mkinitrd",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkisofs",
+    "description": "Create an ISO 9660/Joliet/HFS filesystem",
+    "category": "other",
+    "path": "/docs/commands/other/mkisofs",
+    "source": "linux-command"
+  },
+  {
+    "name": "mknod",
+    "description": "Create block or character special files",
+    "category": "other",
+    "path": "/docs/commands/other/mknod",
+    "source": "linux-command"
+  },
+  {
+    "name": "mkswap",
+    "description": "Setup Linux swap area",
+    "category": "compression",
+    "path": "/docs/commands/compression/mkswap",
+    "source": "linux-command"
+  },
+  {
+    "name": "mktemp",
+    "description": "Create temporary file or directory",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/mktemp",
+    "source": "linux-command"
+  },
+  {
+    "name": "modetest",
+    "description": "Mode setting test tool",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/modetest",
+    "source": "linux-command"
+  },
+  {
+    "name": "modinfo",
+    "description": "Show information about kernel modules",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/modinfo",
+    "source": "linux-command"
+  },
+  {
+    "name": "modprobe",
+    "description": "Add and remove modules from Linux kernel",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/modprobe",
+    "source": "linux-command"
+  },
+  {
+    "name": "more",
+    "description": "Display file content page by page",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/more",
+    "source": "linux-command"
+  },
+  {
+    "name": "mount",
+    "description": "Mount filesystems",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/mount",
+    "source": "linux-command"
+  },
+  {
+    "name": "mpstat",
+    "description": "Report processors related statistics",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/mpstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "mtools",
+    "description": "Tools for MSDOS filesystems",
+    "category": "other",
+    "path": "/docs/commands/other/mtools",
+    "source": "linux-command"
+  },
+  {
+    "name": "mtr",
+    "description": "Network diagnostic tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/mtr",
+    "source": "linux-command"
+  },
+  {
+    "name": "mv",
+    "description": "Move or rename files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/mv",
+    "source": "linux-command"
+  },
+  {
+    "name": "mysql",
+    "description": "MySQL command-line client",
+    "category": "development",
+    "path": "/docs/commands/development/mysql",
+    "source": "linux-command"
+  },
+  {
+    "name": "mysqladmin",
+    "description": "MySQL server administration",
+    "category": "development",
+    "path": "/docs/commands/development/mysqladmin",
+    "source": "linux-command"
+  },
+  {
+    "name": "mysqldump",
+    "description": "Database backup utility",
+    "category": "development",
+    "path": "/docs/commands/development/mysqldump",
+    "source": "linux-command"
+  },
+  {
+    "name": "mysqlimport",
+    "description": "Import data into MySQL",
+    "category": "development",
+    "path": "/docs/commands/development/mysqlimport",
+    "source": "linux-command"
+  },
+  {
+    "name": "mysqlshow",
+    "description": "Show database, table, and column information",
+    "category": "development",
+    "path": "/docs/commands/development/mysqlshow",
+    "source": "linux-command"
+  },
+  {
+    "name": "named-checkzone",
+    "description": "Zone file validity checking tool",
+    "category": "other",
+    "path": "/docs/commands/other/named-checkzone",
+    "source": "linux-command"
+  },
+  {
+    "name": "nano",
+    "description": "Simple text editor",
+    "category": "development",
+    "path": "/docs/commands/development/nano",
+    "source": "linux-command"
+  },
+  {
+    "name": "nc",
+    "description": "Netcat utility",
+    "category": "networking",
+    "path": "/docs/commands/networking/nc",
+    "source": "linux-command"
+  },
+  {
+    "name": "ncdu",
+    "description": "NCurses Disk Usage",
+    "category": "other",
+    "path": "/docs/commands/other/ncdu",
+    "source": "linux-command"
+  },
+  {
+    "name": "ncftp",
+    "description": "Browser program for the File Transfer Protocol",
+    "category": "networking",
+    "path": "/docs/commands/networking/ncftp",
+    "source": "linux-command"
+  },
+  {
+    "name": "neofetch",
+    "description": "Display system information",
+    "category": "other",
+    "path": "/docs/commands/other/neofetch",
+    "source": "linux-command"
+  },
+  {
+    "name": "nethogs",
+    "description": "Net top tool",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/nethogs",
+    "source": "linux-command"
+  },
+  {
+    "name": "netstat",
+    "description": "Display network connections",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/netstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "newusers",
+    "description": "Update and create new users in batch",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/newusers",
+    "source": "linux-command"
+  },
+  {
+    "name": "nfsstat",
+    "description": "Display NFS statistics",
+    "category": "other",
+    "path": "/docs/commands/other/nfsstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "ngrep",
+    "description": "Network grep",
+    "category": "other",
+    "path": "/docs/commands/other/ngrep",
+    "source": "linux-command"
+  },
+  {
+    "name": "nice",
+    "description": "Run command with modified scheduling priority",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/nice",
+    "source": "linux-command"
+  },
+  {
+    "name": "nisdomainname",
+    "description": "Show or set system NIS domain name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/nisdomainname",
+    "source": "linux-command"
+  },
+  {
+    "name": "nl",
+    "description": "Number lines of files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/nl",
+    "source": "linux-command"
+  },
+  {
+    "name": "nm",
+    "description": "List symbols from object files",
+    "category": "development",
+    "path": "/docs/commands/development/nm",
+    "source": "linux-command"
+  },
+  {
+    "name": "nmap",
+    "description": "Network exploration and security auditing",
+    "category": "networking",
+    "path": "/docs/commands/networking/nmap",
+    "source": "linux-command"
+  },
+  {
+    "name": "nmcli",
+    "description": "NetworkManager command-line tool",
+    "category": "other",
+    "path": "/docs/commands/other/nmcli",
+    "source": "linux-command"
+  },
+  {
+    "name": "nohup",
+    "description": "Run command immune to hangups",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/nohup",
+    "source": "linux-command"
+  },
+  {
+    "name": "nologin",
+    "description": "Politely refuse a login",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/nologin",
+    "source": "linux-command"
+  },
+  {
+    "name": "nproc",
+    "description": "Print number of processing units",
+    "category": "other",
+    "path": "/docs/commands/other/nproc",
+    "source": "linux-command"
+  },
+  {
+    "name": "nslookup",
+    "description": "Query Internet name servers interactively",
+    "category": "networking",
+    "path": "/docs/commands/networking/nslookup",
+    "source": "linux-command"
+  },
+  {
+    "name": "nstat",
+    "description": "Network statistics tool",
+    "category": "other",
+    "path": "/docs/commands/other/nstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "ntpdate",
+    "description": "Set date and time via NTP",
+    "category": "other",
+    "path": "/docs/commands/other/ntpdate",
+    "source": "linux-command"
+  },
+  {
+    "name": "ntsysv",
+    "description": "Simple interface for configuring runlevel services",
+    "category": "other",
+    "path": "/docs/commands/other/ntsysv",
+    "source": "linux-command"
+  },
+  {
+    "name": "objdump",
+    "description": "Display information from object files",
+    "category": "development",
+    "path": "/docs/commands/development/objdump",
+    "source": "linux-command"
+  },
+  {
+    "name": "od",
+    "description": "Octal dump",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/od",
+    "source": "linux-command"
+  },
+  {
+    "name": "openssl",
+    "description": "OpenSSL command line tool",
+    "category": "security",
+    "path": "/docs/commands/security/openssl",
+    "source": "linux-command"
+  },
+  {
+    "name": "pacman",
+    "description": "Arch Linux package manager",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/pacman",
+    "source": "linux-command"
+  },
+  {
+    "name": "parted",
+    "description": "Disk partitioning and partition resizing tool",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/parted",
+    "source": "linux-command"
+  },
+  {
+    "name": "partprobe",
+    "description": "Inform OS of partition table changes",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/partprobe",
+    "source": "linux-command"
+  },
+  {
+    "name": "passwd",
+    "description": "Change user password",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/passwd",
+    "source": "linux-command"
+  },
+  {
+    "name": "paste",
+    "description": "Merge lines of files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/paste",
+    "source": "linux-command"
+  },
+  {
+    "name": "patch",
+    "description": "Apply diff file to original",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/patch",
+    "source": "linux-command"
+  },
+  {
+    "name": "pathchk",
+    "description": "Check whether file names are valid",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/pathchk",
+    "source": "linux-command"
+  },
+  {
+    "name": "perl",
+    "description": "Perl interpreter",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/perl",
+    "source": "linux-command"
+  },
+  {
+    "name": "pfctl",
+    "description": "Control packet filter",
+    "category": "other",
+    "path": "/docs/commands/other/pfctl",
+    "source": "linux-command"
+  },
+  {
+    "name": "pgrep",
+    "description": "Lookup processes based on name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pgrep",
+    "source": "linux-command"
+  },
+  {
+    "name": "php",
+    "description": "PHP command-line interface",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/php",
+    "source": "linux-command"
+  },
+  {
+    "name": "pico",
+    "description": "Simple text editor",
+    "category": "development",
+    "path": "/docs/commands/development/pico",
+    "source": "linux-command"
+  },
+  {
+    "name": "pidof",
+    "description": "Find process ID of a running program",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pidof",
+    "source": "linux-command"
+  },
+  {
+    "name": "pidstat",
+    "description": "Statistics for Linux tasks",
+    "category": "other",
+    "path": "/docs/commands/other/pidstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "pigz",
+    "description": "Parallel implementation of gzip",
+    "category": "other",
+    "path": "/docs/commands/other/pigz",
+    "source": "linux-command"
+  },
+  {
+    "name": "ping",
+    "description": "Test network connectivity",
+    "category": "networking",
+    "path": "/docs/commands/networking/ping",
+    "source": "linux-command"
+  },
+  {
+    "name": "ping6",
+    "description": "Test IPv6 network connectivity",
+    "category": "networking",
+    "path": "/docs/commands/networking/ping6",
+    "source": "linux-command"
+  },
+  {
+    "name": "pip",
+    "description": "Python package installer",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/pip",
+    "source": "linux-command"
+  },
+  {
+    "name": "pkexec",
+    "description": "Execute command as another user",
+    "category": "other",
+    "path": "/docs/commands/other/pkexec",
+    "source": "linux-command"
+  },
+  {
+    "name": "pkill",
+    "description": "Kill processes by name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pkill",
+    "source": "linux-command"
+  },
+  {
+    "name": "pmap",
+    "description": "Display memory map of processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pmap",
+    "source": "linux-command"
+  },
+  {
+    "name": "popd",
+    "description": "Pop directory stack",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/popd",
+    "source": "linux-command"
+  },
+  {
+    "name": "poweroff",
+    "description": "Stop the system",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/poweroff",
+    "source": "linux-command"
+  },
+  {
+    "name": "ppp-off",
+    "description": "ppp-off Linux utility",
+    "category": "other",
+    "path": "/docs/commands/other/ppp-off",
+    "source": "linux-command"
+  },
+  {
+    "name": "pr",
+    "description": "Convert text files for printing",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/pr",
+    "source": "linux-command"
+  },
+  {
+    "name": "printf",
+    "description": "Format and print data",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/printf",
+    "source": "linux-command"
+  },
+  {
+    "name": "protoize",
+    "description": "Create/remove ANSI prototypes from C code",
+    "category": "other",
+    "path": "/docs/commands/other/protoize",
+    "source": "linux-command"
+  },
+  {
+    "name": "prtstat",
+    "description": "Print statistics about a process",
+    "category": "other",
+    "path": "/docs/commands/other/prtstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "ps",
+    "description": "Display running processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ps",
+    "source": "linux-command"
+  },
+  {
+    "name": "pssh",
+    "description": "Parallel SSH tool",
+    "category": "other",
+    "path": "/docs/commands/other/pssh",
+    "source": "linux-command"
+  },
+  {
+    "name": "pstack",
+    "description": "Print stack trace of process",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pstack",
+    "source": "linux-command"
+  },
+  {
+    "name": "pstree",
+    "description": "Display processes in tree format",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pstree",
+    "source": "linux-command"
+  },
+  {
+    "name": "pushd",
+    "description": "Push directory to stack",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pushd",
+    "source": "linux-command"
+  },
+  {
+    "name": "pv",
+    "description": "Monitor progress of data through a pipeline",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pv",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvchange",
+    "description": "Change attributes of physical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvchange",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvck",
+    "description": "Check physical volume metadata",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvck",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvcreate",
+    "description": "Initialize physical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvcreate",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvdisplay",
+    "description": "Display attributes of physical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvdisplay",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvremove",
+    "description": "Remove physical volume",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvremove",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvs",
+    "description": "Display information about physical volumes",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvs",
+    "source": "linux-command"
+  },
+  {
+    "name": "pvscan",
+    "description": "Scan all disks for physical volumes",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/pvscan",
+    "source": "linux-command"
+  },
+  {
+    "name": "pwck",
+    "description": "Verify integrity of password files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/pwck",
+    "source": "linux-command"
+  },
+  {
+    "name": "pwconv",
+    "description": "Convert to shadow password files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/pwconv",
+    "source": "linux-command"
+  },
+  {
+    "name": "pwd",
+    "description": "Print working directory",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/pwd",
+    "source": "linux-command"
+  },
+  {
+    "name": "pwdx",
+    "description": "Print current working directory of processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/pwdx",
+    "source": "linux-command"
+  },
+  {
+    "name": "pwunconv",
+    "description": "Convert back from shadow password files",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/pwunconv",
+    "source": "linux-command"
+  },
+  {
+    "name": "quota",
+    "description": "Display disk usage and limits",
+    "category": "other",
+    "path": "/docs/commands/other/quota",
+    "source": "linux-command"
+  },
+  {
+    "name": "quotacheck",
+    "description": "Scan filesystem for disk usage",
+    "category": "other",
+    "path": "/docs/commands/other/quotacheck",
+    "source": "linux-command"
+  },
+  {
+    "name": "quotaoff",
+    "description": "Turn filesystem quotas on/off",
+    "category": "other",
+    "path": "/docs/commands/other/quotaoff",
+    "source": "linux-command"
+  },
+  {
+    "name": "quotaon",
+    "description": "Turn filesystem quotas on",
+    "category": "other",
+    "path": "/docs/commands/other/quotaon",
+    "source": "linux-command"
+  },
+  {
+    "name": "rcconf",
+    "description": "Debian runlevel configuration tool",
+    "category": "other",
+    "path": "/docs/commands/other/rcconf",
+    "source": "linux-command"
+  },
+  {
+    "name": "rcp",
+    "description": "Remote file copy program",
+    "category": "other",
+    "path": "/docs/commands/other/rcp",
+    "source": "linux-command"
+  },
+  {
+    "name": "read",
+    "description": "Read from standard input",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/read",
+    "source": "linux-command"
+  },
+  {
+    "name": "readelf",
+    "description": "Display information about ELF files",
+    "category": "development",
+    "path": "/docs/commands/development/readelf",
+    "source": "linux-command"
+  },
+  {
+    "name": "readonly",
+    "description": "Mark variables as readonly",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/readonly",
+    "source": "linux-command"
+  },
+  {
+    "name": "reboot",
+    "description": "Restart the system",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/reboot",
+    "source": "linux-command"
+  },
+  {
+    "name": "reject",
+    "description": "Reject jobs for a destination",
+    "category": "other",
+    "path": "/docs/commands/other/reject",
+    "source": "linux-command"
+  },
+  {
+    "name": "rename",
+    "description": "Rename files",
+    "category": "other",
+    "path": "/docs/commands/other/rename",
+    "source": "linux-command"
+  },
+  {
+    "name": "renice",
+    "description": "Alter priority of running processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/renice",
+    "source": "linux-command"
+  },
+  {
+    "name": "reposync",
+    "description": "Synchronize repositories",
+    "category": "other",
+    "path": "/docs/commands/other/reposync",
+    "source": "linux-command"
+  },
+  {
+    "name": "repquota",
+    "description": "Report quotas",
+    "category": "other",
+    "path": "/docs/commands/other/repquota",
+    "source": "linux-command"
+  },
+  {
+    "name": "resize",
+    "description": "Set terminal size",
+    "category": "other",
+    "path": "/docs/commands/other/resize",
+    "source": "linux-command"
+  },
+  {
+    "name": "restore",
+    "description": "Restore files from dump",
+    "category": "compression",
+    "path": "/docs/commands/compression/restore",
+    "source": "linux-command"
+  },
+  {
+    "name": "restorecon",
+    "description": "Restore default SELinux security contexts",
+    "category": "other",
+    "path": "/docs/commands/other/restorecon",
+    "source": "linux-command"
+  },
+  {
+    "name": "return",
+    "description": "Return from shell function",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/return",
+    "source": "linux-command"
+  },
+  {
+    "name": "rev",
+    "description": "Reverse lines of a file",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/rev",
+    "source": "linux-command"
+  },
+  {
+    "name": "rexec",
+    "description": "Remote execution client",
+    "category": "other",
+    "path": "/docs/commands/other/rexec",
+    "source": "linux-command"
+  },
+  {
+    "name": "rlogin",
+    "description": "Remote login",
+    "category": "other",
+    "path": "/docs/commands/other/rlogin",
+    "source": "linux-command"
+  },
+  {
+    "name": "rm",
+    "description": "Remove files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/rm",
+    "source": "linux-command"
+  },
+  {
+    "name": "rmdir",
+    "description": "Remove empty directories",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/rmdir",
+    "source": "linux-command"
+  },
+  {
+    "name": "rmmod",
+    "description": "Remove module from Linux kernel",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/rmmod",
+    "source": "linux-command"
+  },
+  {
+    "name": "route",
+    "description": "Show and manipulate IP routing table",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/route",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpm",
+    "description": "RPM Package Manager",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpm",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpm2cpio",
+    "description": "Extract cpio archive from RPM package",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpm2cpio",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpmbuild",
+    "description": "Build RPM packages",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpmbuild",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpmdb",
+    "description": "RPM database",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpmdb",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpmquery",
+    "description": "RPM query tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpmquery",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpmsign",
+    "description": "RPM signature tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpmsign",
+    "source": "linux-command"
+  },
+  {
+    "name": "rpmverify",
+    "description": "RPM verify tool",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/rpmverify",
+    "source": "linux-command"
+  },
+  {
+    "name": "rsh",
+    "description": "Remote shell",
+    "category": "other",
+    "path": "/docs/commands/other/rsh",
+    "source": "linux-command"
+  },
+  {
+    "name": "rsync",
+    "description": "Sync files remotely",
+    "category": "networking",
+    "path": "/docs/commands/networking/rsync",
+    "source": "linux-command"
+  },
+  {
+    "name": "runlevel",
+    "description": "Print previous and current runlevel",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/runlevel",
+    "source": "linux-command"
+  },
+  {
+    "name": "sar",
+    "description": "Collect, report, or save system activity",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/sar",
+    "source": "linux-command"
+  },
+  {
+    "name": "scp",
+    "description": "Secure copy over network",
+    "category": "networking",
+    "path": "/docs/commands/networking/scp",
+    "source": "linux-command"
+  },
+  {
+    "name": "screen",
+    "description": "Screen manager with VT100/ANSI terminal emulation",
+    "category": "process-management",
+    "path": "/docs/commands/process-management/screen",
+    "source": "linux-command"
+  },
+  {
+    "name": "script",
+    "description": "Make typescript of terminal session",
+    "category": "other",
+    "path": "/docs/commands/other/script",
+    "source": "linux-command"
+  },
+  {
+    "name": "scriptreplay",
+    "description": "Play back typescripts",
+    "category": "other",
+    "path": "/docs/commands/other/scriptreplay",
+    "source": "linux-command"
+  },
+  {
+    "name": "sed",
+    "description": "Stream editor for filtering and transforming text",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/sed",
+    "source": "linux-command"
+  },
+  {
+    "name": "seinfo",
+    "description": "SELinux policy information tool",
+    "category": "other",
+    "path": "/docs/commands/other/seinfo",
+    "source": "linux-command"
+  },
+  {
+    "name": "semanage",
+    "description": "SELinux policy management tool",
+    "category": "other",
+    "path": "/docs/commands/other/semanage",
+    "source": "linux-command"
+  },
+  {
+    "name": "sendmail",
+    "description": "Send email",
+    "category": "other",
+    "path": "/docs/commands/other/sendmail",
+    "source": "linux-command"
+  },
+  {
+    "name": "seq",
+    "description": "Print a sequence of numbers",
+    "category": "other",
+    "path": "/docs/commands/other/seq",
+    "source": "linux-command"
+  },
+  {
+    "name": "service",
+    "description": "Run system services scripts",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/service",
+    "source": "linux-command"
+  },
+  {
+    "name": "sesearch",
+    "description": "Search SELinux policy",
+    "category": "other",
+    "path": "/docs/commands/other/sesearch",
+    "source": "linux-command"
+  },
+  {
+    "name": "set",
+    "description": "Set shell options",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/set",
+    "source": "linux-command"
+  },
+  {
+    "name": "setfacl",
+    "description": "Set file access control lists",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/setfacl",
+    "source": "linux-command"
+  },
+  {
+    "name": "setpci",
+    "description": "Configure PCI devices",
+    "category": "permission",
+    "path": "/docs/commands/permission/setpci",
+    "source": "linux-command"
+  },
+  {
+    "name": "setsebool",
+    "description": "Set SELinux boolean value",
+    "category": "permission",
+    "path": "/docs/commands/permission/setsebool",
+    "source": "linux-command"
+  },
+  {
+    "name": "setsid",
+    "description": "Run command in new session",
+    "category": "permission",
+    "path": "/docs/commands/permission/setsid",
+    "source": "linux-command"
+  },
+  {
+    "name": "sftp",
+    "description": "Secure file transfer program",
+    "category": "networking",
+    "path": "/docs/commands/networking/sftp",
+    "source": "linux-command"
+  },
+  {
+    "name": "sftp-server",
+    "description": "sftp-server networking tool",
+    "category": "networking",
+    "path": "/docs/commands/networking/sftp-server",
+    "source": "linux-command"
+  },
+  {
+    "name": "sh",
+    "description": "Bourne shell",
+    "category": "shell",
+    "path": "/docs/commands/shell/sh",
+    "source": "linux-command"
+  },
+  {
+    "name": "sha256sum",
+    "description": "Compute and check SHA256 message digest",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/sha256sum",
+    "source": "linux-command"
+  },
+  {
+    "name": "shift",
+    "description": "Shift positional parameters",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/shift",
+    "source": "linux-command"
+  },
+  {
+    "name": "shopt",
+    "description": "Set shell options",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/shopt",
+    "source": "linux-command"
+  },
+  {
+    "name": "showmount",
+    "description": "Show mount information for NFS server",
+    "category": "other",
+    "path": "/docs/commands/other/showmount",
+    "source": "linux-command"
+  },
+  {
+    "name": "shuf",
+    "description": "Shuffle input lines",
+    "category": "other",
+    "path": "/docs/commands/other/shuf",
+    "source": "linux-command"
+  },
+  {
+    "name": "shutdown",
+    "description": "Bring the system down",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/shutdown",
+    "source": "linux-command"
+  },
+  {
+    "name": "skill",
+    "description": "Send signal to processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/skill",
+    "source": "linux-command"
+  },
+  {
+    "name": "slabtop",
+    "description": "Display kernel slab cache information",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/slabtop",
+    "source": "linux-command"
+  },
+  {
+    "name": "sleep",
+    "description": "Delay for a specified time",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/sleep",
+    "source": "linux-command"
+  },
+  {
+    "name": "slocate",
+    "description": "Security enhanced locate",
+    "category": "other",
+    "path": "/docs/commands/other/slocate",
+    "source": "linux-command"
+  },
+  {
+    "name": "smartmontools",
+    "description": "Control and monitor storage systems",
+    "category": "other",
+    "path": "/docs/commands/other/smartmontools",
+    "source": "linux-command"
+  },
+  {
+    "name": "smbclient",
+    "description": "SMB/CIFS client",
+    "category": "other",
+    "path": "/docs/commands/other/smbclient",
+    "source": "linux-command"
+  },
+  {
+    "name": "smbpasswd",
+    "description": "Change SMB passwords",
+    "category": "other",
+    "path": "/docs/commands/other/smbpasswd",
+    "source": "linux-command"
+  },
+  {
+    "name": "sort",
+    "description": "Sort lines of text files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/sort",
+    "source": "linux-command"
+  },
+  {
+    "name": "sosreport",
+    "description": "Collect system configuration and diagnostic information",
+    "category": "other",
+    "path": "/docs/commands/other/sosreport",
+    "source": "linux-command"
+  },
+  {
+    "name": "source",
+    "description": "Execute commands from file",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/source",
+    "source": "linux-command"
+  },
+  {
+    "name": "speedtest-cli",
+    "description": "Command line interface for testing internet bandwidth",
+    "category": "other",
+    "path": "/docs/commands/other/speedtest-cli",
+    "source": "linux-command"
+  },
+  {
+    "name": "spell",
+    "description": "Spell checker",
+    "category": "other",
+    "path": "/docs/commands/other/spell",
+    "source": "linux-command"
+  },
+  {
+    "name": "split",
+    "description": "Split file into pieces",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/split",
+    "source": "linux-command"
+  },
+  {
+    "name": "squid",
+    "description": "Web proxy cache",
+    "category": "other",
+    "path": "/docs/commands/other/squid",
+    "source": "linux-command"
+  },
+  {
+    "name": "squidclient",
+    "description": "Squid web proxy client",
+    "category": "other",
+    "path": "/docs/commands/other/squidclient",
+    "source": "linux-command"
+  },
+  {
+    "name": "ss",
+    "description": "Display socket statistics",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ss",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh",
+    "description": "OpenSSH SSH client",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh-add",
+    "description": "Add private key identities to the authentication agent",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh-add",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh-agent",
+    "description": "Authentication agent",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh-agent",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh-copy-id",
+    "description": "Install SSH public key on remote server",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh-copy-id",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh-keygen",
+    "description": "Authentication key generation",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh-keygen",
+    "source": "linux-command"
+  },
+  {
+    "name": "ssh-keyscan",
+    "description": "Gather SSH public keys",
+    "category": "networking",
+    "path": "/docs/commands/networking/ssh-keyscan",
+    "source": "linux-command"
+  },
+  {
+    "name": "sshd",
+    "description": "OpenSSH SSH daemon",
+    "category": "networking",
+    "path": "/docs/commands/networking/sshd",
+    "source": "linux-command"
+  },
+  {
+    "name": "sshpass",
+    "description": "Non-interactive ssh password provider",
+    "category": "networking",
+    "path": "/docs/commands/networking/sshpass",
+    "source": "linux-command"
+  },
+  {
+    "name": "startx",
+    "description": "Initialize X session",
+    "category": "other",
+    "path": "/docs/commands/other/startx",
+    "source": "linux-command"
+  },
+  {
+    "name": "stat",
+    "description": "Display file or filesystem status",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/stat",
+    "source": "linux-command"
+  },
+  {
+    "name": "strace",
+    "description": "Trace system calls and signals",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/strace",
+    "source": "linux-command"
+  },
+  {
+    "name": "strings",
+    "description": "Find printable strings in files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/strings",
+    "source": "linux-command"
+  },
+  {
+    "name": "stty",
+    "description": "Change and print terminal line settings",
+    "category": "other",
+    "path": "/docs/commands/other/stty",
+    "source": "linux-command"
+  },
+  {
+    "name": "su",
+    "description": "Switch user or become superuser",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/su",
+    "source": "linux-command"
+  },
+  {
+    "name": "sudo",
+    "description": "Execute command as superuser",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/sudo",
+    "source": "linux-command"
+  },
+  {
+    "name": "sum",
+    "description": "Checksum and count blocks in file",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/sum",
+    "source": "linux-command"
+  },
+  {
+    "name": "supervisord",
+    "description": "Process control system",
+    "category": "other",
+    "path": "/docs/commands/other/supervisord",
+    "source": "linux-command"
+  },
+  {
+    "name": "suspend",
+    "description": "Suspend execution",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/suspend",
+    "source": "linux-command"
+  },
+  {
+    "name": "swapoff",
+    "description": "Disable devices for paging and swapping",
+    "category": "compression",
+    "path": "/docs/commands/compression/swapoff",
+    "source": "linux-command"
+  },
+  {
+    "name": "swapon",
+    "description": "Enable devices for paging and swapping",
+    "category": "compression",
+    "path": "/docs/commands/compression/swapon",
+    "source": "linux-command"
+  },
+  {
+    "name": "sync",
+    "description": "Flush filesystem buffers",
+    "category": "other",
+    "path": "/docs/commands/other/sync",
+    "source": "linux-command"
+  },
+  {
+    "name": "sysctl",
+    "description": "Configure kernel parameters at runtime",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/sysctl",
+    "source": "linux-command"
+  },
+  {
+    "name": "syslog",
+    "description": "System logging utilities",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/syslog",
+    "source": "linux-command"
+  },
+  {
+    "name": "systemctl",
+    "description": "Control systemd services",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/systemctl",
+    "source": "linux-command"
+  },
+  {
+    "name": "systool",
+    "description": "System device utilities",
+    "category": "other",
+    "path": "/docs/commands/other/systool",
+    "source": "linux-command"
+  },
+  {
+    "name": "tac",
+    "description": "Concatenate and print files in reverse",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/tac",
+    "source": "linux-command"
+  },
+  {
+    "name": "tail",
+    "description": "Display last lines of files",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/tail",
+    "source": "linux-command"
+  },
+  {
+    "name": "tailf",
+    "description": "Follow growth of log file",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/tailf",
+    "source": "linux-command"
+  },
+  {
+    "name": "talk",
+    "description": "Talk to another user",
+    "category": "other",
+    "path": "/docs/commands/other/talk",
+    "source": "linux-command"
+  },
+  {
+    "name": "tar",
+    "description": "Archive and extract files",
+    "category": "compression",
+    "path": "/docs/commands/compression/tar",
+    "source": "linux-command"
+  },
+  {
+    "name": "tcpdump",
+    "description": "Dump traffic on network",
+    "category": "networking",
+    "path": "/docs/commands/networking/tcpdump",
+    "source": "linux-command"
+  },
+  {
+    "name": "tcpreplay",
+    "description": "Replay captured network traffic",
+    "category": "networking",
+    "path": "/docs/commands/networking/tcpreplay",
+    "source": "linux-command"
+  },
+  {
+    "name": "tee",
+    "description": "Read from standard input and write to standard output and files",
+    "category": "other",
+    "path": "/docs/commands/other/tee",
+    "source": "linux-command"
+  },
+  {
+    "name": "telinit",
+    "description": "Change runlevel",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/telinit",
+    "source": "linux-command"
+  },
+  {
+    "name": "telnet",
+    "description": "User interface to TELNET protocol",
+    "category": "networking",
+    "path": "/docs/commands/networking/telnet",
+    "source": "linux-command"
+  },
+  {
+    "name": "tempfile",
+    "description": "Create temporary file",
+    "category": "other",
+    "path": "/docs/commands/other/tempfile",
+    "source": "linux-command"
+  },
+  {
+    "name": "test",
+    "description": "Check file types and compare values",
+    "category": "other",
+    "path": "/docs/commands/other/test",
+    "source": "linux-command"
+  },
+  {
+    "name": "tftp",
+    "description": "Trivial File Transfer Protocol client",
+    "category": "other",
+    "path": "/docs/commands/other/tftp",
+    "source": "linux-command"
+  },
+  {
+    "name": "time",
+    "description": "Run command and display resource usage",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/time",
+    "source": "linux-command"
+  },
+  {
+    "name": "timedatectl",
+    "description": "Control system time and date",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/timedatectl",
+    "source": "linux-command"
+  },
+  {
+    "name": "times",
+    "description": "Shell built-in to report times",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/times",
+    "source": "linux-command"
+  },
+  {
+    "name": "tload",
+    "description": "Graphic representation of system load average",
+    "category": "other",
+    "path": "/docs/commands/other/tload",
+    "source": "linux-command"
+  },
+  {
+    "name": "tmux",
+    "description": "Terminal multiplexer",
+    "category": "process-management",
+    "path": "/docs/commands/process-management/tmux",
+    "source": "linux-command"
+  },
+  {
+    "name": "top",
+    "description": "Display Linux processes",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/top",
+    "source": "linux-command"
+  },
+  {
+    "name": "touch",
+    "description": "Change file timestamps",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/touch",
+    "source": "linux-command"
+  },
+  {
+    "name": "tput",
+    "description": "Initialize terminal or query terminfo database",
+    "category": "other",
+    "path": "/docs/commands/other/tput",
+    "source": "linux-command"
+  },
+  {
+    "name": "tr",
+    "description": "Translate or delete characters",
+    "category": "other",
+    "path": "/docs/commands/other/tr",
+    "source": "linux-command"
+  },
+  {
+    "name": "tracepath",
+    "description": "Trace path to destination",
+    "category": "networking",
+    "path": "/docs/commands/networking/tracepath",
+    "source": "linux-command"
+  },
+  {
+    "name": "traceroute",
+    "description": "Track route to destination",
+    "category": "networking",
+    "path": "/docs/commands/networking/traceroute",
+    "source": "linux-command"
+  },
+  {
+    "name": "trap",
+    "description": "Trap signals and handle them",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/trap",
+    "source": "linux-command"
+  },
+  {
+    "name": "tree",
+    "description": "List contents of directories in tree-like format",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/tree",
+    "source": "linux-command"
+  },
+  {
+    "name": "true",
+    "description": "Return successful exit status",
+    "category": "other",
+    "path": "/docs/commands/other/true",
+    "source": "linux-command"
+  },
+  {
+    "name": "tty",
+    "description": "Print terminal name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/tty",
+    "source": "linux-command"
+  },
+  {
+    "name": "type",
+    "description": "Write command description",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/type",
+    "source": "linux-command"
+  },
+  {
+    "name": "ufw",
+    "description": "Uncomplicated Firewall",
+    "category": "networking",
+    "path": "/docs/commands/networking/ufw",
+    "source": "linux-command"
+  },
+  {
+    "name": "ulimit",
+    "description": "Control shell resources",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ulimit",
+    "source": "linux-command"
+  },
+  {
+    "name": "umask",
+    "description": "Set file creation mode mask",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/umask",
+    "source": "linux-command"
+  },
+  {
+    "name": "umount",
+    "description": "Unmount filesystems",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/umount",
+    "source": "linux-command"
+  },
+  {
+    "name": "unalias",
+    "description": "Remove command aliases",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/unalias",
+    "source": "linux-command"
+  },
+  {
+    "name": "uname",
+    "description": "Display system information",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/uname",
+    "source": "linux-command"
+  },
+  {
+    "name": "unarj",
+    "description": "Extract files from ARJ archives",
+    "category": "compression",
+    "path": "/docs/commands/compression/unarj",
+    "source": "linux-command"
+  },
+  {
+    "name": "uncompress",
+    "description": "Uncompress .Z files",
+    "category": "compression",
+    "path": "/docs/commands/compression/uncompress",
+    "source": "linux-command"
+  },
+  {
+    "name": "unexpand",
+    "description": "Convert spaces to tabs",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/unexpand",
+    "source": "linux-command"
+  },
+  {
+    "name": "uniq",
+    "description": "Report or omit repeated lines",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/uniq",
+    "source": "linux-command"
+  },
+  {
+    "name": "unlink",
+    "description": "Remove directory entry",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/unlink",
+    "source": "linux-command"
+  },
+  {
+    "name": "unprotoize",
+    "description": "Remove ANSI prototypes from C code",
+    "category": "other",
+    "path": "/docs/commands/other/unprotoize",
+    "source": "linux-command"
+  },
+  {
+    "name": "unrar",
+    "description": "Extract files from RAR archives",
+    "category": "compression",
+    "path": "/docs/commands/compression/unrar",
+    "source": "linux-command"
+  },
+  {
+    "name": "unset",
+    "description": "Remove variable or function",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/unset",
+    "source": "linux-command"
+  },
+  {
+    "name": "unzip",
+    "description": "Extract zip files",
+    "category": "compression",
+    "path": "/docs/commands/compression/unzip",
+    "source": "linux-command"
+  },
+  {
+    "name": "updatedb",
+    "description": "Update file name database",
+    "category": "other",
+    "path": "/docs/commands/other/updatedb",
+    "source": "linux-command"
+  },
+  {
+    "name": "uptime",
+    "description": "Show system uptime and load",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/uptime",
+    "source": "linux-command"
+  },
+  {
+    "name": "useradd",
+    "description": "Create new user account",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/useradd",
+    "source": "linux-command"
+  },
+  {
+    "name": "userdel",
+    "description": "Delete user account",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/userdel",
+    "source": "linux-command"
+  },
+  {
+    "name": "usermod",
+    "description": "Modify user account",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/usermod",
+    "source": "linux-command"
+  },
+  {
+    "name": "usernetctl",
+    "description": "Allow user to control network interfaces",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/usernetctl",
+    "source": "linux-command"
+  },
+  {
+    "name": "users",
+    "description": "Display current user names",
+    "category": "user-management",
+    "path": "/docs/commands/user-management/users",
+    "source": "linux-command"
+  },
+  {
+    "name": "uucico",
+    "description": "UUCP file transfer daemon",
+    "category": "other",
+    "path": "/docs/commands/other/uucico",
+    "source": "linux-command"
+  },
+  {
+    "name": "uupick",
+    "description": "Retrieve files transferred by uuto",
+    "category": "other",
+    "path": "/docs/commands/other/uupick",
+    "source": "linux-command"
+  },
+  {
+    "name": "uuto",
+    "description": "Copy files to remote system",
+    "category": "other",
+    "path": "/docs/commands/other/uuto",
+    "source": "linux-command"
+  },
+  {
+    "name": "vdfuse",
+    "description": "Virtual Disk Filesystem",
+    "category": "other",
+    "path": "/docs/commands/other/vdfuse",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgchange",
+    "description": "Change attributes of volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgchange",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgconvert",
+    "description": "Convert volume group metadata format",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgconvert",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgcreate",
+    "description": "Create volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgcreate",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgdisplay",
+    "description": "Display volume group information",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgdisplay",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgextend",
+    "description": "Add physical volumes to volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgextend",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgreduce",
+    "description": "Reduce volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgreduce",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgremove",
+    "description": "Remove volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgremove",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgrename",
+    "description": "Rename volume group",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgrename",
+    "source": "linux-command"
+  },
+  {
+    "name": "vgscan",
+    "description": "Scan for volume groups",
+    "category": "system-service",
+    "path": "/docs/commands/system-service/vgscan",
+    "source": "linux-command"
+  },
+  {
+    "name": "vi",
+    "description": "Text editor",
+    "category": "development",
+    "path": "/docs/commands/development/vi",
+    "source": "linux-command"
+  },
+  {
+    "name": "vmstat",
+    "description": "Report virtual memory statistics",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/vmstat",
+    "source": "linux-command"
+  },
+  {
+    "name": "volname",
+    "description": "Print CD-ROM volume name",
+    "category": "other",
+    "path": "/docs/commands/other/volname",
+    "source": "linux-command"
+  },
+  {
+    "name": "w",
+    "description": "Show who is logged on and what they are doing",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/w",
+    "source": "linux-command"
+  },
+  {
+    "name": "wait",
+    "description": "Wait for process completion",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/wait",
+    "source": "linux-command"
+  },
+  {
+    "name": "wall",
+    "description": "Send message to all users",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/wall",
+    "source": "linux-command"
+  },
+  {
+    "name": "watch",
+    "description": "Execute command periodically",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/watch",
+    "source": "linux-command"
+  },
+  {
+    "name": "wc",
+    "description": "Print newline, word, and byte counts",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/wc",
+    "source": "linux-command"
+  },
+  {
+    "name": "wget",
+    "description": "Download files from web",
+    "category": "networking",
+    "path": "/docs/commands/networking/wget",
+    "source": "linux-command"
+  },
+  {
+    "name": "whatis",
+    "description": "Display one-line manual page descriptions",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/whatis",
+    "source": "linux-command"
+  },
+  {
+    "name": "whereis",
+    "description": "Find command binary, source, and manual",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/whereis",
+    "source": "linux-command"
+  },
+  {
+    "name": "which",
+    "description": "Locate command executable",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/which",
+    "source": "linux-command"
+  },
+  {
+    "name": "who",
+    "description": "Show who is logged on",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/who",
+    "source": "linux-command"
+  },
+  {
+    "name": "whoami",
+    "description": "Display current username",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/whoami",
+    "source": "linux-command"
+  },
+  {
+    "name": "write",
+    "description": "Send message to another user",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/write",
+    "source": "linux-command"
+  },
+  {
+    "name": "xargs",
+    "description": "Build and execute command lines from standard input",
+    "category": "other",
+    "path": "/docs/commands/other/xargs",
+    "source": "linux-command"
+  },
+  {
+    "name": "xauth",
+    "description": "X authority file utility",
+    "category": "other",
+    "path": "/docs/commands/other/xauth",
+    "source": "linux-command"
+  },
+  {
+    "name": "xclip",
+    "description": "Access X clipboard from command line",
+    "category": "other",
+    "path": "/docs/commands/other/xclip",
+    "source": "linux-command"
+  },
+  {
+    "name": "xhost",
+    "description": "Server access control program for X",
+    "category": "other",
+    "path": "/docs/commands/other/xhost",
+    "source": "linux-command"
+  },
+  {
+    "name": "xinit",
+    "description": "X Window System initializer",
+    "category": "other",
+    "path": "/docs/commands/other/xinit",
+    "source": "linux-command"
+  },
+  {
+    "name": "xlsatoms",
+    "description": "List interned atoms defined on server",
+    "category": "other",
+    "path": "/docs/commands/other/xlsatoms",
+    "source": "linux-command"
+  },
+  {
+    "name": "xlsclients",
+    "description": "List client applications running on display",
+    "category": "other",
+    "path": "/docs/commands/other/xlsclients",
+    "source": "linux-command"
+  },
+  {
+    "name": "xlsfonts",
+    "description": "List fonts matching criteria",
+    "category": "other",
+    "path": "/docs/commands/other/xlsfonts",
+    "source": "linux-command"
+  },
+  {
+    "name": "xrandr",
+    "description": "Configure screen size and orientation",
+    "category": "other",
+    "path": "/docs/commands/other/xrandr",
+    "source": "linux-command"
+  },
+  {
+    "name": "xset",
+    "description": "User preference utility for X",
+    "category": "other",
+    "path": "/docs/commands/other/xset",
+    "source": "linux-command"
+  },
+  {
+    "name": "xz",
+    "description": "Compress and decompress files",
+    "category": "compression",
+    "path": "/docs/commands/compression/xz",
+    "source": "linux-command"
+  },
+  {
+    "name": "yes",
+    "description": "Output a string repeatedly",
+    "category": "other",
+    "path": "/docs/commands/other/yes",
+    "source": "linux-command"
+  },
+  {
+    "name": "ypdomainname",
+    "description": "Show or set system NIS/YP domain name",
+    "category": "system-info",
+    "path": "/docs/commands/system-info/ypdomainname",
+    "source": "linux-command"
+  },
+  {
+    "name": "yum",
+    "description": "Yellowdog Updater Modified",
+    "category": "package-management",
+    "path": "/docs/commands/package-management/yum",
+    "source": "linux-command"
+  },
+  {
+    "name": "zcat",
+    "description": "Decompress files to stdout",
+    "category": "file-management",
+    "path": "/docs/commands/file-management/zcat",
+    "source": "linux-command"
+  },
+  {
+    "name": "zfore",
+    "description": "Force compression file to end with .gz",
+    "category": "other",
+    "path": "/docs/commands/other/zfore",
+    "source": "linux-command"
+  },
+  {
+    "name": "zip",
+    "description": "Package and compress files",
+    "category": "compression",
+    "path": "/docs/commands/compression/zip",
+    "source": "linux-command"
+  },
+  {
+    "name": "zipinfo",
+    "description": "List detailed information about zip archive",
+    "category": "other",
+    "path": "/docs/commands/other/zipinfo",
+    "source": "linux-command"
+  },
+  {
+    "name": "zipsplit",
+    "description": "Split zip archive",
+    "category": "other",
+    "path": "/docs/commands/other/zipsplit",
+    "source": "linux-command"
+  },
+  {
+    "name": "znew",
+    "description": "Recompress .Z files to .gz files",
+    "category": "other",
+    "path": "/docs/commands/other/znew",
+    "source": "linux-command"
+  }
+]
