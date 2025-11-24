@@ -183,6 +183,10 @@ const config = {
                 label: 'Reddit Linux',
                 href: 'https://reddit.com/r/linux',
               },
+              {
+                label: 'CorleoM',
+                href: 'https://corleom.com',
+              },
             ],
           },
           {
