@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import CommandSearch from '@site/src/components/CommandSearch';
 import AdSenseAd from '@site/src/components/AdSenseAd';
+import Sponsors from '@site/src/components/Sponsors';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -48,6 +49,7 @@ export default function Home() {
           />
         </div>
         <HomepageFeatures />
+        <Sponsors />
       </main>
     </Layout>
   );

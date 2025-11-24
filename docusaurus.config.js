@@ -190,6 +190,31 @@ const config = {
             ],
           },
           {
+            title: 'Sponsors',
+            items: [
+              {
+                label: 'DigitalOcean',
+                href: 'https://www.digitalocean.com/?refcode=9b80bafe43ef&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge',
+                html: '<a href="https://www.digitalocean.com/?refcode=9b80bafe43ef&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge" target="_blank" rel="noopener"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="height: 32px;" /></a>',
+              },
+              {
+                label: 'Vultr',
+                href: 'https://www.vultr.com/?ref=9832100-9J',
+                html: '<a href="https://www.vultr.com/?ref=9832100-9J" target="_blank" rel="noopener"><img src="https://www.vultr.com/media/logo_onwhite.png" alt="Vultr" style="height: 32px;" /></a>',
+              },
+              {
+                label: 'Setapp',
+                href: 'https://go.setapp.com/invite/ajcaw4fb',
+                html: '<a href="https://go.setapp.com/invite/ajcaw4fb" target="_blank" rel="noopener"><img src="https://cdn.setapp.com/master-7c09a14f402a20c2d99463402edf4b37320cf342-983/static/main/images/components/logo/setapp-icon.svg" alt="Setapp" style="height: 32px;" /></a>',
+              },
+              {
+                label: 'Cloudflare',
+                href: 'https://www.cloudflare.com/',
+                html: '<a href="https://www.cloudflare.com/" target="_blank" rel="noopener"><img src="https://www.cloudflare.com/img/logo-web-badges/cf-logo-on-white-bg.svg" alt="Cloudflare" style="height: 32px;" /></a>',
+              },
+            ],
+          },
+          {
             title: 'Contribute',
             items: [
               {
