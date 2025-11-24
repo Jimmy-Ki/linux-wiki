@@ -1,5 +1,6 @@
 ---
 title: passwd - Change User Password
+sidebar_label: passwd
 ---
 
 > **Command documentation sourced from the linux-command project**

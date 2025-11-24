@@ -1,5 +1,6 @@
 ---
 title: join - Join Lines of Two Files on a Common Field
+sidebar_label: join
 ---
 
 > **Command documentation sourced from the linux-command project**

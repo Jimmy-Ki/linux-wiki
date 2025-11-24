@@ -1,5 +1,6 @@
 ---
 title: xz - XZ Format Compression Utility
+sidebar_label: xz
 ---
 
 > **Command documentation sourced from the linux-command project**

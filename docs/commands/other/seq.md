@@ -1,5 +1,6 @@
 ---
 title: seq - Print a Sequence of Numbers
+sidebar_label: seq
 ---
 
 > **Command documentation sourced from the linux-command project**

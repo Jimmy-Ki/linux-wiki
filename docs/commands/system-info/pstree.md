@@ -1,5 +1,6 @@
 ---
 title: pstree - Process Tree
+sidebar_label: pstree
 ---
 
 > **Command documentation sourced from the linux-command project**

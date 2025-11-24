@@ -9,6 +9,7 @@ tags:
   - arj
   - backup
 toc: true
+sidebar_label: arj
 ---
 
 # arj Command

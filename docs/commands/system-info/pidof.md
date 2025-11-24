@@ -1,5 +1,6 @@
 ---
 title: pidof - Find Process ID by Name
+sidebar_label: pidof
 ---
 
 > **Command documentation sourced from the linux-command project**

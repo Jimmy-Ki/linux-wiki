@@ -1,5 +1,6 @@
 ---
 title: expr - Evaluate Expressions
+sidebar_label: expr
 ---
 
 > **Command documentation sourced from the linux-command project**

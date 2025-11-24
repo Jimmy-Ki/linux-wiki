@@ -1,5 +1,6 @@
 ---
 title: emacs - Emacs Text Editor
+sidebar_label: emacs
 ---
 
 > **Command documentation sourced from the linux-command project**

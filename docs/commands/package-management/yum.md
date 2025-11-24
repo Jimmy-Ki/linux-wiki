@@ -1,5 +1,6 @@
 ---
 title: yum - Yellowdog Updater Modified
+sidebar_label: yum
 ---
 
 > **Command documentation sourced from the linux-command project**

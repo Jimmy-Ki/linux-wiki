@@ -10,6 +10,7 @@ tags:
   - mount
   - devices
 toc: true
+sidebar_label: mount
 ---
 
 # mount Command

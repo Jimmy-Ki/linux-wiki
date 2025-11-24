@@ -1,5 +1,6 @@
 ---
 title: echo - Display a Line of Text
+sidebar_label: echo
 ---
 
 > **Command documentation sourced from the linux-command project**

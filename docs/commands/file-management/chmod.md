@@ -1,5 +1,6 @@
 ---
 title: chmod - Change File Permissions
+sidebar_label: chmod
 ---
 
 > **Command documentation sourced from the linux-command project**

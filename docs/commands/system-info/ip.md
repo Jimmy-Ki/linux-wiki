@@ -1,5 +1,6 @@
 ---
 title: ip - Show/manipulate routing, devices, policy routing and tunnels
+sidebar_label: ip
 ---
 
 > **Command documentation sourced from the linux-command project**

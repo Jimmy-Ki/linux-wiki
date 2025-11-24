@@ -1,5 +1,6 @@
 ---
 title: createrepo - Create YUM Repository Metadata
+sidebar_label: createrepo
 ---
 
 > **Command documentation sourced from the linux-command project**

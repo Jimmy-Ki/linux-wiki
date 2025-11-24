@@ -1,5 +1,6 @@
 ---
 title: touch - Create Empty Files or Update Timestamps
+sidebar_label: touch
 ---
 
 > **Command documentation sourced from the linux-command project**

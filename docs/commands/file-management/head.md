@@ -1,5 +1,6 @@
 ---
 title: head - Display First Lines
+sidebar_label: head
 ---
 
 > **Command documentation sourced from the linux-command project**

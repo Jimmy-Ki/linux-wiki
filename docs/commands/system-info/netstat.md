@@ -1,5 +1,6 @@
 ---
 title: netstat - Network Statistics
+sidebar_label: netstat
 ---
 
 > **Command documentation sourced from the linux-command project**

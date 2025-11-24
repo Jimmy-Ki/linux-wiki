@@ -1,5 +1,6 @@
 ---
 title: fg - Foreground Job
+sidebar_label: fg
 ---
 
 > **Command documentation sourced from the linux-command project**

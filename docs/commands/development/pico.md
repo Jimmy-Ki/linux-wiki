@@ -1,5 +1,6 @@
 ---
 title: pico - Pine composer text editor
+sidebar_label: pico
 ---
 
 > **Command documentation sourced from the linux-command project**

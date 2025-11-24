@@ -1,5 +1,6 @@
 ---
 title: ps - Process Status
+sidebar_label: ps
 ---
 
 > **Command documentation sourced from the linux-command project**

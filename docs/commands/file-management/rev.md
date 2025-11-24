@@ -1,5 +1,6 @@
 ---
 title: rev - Reverse Lines Character by Character
+sidebar_label: rev
 ---
 
 > **Command documentation sourced from the linux-command project**

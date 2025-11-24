@@ -1,5 +1,6 @@
 ---
 title: ex - EX editor
+sidebar_label: ex
 ---
 
 > **Command documentation sourced from the linux-command project**

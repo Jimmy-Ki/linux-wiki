@@ -1,5 +1,6 @@
 ---
 title: iptables - Linux Firewall Administration
+sidebar_label: iptables
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: dmidecode - DMI Table Decoder
+sidebar_label: dmidecode
 ---
 
 > **Command documentation sourced from the linux-command project**

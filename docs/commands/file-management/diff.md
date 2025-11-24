@@ -1,5 +1,6 @@
 ---
 title: diff - Show File Differences
+sidebar_label: diff
 ---
 
 > **Command documentation sourced from the linux-command project**

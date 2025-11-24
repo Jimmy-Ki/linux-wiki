@@ -1,5 +1,6 @@
 ---
 title: paste - Merge Lines of Files
+sidebar_label: paste
 ---
 
 > **Command documentation sourced from the linux-command project**

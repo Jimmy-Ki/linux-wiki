@@ -1,5 +1,6 @@
 ---
 title: rmdir - Remove Empty Directories
+sidebar_label: rmdir
 ---
 
 > **Command documentation sourced from the linux-command project**

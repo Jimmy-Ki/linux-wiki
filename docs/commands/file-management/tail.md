@@ -1,5 +1,6 @@
 ---
 title: tail - Display Last Lines of a File
+sidebar_label: tail
 ---
 
 > **Command documentation sourced from the linux-command project**

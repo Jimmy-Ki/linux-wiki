@@ -1,5 +1,6 @@
 ---
 title: userdel - Delete User Account
+sidebar_label: userdel
 ---
 
 > **Command documentation sourced from the linux-command project**

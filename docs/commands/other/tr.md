@@ -1,5 +1,6 @@
 ---
 title: tr - Translate or Delete Characters
+sidebar_label: tr
 ---
 
 > **Command documentation sourced from the linux-command project**

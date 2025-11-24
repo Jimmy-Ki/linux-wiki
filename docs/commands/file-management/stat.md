@@ -1,5 +1,6 @@
 ---
 title: stat - Display File or Filesystem Status
+sidebar_label: stat
 ---
 
 > **Command documentation sourced from the linux-command project**

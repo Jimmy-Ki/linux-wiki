@@ -1,5 +1,6 @@
 ---
 title: cd - Change Directory
+sidebar_label: cd
 ---
 
 > **Command documentation sourced from the linux-command project**

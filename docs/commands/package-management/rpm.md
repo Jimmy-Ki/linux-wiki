@@ -1,5 +1,6 @@
 ---
 title: rpm - RPM Package Manager
+sidebar_label: rpm
 ---
 
 > **Command documentation sourced from the linux-command project**

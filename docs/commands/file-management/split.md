@@ -1,5 +1,6 @@
 ---
 title: split - Split a File into Pieces
+sidebar_label: split
 ---
 
 > **Command documentation sourced from the linux-command project**

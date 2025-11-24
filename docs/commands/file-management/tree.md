@@ -1,5 +1,6 @@
 ---
 title: tree - Directory Tree Listing
+sidebar_label: tree
 ---
 
 > **Command documentation sourced from the linux-command project**

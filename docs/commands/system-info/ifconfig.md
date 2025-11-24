@@ -1,5 +1,6 @@
 ---
 title: ifconfig - Network Interface Configuration
+sidebar_label: ifconfig
 ---
 
 > **Command documentation sourced from the linux-command project**

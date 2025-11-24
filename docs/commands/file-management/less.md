@@ -1,5 +1,6 @@
 ---
 title: less - View File Content Page by Page
+sidebar_label: less
 ---
 
 > **Command documentation sourced from the linux-command project**

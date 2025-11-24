@@ -1,5 +1,6 @@
 ---
 title: reposync - Synchronize YUM Repositories to Local Directory
+sidebar_label: reposync
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: disown - Remove Jobs from Shell
+sidebar_label: disown
 ---
 
 > **Command documentation sourced from the linux-command project**

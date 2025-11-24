@@ -1,5 +1,6 @@
 ---
 title: apt - Advanced Package Tool
+sidebar_label: apt
 ---
 
 > **Command documentation sourced from the linux-command project**

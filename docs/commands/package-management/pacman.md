@@ -1,5 +1,6 @@
 ---
 title: pacman - Arch Linux Package Manager
+sidebar_label: pacman
 ---
 
 > **Command documentation sourced from the linux-command project**

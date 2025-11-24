@@ -1,5 +1,6 @@
 ---
 title: read - Read Input from Standard Input
+sidebar_label: read
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: tar - Tape Archive Utility for Backups
+sidebar_label: tar
 ---
 
 > **Command documentation sourced from the linux-command project**

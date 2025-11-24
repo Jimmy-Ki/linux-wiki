@@ -1,5 +1,6 @@
 ---
 title: parted - Partition Manipulation Tool
+sidebar_label: parted
 ---
 
 > **Command documentation sourced from the linux-command project**

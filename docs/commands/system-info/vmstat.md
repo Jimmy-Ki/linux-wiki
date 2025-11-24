@@ -1,5 +1,6 @@
 ---
 title: vmstat - Virtual Memory Statistics
+sidebar_label: vmstat
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -2,6 +2,7 @@
 title: nohup - Run command immune to hangups
 slug: nohup
 tags: [process-management, linux-commands]
+sidebar_label: nohup
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

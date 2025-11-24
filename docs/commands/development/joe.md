@@ -1,5 +1,6 @@
 ---
 title: joe - Joe's Own Editor
+sidebar_label: joe
 ---
 
 > **Command documentation sourced from the linux-command project**

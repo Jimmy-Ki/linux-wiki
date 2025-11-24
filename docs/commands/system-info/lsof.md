@@ -1,5 +1,6 @@
 ---
 title: lsof - List Open Files
+sidebar_label: lsof
 ---
 
 > **Command documentation sourced from the linux-command project**

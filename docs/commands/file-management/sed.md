@@ -1,5 +1,6 @@
 ---
 title: sed - Stream Editor
+sidebar_label: sed
 ---
 
 > **Command documentation sourced from the linux-command project**

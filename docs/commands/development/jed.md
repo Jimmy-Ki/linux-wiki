@@ -1,5 +1,6 @@
 ---
 title: jed - JED Editor
+sidebar_label: jed
 ---
 
 > **Command documentation sourced from the linux-command project**

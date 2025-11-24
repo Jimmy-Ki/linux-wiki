@@ -1,5 +1,6 @@
 ---
 title: lsblk - List Block Devices
+sidebar_label: lsblk
 ---
 
 > **Command documentation sourced from the linux-command project**

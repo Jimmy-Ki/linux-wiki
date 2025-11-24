@@ -1,5 +1,6 @@
 ---
 title: uniq - Report or Omit Repeated Lines
+sidebar_label: uniq
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: top - Display Linux Processes
+sidebar_label: top
 ---
 
 > **Command documentation sourced from the linux-command project**

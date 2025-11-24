@@ -1,5 +1,6 @@
 ---
 title: git - Distributed Version Control System
+sidebar_label: git
 ---
 
 > **Command documentation sourced from the linux-command project**

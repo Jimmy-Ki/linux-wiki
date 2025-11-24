@@ -1,5 +1,6 @@
 ---
 title: pgrep - Process Grep
+sidebar_label: pgrep
 ---
 
 > **Command documentation sourced from the linux-command project**

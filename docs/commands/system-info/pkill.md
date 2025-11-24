@@ -2,6 +2,7 @@
 title: pkill - Kill processes by pattern
 slug: pkill
 tags: [process-management, linux-commands]
+sidebar_label: pkill
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

@@ -1,3 +1,7 @@
+---
+sidebar_label: iostat
+---
+
 # iostat
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: cpio - Copy Files to and from Archives
+sidebar_label: cpio
 ---
 
 > **Command documentation sourced from the linux-command project**

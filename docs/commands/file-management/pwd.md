@@ -1,5 +1,6 @@
 ---
 title: pwd - Print Working Directory
+sidebar_label: pwd
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: vi - Visual Editor
+sidebar_label: vi
 ---
 
 > **Command documentation sourced from the linux-command project**

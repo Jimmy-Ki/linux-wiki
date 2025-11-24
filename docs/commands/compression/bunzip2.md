@@ -1,5 +1,6 @@
 ---
 title: bunzip2 - Bzip2 Decompression Utility
+sidebar_label: bunzip2
 ---
 
 > **Command documentation sourced from the linux-command project**

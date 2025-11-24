@@ -1,5 +1,6 @@
 ---
 title: dnf - Dandified YUM Package Manager
+sidebar_label: dnf
 ---
 
 > **Command documentation sourced from the linux-command project**

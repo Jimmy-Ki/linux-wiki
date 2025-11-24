@@ -1,5 +1,6 @@
 ---
 title: cut - Remove Sections from Lines
+sidebar_label: cut
 ---
 
 > **Command documentation sourced from the linux-command project**

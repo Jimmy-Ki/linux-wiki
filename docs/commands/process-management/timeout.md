@@ -2,6 +2,7 @@
 title: timeout - Time limit command execution
 slug: timeout
 tags: [process-management, linux-commands]
+sidebar_label: timeout
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

@@ -1,5 +1,6 @@
 ---
 title: pip - Python Package Installer
+sidebar_label: pip
 ---
 
 > **Command documentation sourced from the linux-command project**

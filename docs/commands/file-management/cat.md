@@ -1,5 +1,6 @@
 ---
 title: cat - Display File Contents
+sidebar_label: cat
 ---
 
 > **Command documentation sourced from the linux-command project**

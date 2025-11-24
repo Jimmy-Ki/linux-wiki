@@ -1,5 +1,6 @@
 ---
 title: ltrace - Library Call Tracer
+sidebar_label: ltrace
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: sort - Sort Lines of Text Files
+sidebar_label: sort
 ---
 
 > **Command documentation sourced from the linux-command project**

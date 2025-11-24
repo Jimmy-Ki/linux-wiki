@@ -1,5 +1,6 @@
 ---
 title: restore - Restore Files from Dump Backups
+sidebar_label: restore
 ---
 
 > **Command documentation sourced from the linux-command project**

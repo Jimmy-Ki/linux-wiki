@@ -1,5 +1,6 @@
 ---
 title: awk - Text Processing Programming Language
+sidebar_label: awk
 ---
 
 > **Command documentation sourced from the linux-command project**

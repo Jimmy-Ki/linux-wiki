@@ -1,5 +1,6 @@
 ---
 title: strace - System Call Tracer
+sidebar_label: strace
 ---
 
 > **Command documentation sourced from the linux-command project**

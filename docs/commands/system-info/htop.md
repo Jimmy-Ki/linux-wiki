@@ -1,5 +1,6 @@
 ---
 title: htop - Interactive Process Viewer
+sidebar_label: htop
 ---
 
 > **Command documentation sourced from the linux-command project**

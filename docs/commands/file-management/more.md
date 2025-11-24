@@ -1,5 +1,6 @@
 ---
 title: more - Display File Content Page by Page
+sidebar_label: more
 ---
 
 > **Command documentation sourced from the linux-command project**

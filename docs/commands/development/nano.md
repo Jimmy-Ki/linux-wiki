@@ -1,5 +1,6 @@
 ---
 title: nano - Nano's ANOther editor
+sidebar_label: nano
 ---
 
 > **Command documentation sourced from the linux-command project**

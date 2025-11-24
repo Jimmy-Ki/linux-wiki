@@ -1,5 +1,6 @@
 ---
 title: mv - Move or Rename Files and Directories
+sidebar_label: mv
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: curl - Transfer Data with URLs
+sidebar_label: curl
 ---
 
 > **Command documentation sourced from the linux-command project**

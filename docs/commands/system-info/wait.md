@@ -1,5 +1,6 @@
 ---
 title: wait - Wait for Process Completion
+sidebar_label: wait
 ---
 
 > **Command documentation sourced from the linux-command project**

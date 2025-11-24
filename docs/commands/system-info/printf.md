@@ -1,5 +1,6 @@
 ---
 title: printf - Format and Print Data
+sidebar_label: printf
 ---
 
 > **Command documentation sourced from the linux-command project**

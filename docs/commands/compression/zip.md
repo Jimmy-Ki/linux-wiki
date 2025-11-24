@@ -1,5 +1,6 @@
 ---
 title: zip - Package and Compress Files
+sidebar_label: zip
 ---
 
 > **Command documentation sourced from the linux-command project**

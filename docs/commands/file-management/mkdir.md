@@ -1,5 +1,6 @@
 ---
 title: mkdir - Create Directories
+sidebar_label: mkdir
 ---
 
 > **Command documentation sourced from the linux-command project**

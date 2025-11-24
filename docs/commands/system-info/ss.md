@@ -1,5 +1,6 @@
 ---
 title: ss - Socket Statistics
+sidebar_label: ss
 ---
 
 > **Command documentation sourced from the linux-command project**

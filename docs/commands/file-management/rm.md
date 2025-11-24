@@ -1,5 +1,6 @@
 ---
 title: rm - Remove Files and Directories
+sidebar_label: rm
 ---
 
 > **Command documentation sourced from the linux-command project**

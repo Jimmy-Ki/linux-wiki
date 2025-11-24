@@ -1,5 +1,6 @@
 ---
 title: gunzip - GNU Zip Decompression Utility
+sidebar_label: gunzip
 ---
 
 > **Command documentation sourced from the linux-command project**

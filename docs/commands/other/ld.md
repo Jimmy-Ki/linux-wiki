@@ -1,5 +1,6 @@
 ---
 title: ld - GNU Linker
+sidebar_label: ld
 ---
 
 > **Command documentation sourced from the linux-command project**

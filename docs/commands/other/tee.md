@@ -1,5 +1,6 @@
 ---
 title: tee - Read from Standard Input and Write to Standard Output and Files
+sidebar_label: tee
 ---
 
 > **Command documentation sourced from the linux-command project**

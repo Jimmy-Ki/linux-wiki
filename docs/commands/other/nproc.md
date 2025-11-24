@@ -1,5 +1,6 @@
 ---
 title: nproc - Number of Processing Units
+sidebar_label: nproc
 ---
 
 > **Command documentation sourced from the linux-command project**

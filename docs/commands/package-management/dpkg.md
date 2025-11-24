@@ -1,5 +1,6 @@
 ---
 title: dpkg - Debian Package Manager
+sidebar_label: dpkg
 ---
 
 > **Command documentation sourced from the linux-command project**

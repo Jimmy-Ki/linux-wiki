@@ -1,5 +1,6 @@
 ---
 title: aptitude - Text-based Package Management Interface
+sidebar_label: aptitude
 ---
 
 > **Command documentation sourced from the linux-command project**

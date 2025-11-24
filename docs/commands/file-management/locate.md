@@ -1,5 +1,6 @@
 ---
 title: locate - Find Files by Name Using Database
+sidebar_label: locate
 ---
 
 > **Command documentation sourced from the linux-command project**

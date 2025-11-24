@@ -1,5 +1,6 @@
 ---
 title: chown - Change File Owner
+sidebar_label: chown
 ---
 
 > **Command documentation sourced from the linux-command project**

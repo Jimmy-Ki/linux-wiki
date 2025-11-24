@@ -1,5 +1,6 @@
 ---
 title: df - Display Free Disk Space
+sidebar_label: df
 ---
 
 > **Command documentation sourced from the linux-command project**

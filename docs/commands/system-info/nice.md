@@ -2,6 +2,7 @@
 title: nice - Set process priority
 slug: nice
 tags: [process-management, linux-commands]
+sidebar_label: nice
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

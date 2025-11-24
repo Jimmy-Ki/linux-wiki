@@ -1,5 +1,6 @@
 ---
 title: gcc - GNU Compiler Collection
+sidebar_label: gcc
 ---
 
 > **Command documentation sourced from the linux-command project**

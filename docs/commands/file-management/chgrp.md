@@ -1,5 +1,6 @@
 ---
 title: chgrp - Change Group Ownership
+sidebar_label: chgrp
 ---
 
 > **Command documentation sourced from the linux-command project**

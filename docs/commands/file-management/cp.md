@@ -1,5 +1,6 @@
 ---
 title: cp - Copy Files and Directories
+sidebar_label: cp
 ---
 
 > **Command documentation sourced from the linux-command project**

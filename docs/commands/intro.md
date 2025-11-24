@@ -1,3 +1,7 @@
+---
+sidebar_label: intro
+---
+
 # Linux Commands
 
 Welcome to the comprehensive Linux commands reference. This section contains detailed documentation for 624 Linux commands, organized by category.

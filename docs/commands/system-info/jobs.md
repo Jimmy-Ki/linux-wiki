@@ -2,6 +2,7 @@
 title: jobs - Display background jobs
 slug: jobs
 tags: [process-management, linux-commands]
+sidebar_label: jobs
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

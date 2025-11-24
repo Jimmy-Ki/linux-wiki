@@ -1,5 +1,6 @@
 ---
 title: lscpu - Display CPU Architecture Information
+sidebar_label: lscpu
 ---
 
 > **Command documentation sourced from the linux-command project**

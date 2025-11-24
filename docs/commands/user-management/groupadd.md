@@ -1,5 +1,6 @@
 ---
 title: groupadd - Create New Group
+sidebar_label: groupadd
 ---
 
 > **Command documentation sourced from the linux-command project**

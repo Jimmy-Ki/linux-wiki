@@ -1,5 +1,6 @@
 ---
 title: gzip - GNU Zip Compression Utility
+sidebar_label: gzip
 ---
 
 > **Command documentation sourced from the linux-command project**

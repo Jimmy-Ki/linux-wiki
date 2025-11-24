@@ -1,5 +1,6 @@
 ---
 title: apt-sortpkgs - Utility to Sort Debian Package Index Files
+sidebar_label: apt-sortpkgs
 ---
 
 > **Command documentation sourced from the linux-command project**

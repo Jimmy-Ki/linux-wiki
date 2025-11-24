@@ -1,5 +1,6 @@
 ---
 title: wc - Word Count
+sidebar_label: wc
 ---
 
 > **Command documentation sourced from the linux-command project**

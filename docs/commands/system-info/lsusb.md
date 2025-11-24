@@ -1,5 +1,6 @@
 ---
 title: lsusb - List USB Devices
+sidebar_label: lsusb
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: test - Evaluate Conditional Expressions
+sidebar_label: test
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: smartctl - SMART Monitoring Tool
+sidebar_label: smartctl
 ---
 
 > **Command documentation sourced from the linux-command project**

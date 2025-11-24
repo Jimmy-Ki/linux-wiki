@@ -1,5 +1,6 @@
 ---
 title: lspci - List PCI Devices
+sidebar_label: lspci
 ---
 
 > **Command documentation sourced from the linux-command project**

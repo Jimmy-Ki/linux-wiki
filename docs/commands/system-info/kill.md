@@ -1,5 +1,6 @@
 ---
 title: kill - Send Signals to Processes
+sidebar_label: kill
 ---
 
 > **Command documentation sourced from the linux-command project**

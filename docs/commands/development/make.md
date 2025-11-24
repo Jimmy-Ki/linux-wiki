@@ -1,5 +1,6 @@
 ---
 title: make - GNU Build Automation Tool
+sidebar_label: make
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: valgrind - Memory Debugging and Profiling Tool
+sidebar_label: valgrind
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: ls - List Directory Contents
+sidebar_label: ls
 ---
 
 > **Command documentation sourced from the linux-command project**

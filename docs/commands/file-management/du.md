@@ -1,5 +1,6 @@
 ---
 title: du - Disk Usage
+sidebar_label: du
 ---
 
 > **Command documentation sourced from the linux-command project**

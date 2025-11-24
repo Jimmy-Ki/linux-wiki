@@ -1,5 +1,6 @@
 ---
 title: bzip2 - Block-sorting File Compressor
+sidebar_label: bzip2
 ---
 
 > **Command documentation sourced from the linux-command project**

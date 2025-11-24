@@ -1,5 +1,6 @@
 ---
 title: firewall-cmd - Firewalld Command Line Tool
+sidebar_label: firewall-cmd
 ---
 
 > **Command documentation sourced from the linux-command project**

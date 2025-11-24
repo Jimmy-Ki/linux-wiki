@@ -9,6 +9,7 @@ tags:
   - system-management
   - init
 toc: true
+sidebar_label: systemctl
 ---
 
 # systemctl Command

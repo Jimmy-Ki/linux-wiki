@@ -1,5 +1,6 @@
 ---
 title: gpg - GNU Privacy Guard
+sidebar_label: gpg
 ---
 
 > **Command documentation sourced from the linux-command project**

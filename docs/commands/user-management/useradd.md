@@ -1,5 +1,6 @@
 ---
 title: useradd - Create New User Account
+sidebar_label: useradd
 ---
 
 > **Command documentation sourced from the linux-command project**

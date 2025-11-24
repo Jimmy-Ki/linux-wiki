@@ -1,5 +1,6 @@
 ---
 title: apt-key - APT Key Management Utility
+sidebar_label: apt-key
 ---
 
 > **Command documentation sourced from the linux-command project**

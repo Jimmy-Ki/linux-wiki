@@ -1,5 +1,6 @@
 ---
 title: usermod - Modify User Account
+sidebar_label: usermod
 ---
 
 > **Command documentation sourced from the linux-command project**

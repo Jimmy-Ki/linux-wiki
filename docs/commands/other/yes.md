@@ -1,5 +1,6 @@
 ---
 title: yes - Repeatedly Output a String
+sidebar_label: yes
 ---
 
 > **Command documentation sourced from the linux-command project**

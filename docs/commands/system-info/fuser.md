@@ -1,5 +1,6 @@
 ---
 title: fuser - Find Processes Using Files or Sockets
+sidebar_label: fuser
 ---
 
 > **Command documentation sourced from the linux-command project**

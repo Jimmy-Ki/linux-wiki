@@ -1,5 +1,6 @@
 ---
 title: free - Memory Usage Display
+sidebar_label: free
 ---
 
 > **Command documentation sourced from the linux-command project**

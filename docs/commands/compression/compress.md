@@ -1,5 +1,6 @@
 ---
 title: compress - Lempel-Ziv Compression Utility
+sidebar_label: compress
 ---
 
 > **Command documentation sourced from the linux-command project**

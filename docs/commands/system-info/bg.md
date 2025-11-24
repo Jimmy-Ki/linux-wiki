@@ -1,5 +1,6 @@
 ---
 title: bg - Background Job
+sidebar_label: bg
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: file - Determine File Type
+sidebar_label: file
 ---
 
 > **Command documentation sourced from the linux-command project**

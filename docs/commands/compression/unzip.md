@@ -1,5 +1,6 @@
 ---
 title: unzip - Extract ZIP Archives
+sidebar_label: unzip
 ---
 
 > **Command documentation sourced from the linux-command project**

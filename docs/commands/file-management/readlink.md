@@ -1,5 +1,6 @@
 ---
 title: readlink - Read Symbolic Link Target
+sidebar_label: readlink
 ---
 
 > **Command documentation sourced from the linux-command project**

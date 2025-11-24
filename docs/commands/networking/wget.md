@@ -1,5 +1,6 @@
 ---
 title: wget - Web Downloader
+sidebar_label: wget
 ---
 
 > **Command documentation sourced from the linux-command project**

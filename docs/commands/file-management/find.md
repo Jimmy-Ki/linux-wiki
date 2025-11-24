@@ -1,5 +1,6 @@
 ---
 title: find - Search for Files and Directories
+sidebar_label: find
 ---
 
 > **Command documentation sourced from the linux-command project**

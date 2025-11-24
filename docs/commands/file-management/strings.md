@@ -1,5 +1,6 @@
 ---
 title: strings - Find Printable Strings in Files
+sidebar_label: strings
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: gdb - GNU Debugger
+sidebar_label: gdb
 ---
 
 > **Command documentation sourced from the linux-command project**

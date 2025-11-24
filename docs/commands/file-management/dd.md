@@ -1,5 +1,6 @@
 ---
 title: dd - Data Duplicator and File Converter
+sidebar_label: dd
 ---
 
 > **Command documentation sourced from the linux-command project**

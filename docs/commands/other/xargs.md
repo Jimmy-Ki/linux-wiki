@@ -1,5 +1,6 @@
 ---
 title: xargs - Build and Execute Command Lines from Standard Input
+sidebar_label: xargs
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -2,6 +2,7 @@
 title: who - Show logged in users
 slug: who
 tags: [system-info, linux-commands]
+sidebar_label: who
 ---
 
 > **Command Reference**: This content is based on the comprehensive [linux-command](https://github.com/jaywcjlove/linux-command) project by [jaywcjlove](https://github.com/jaywcjlove), licensed under the MIT License.

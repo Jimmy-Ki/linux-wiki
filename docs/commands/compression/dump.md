@@ -1,5 +1,6 @@
 ---
 title: dump - Ext2/Ext3 Filesystem Backup Utility
+sidebar_label: dump
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: ed - Line-oriented text editor
+sidebar_label: ed
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: csplit - Split a File into Sections Determined by Context Lines
+sidebar_label: csplit
 ---
 
 > **Command documentation sourced from the linux-command project**

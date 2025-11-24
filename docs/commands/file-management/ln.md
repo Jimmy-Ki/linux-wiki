@@ -1,5 +1,6 @@
 ---
 title: ln - Create Symbolic Links
+sidebar_label: ln
 ---
 
 > **Command documentation sourced from the linux-command project**

@@ -1,5 +1,6 @@
 ---
 title: rsync - Remote Sync File Transfer and Synchronization
+sidebar_label: rsync
 ---
 
 > **Command documentation sourced from the linux-command project**

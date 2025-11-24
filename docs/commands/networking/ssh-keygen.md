@@ -1,5 +1,6 @@
 ---
 title: ssh-keygen - SSH Authentication Key Generation
+sidebar_label: ssh-keygen
 ---
 
 > **Command documentation sourced from the linux-command project**

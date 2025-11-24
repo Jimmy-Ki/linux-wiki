@@ -1,5 +1,6 @@
 ---
 title: uptime - System Uptime and Load Average
+sidebar_label: uptime
 ---
 
 > **Command documentation sourced from the linux-command project**

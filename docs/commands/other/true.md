@@ -1,5 +1,6 @@
 ---
 title: true - Return Successful Status
+sidebar_label: true
 ---
 
 > **Command documentation sourced from the linux-command project**

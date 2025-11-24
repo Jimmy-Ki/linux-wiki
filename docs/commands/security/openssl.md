@@ -1,5 +1,6 @@
 ---
 title: openssl - Open Source Toolkit for SSL/TLS
+sidebar_label: openssl
 ---
 
 > **Command documentation sourced from the linux-command project**
