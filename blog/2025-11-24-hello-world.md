@@ -32,7 +32,7 @@ Linux Wiki is a modern, comprehensive knowledge base featuring:
 
 ## Join Our Community
 
-Visit our [GitHub repository](https://github.com/jimmy-ki/linux.wiki) to get involved!
+Visit our [GitHub repository](https://github.com/Jimmy-Ki/linux-wiki) to get involved!
 
 ---
 

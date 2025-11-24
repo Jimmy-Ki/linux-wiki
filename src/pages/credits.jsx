@@ -118,7 +118,7 @@ export default function Credits() {
                   </div>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '2rem'}}>
-                  <a href="https://github.com/jimmy-ki/linux.wiki" target="_blank" rel="noopener noreferrer" className="button button--primary button--lg">
+                  <a href="https://github.com/Jimmy-Ki/linux-wiki" target="_blank" rel="noopener noreferrer" className="button button--primary button--lg">
                     🚀 Contribute on GitHub
                   </a>
                 </div>

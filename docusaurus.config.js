@@ -24,8 +24,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'jimmy-ki', // Usually your GitHub org/user name.
-  projectName: 'linux.wiki', // Usually your repo name.
+  organizationName: 'Jimmy-Ki', // Usually your GitHub org/user name.
+  projectName: 'linux-wiki', // Usually your repo name.
 
   onBrokenLinks: 'warn',
 
@@ -47,7 +47,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/jimmy-ki/linux.wiki/tree/main/',
+            'https://github.com/Jimmy-Ki/linux-wiki/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -58,7 +58,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/jimmy-ki/linux.wiki/tree/main/',
+            'https://github.com/Jimmy-Ki/linux-wiki/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -138,7 +138,7 @@ const config = {
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/credits', label: 'Credits', position: 'right'},
           {
-            href: 'https://github.com/jimmy-ki',
+            href: 'https://github.com/Jimmy-Ki',
             label: 'GitHub',
             position: 'right',
           },
@@ -190,11 +190,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/jimmy-ki',
+                href: 'https://github.com/Jimmy-Ki',
               },
               {
                 label: 'Report Issues',
-                href: 'https://github.com/jimmy-ki/linux.wiki/issues',
+                href: 'https://github.com/Jimmy-Ki/linux-wiki/issues',
               },
             ],
           },
