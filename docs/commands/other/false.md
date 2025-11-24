@@ -1,6 +1,6 @@
 ---
 title: false - Return Unsuccessful Status
-sidebar_label: false
+sidebar_label: "false"
 ---
 
 > **Command documentation sourced from the linux-command project**
