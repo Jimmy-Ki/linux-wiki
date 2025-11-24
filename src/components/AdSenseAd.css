@@ -1,0 +1,58 @@
+.adsense-ad-container {
+  text-align: center;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.adsense-ad-container .adsbygoogle {
+  display: block !important;
+}
+
+.ad-placeholder {
+  min-height: 250px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+/* 响应式广告样式 */
+@media (max-width: 768px) {
+  .adsense-ad-container {
+    margin: 1rem 0;
+  }
+
+  .ad-placeholder {
+    min-height: 200px;
+    margin: 1rem 0;
+  }
+}
+
+/* 侧边栏广告样式 */
+.sidebar-ad .adsense-ad-container {
+  margin: 1rem 0;
+  max-width: 300px;
+}
+
+/* 文章内容广告样式 */
+.content-ad {
+  margin: 2rem auto;
+  max-width: 728px;
+}
+
+/* 横幅广告样式 */
+.horizontal-ad .adsense-ad-container {
+  max-width: 728px;
+  min-height: 90px;
+}
+
+/* 方形广告样式 */
+.square-ad .adsense-ad-container {
+  max-width: 300px;
+  min-height: 250px;
+}
+
+/* 大矩形广告样式 */
+.rectangle-ad .adsense-ad-container {
+  max-width: 336px;
+  min-height: 280px;
+}

@@ -108,6 +108,7 @@ const config = {
         {name: 'msapplication-TileColor', content: '#336791'},
         {name: 'theme-color', content: '#336791'},
         {name: 'manifest', content: '/manifest.json'},
+        {name: 'google-adsense-account', content: 'ca-pub-1920044696501149'},
       ],
       navbar: {
         title: 'Linux Wiki',

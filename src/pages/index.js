@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import CommandSearch from '@site/src/components/CommandSearch';
+import AdSenseAd from '@site/src/components/AdSenseAd';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -38,6 +39,14 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <CommandSearch />
+        <div className="content-ad">
+          <AdSenseAd
+            slot="1234567890"
+            format="auto"
+            responsive="true"
+            style={{ textAlign: 'center' }}
+          />
+        </div>
         <HomepageFeatures />
       </main>
     </Layout>
