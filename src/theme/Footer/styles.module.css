@@ -1,67 +1,52 @@
 .sponsorFooter {
   background: var(--ifm-color-emphasis-100);
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.sponsorTitle {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--ifm-color-primary-dark);
+.sponsorLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.sponsorGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  align-items: center;
-  justify-items: center;
+.sponsorLabel {
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 500;
+  margin-right: 0.5rem;
 }
 
 .sponsorLink {
-  display: block;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  color: var(--ifm-color-primary);
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .sponsorLink:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-}
-
-.sponsorLogo {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
-  .sponsorGrid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
+  .sponsorLinks {
+    gap: 0.5rem;
   }
 
-  .sponsorTitle {
-    font-size: 1rem;
+  .sponsorLabel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
-
-  .sponsorLogo {
-    height: 24px;
-  }
-}
-
-[data-theme='dark'] .sponsorLink {
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
 }
 
 [data-theme='dark'] .sponsorFooter {
   background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .sponsorLabel {
+  color: var(--ifm-color-emphasis-600);
 }
