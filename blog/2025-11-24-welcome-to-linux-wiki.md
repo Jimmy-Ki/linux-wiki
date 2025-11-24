@@ -3,7 +3,7 @@ slug: hello-world
 title: Hello World - Linux Wiki Launch
 authors: [jimmyki]
 tags: [announcement, linux, wiki]
-date: 2024-11-24
+date: 2025-11-24
 ---
 
 # Hello World - Linux Wiki Launch
