@@ -4,13 +4,11 @@ import styles from './styles.module.css';
 const toolsCategories = [
   {
     title: 'Cryptography & Security',
-    description: '89+ encryption, encoding, and security tools',
+    description: 'Encryption, encoding, and hashing tools',
     icon: 'Lock',
     tools: [
-      { title: 'Crypto Tools Suite', description: '89+ encryption, hashing, encoding tools', path: '/crypto-tools', difficulty: 'easy' },
-      { title: 'Encoders & Decoders', description: 'Base64, Base32, URL, HTML encoding (17 tools)', path: '/crypto-tools#encoders', difficulty: 'easy' },
-      { title: 'Modern Crypto', description: 'AES, RSA, ChaCha20, ECC encryption (21 tools)', path: '/crypto-tools#modern', difficulty: 'medium' },
-      { title: 'Hashing & Ciphers', description: 'MD5, SHA, Caesar, Vigenère, CTF tools (38 tools)', path: '/crypto-tools#ciphers', difficulty: 'medium' },
+      { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', difficulty: 'easy' },
+      { title: 'Key Generator', description: 'SSH keys, API keys, passwords', path: '/tools/keygen', difficulty: 'easy' },
     ]
   },
   {
@@ -116,11 +114,11 @@ export default function ToolsGrid() {
         <div className={styles.header}>
           <h1 className={styles.title}>Linux Wiki Tools Collection</h1>
           <p className={styles.subtitle}>
-            89+ free online crypto and security tools for developers, sysadmins, and tech enthusiasts.
+            25+ free online tools for developers, sysadmins, and tech enthusiasts.
             All tools run in your browser - no server required!
           </p>
           <div className={styles.stats}>
-            <span>89+ Crypto Tools</span>
+            <span>25+ Tools</span>
             <span>Free Forever</span>
             <span>Privacy First</span>
           </div>
