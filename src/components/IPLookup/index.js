@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-import { lookupIPLocal } from './ipDatabase';
-import { resolveDomainLocal } from './localDNS';
-import { lookupIPReal } from './realIPDatabase';
-import { lookupIPCloudflare, isCloudflareIP } from './cloudflareIPDatabase';
+import { lookupIPCloudflare } from './cloudflareIPDatabase';
 
 // IP validation functions
 function isValidIPv4(ip) {
@@ -77,50 +74,41 @@ export default function IPLookup() {
       let targetIP = input;
       let resolvedDomain = null;
 
-      // If it's a domain, resolve it locally
+      // If it's a domain, provide basic domain info (no DNS resolution)
       if (isValidDomain(input)) {
-        resolvedDomain = input;
-        const resolutionResult = resolveDomainLocal(input);
-
-        if (resolutionResult.success) {
-          targetIP = resolutionResult.ip;
-        } else {
-          // If we can't resolve the domain locally, still provide basic domain info
-          setIpInfo({
-            ip: input,
-            domain: input,
-            location: {
-              country: 'Unknown',
-              countryCode: 'XX',
-              region: 'Unknown',
-              city: 'Unknown',
-              postalCode: 'Unknown',
-              latitude: null,
-              longitude: null,
-              timezone: 'Unknown',
-            },
-            network: {
-              isp: 'Domain Only',
-              organization: 'Domain Only',
-              asn: 'Unknown',
-              connectionType: null,
-            },
-            security: {
-              isProxy: false,
-              isVpn: false,
-              isTor: false,
-              isHosting: false,
-            },
-            meta: {
-              type: 'Domain',
-              isCurrent: false,
-              lookupTime: new Date().toISOString(),
-              source: 'Local DNS - Domain Not Resolved',
-              resolutionStatus: 'Domain not found in local cache'
-            }
-          });
-          return;
-        }
+        setIpInfo({
+          ip: input,
+          domain: input,
+          location: {
+            country: 'Unknown',
+            countryCode: 'XX',
+            region: 'Unknown',
+            city: 'Unknown',
+            postalCode: 'Unknown',
+            latitude: null,
+            longitude: null,
+            timezone: 'Unknown',
+          },
+          network: {
+            isp: 'Domain Only',
+            organization: 'Domain Only',
+            asn: 'Unknown',
+            connectionType: null,
+          },
+          security: {
+            isProxy: false,
+            isVpn: false,
+            isTor: false,
+            isHosting: false,
+          },
+          meta: {
+            type: 'Domain',
+            isCurrent: false,
+            lookupTime: new Date().toISOString(),
+            source: 'Cloudflare Database - Domain Only'
+          }
+        });
+        return;
       }
 
       // Validate IP after domain resolution
@@ -128,17 +116,9 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Check if it's Cloudflare IP first, then try real database, then fallback to local database
-      const cloudflareData = lookupIPCloudflare(targetIP);
-      const isCFIP = isCloudflareIP(targetIP);
-
-      let finalData;
-      if (isCFIP) {
-        finalData = cloudflareData;
-      } else {
-        const realData = lookupIPReal(targetIP);
-        finalData = realData.source === 'Real IP Database - Not Found' ? lookupIPLocal(targetIP) : realData;
-      }
+      // Only use Cloudflare database
+      const finalData = lookupIPCloudflare(targetIP);
+      const isCFIP = finalData.source !== 'Cloudflare Database - Not Found';
 
       // Build IP information
       const combinedInfo = {
@@ -208,7 +188,7 @@ export default function IPLookup() {
       <div className="container">
         <div className={styles.header}>
           <h1>IP Lookup Tool</h1>
-          <p>Get detailed information about IP addresses and domains using our local database. Completely offline operation.</p>
+          <p>Get detailed information about IP addresses and domains using Cloudflare's IP geolocation database.</p>
 
   
           {currentIP && (
@@ -291,7 +271,7 @@ export default function IPLookup() {
           <div className={styles.loadingSection}>
             <div className={styles.loadingBox}>
               <div className={styles.spinner}></div>
-              <p>Looking up IP information in local database...</p>
+              <p>Looking up IP information in Cloudflare database...</p>
             </div>
           </div>
         )}

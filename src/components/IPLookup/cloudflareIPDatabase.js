@@ -1,7 +1,11 @@
 // Cloudflare IP Database - Real-time data from Cloudflare's infrastructure
 // Uses Cloudflare's IP geolocation data and routing information
 
-import { ipToNumber } from './ipDatabase';
+// Convert IP string to number for comparison
+function ipToNumber(ip) {
+  const parts = ip.split('.').map(Number);
+  return (parts[0] << 24) + (parts[1] << 16) + (parts[2] << 8) + parts[3];
+}
 
 // Cloudflare IP ranges and their corresponding locations
 const cloudflareIPDatabase = {
