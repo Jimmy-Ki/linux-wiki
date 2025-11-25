@@ -1,0 +1,129 @@
+.toolPage {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.content {
+  margin-bottom: 3rem;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: white;
+}
+
+/* Coming Soon Styles */
+.comingSoon {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.comingSoonCard {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: var(--ifm-card-background-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.comingSoonCard .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.comingSoonCard h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.comingSoonCard p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.check {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .toolPage {
+    padding: 1rem 0 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .comingSoonCard {
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+[data-theme='dark'] .comingSoonCard {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
