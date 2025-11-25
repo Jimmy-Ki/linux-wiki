@@ -80,6 +80,7 @@ export default function IPLookup() {
               src="/ip/png"
               alt="IP Address Card"
               className={styles.apiCardImage}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <div className={styles.apiCode}>
