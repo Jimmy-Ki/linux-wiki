@@ -15,20 +15,20 @@ export default function ToolPage({
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.description}>{description}</p>
             <div className={styles.comingSoonCard}>
-              <div className={styles.icon}>🚧</div>
+              <div className={styles.icon}>Under Construction</div>
               <h2>Coming Soon!</h2>
               <p>This tool is under development. We're working hard to bring it to you soon.</p>
               <div className={styles.features}>
                 <div className={styles.feature}>
-                  <span className={styles.check}>✅</span>
+                  <span className={styles.check}>Done</span>
                   <span>Planning Complete</span>
                 </div>
                 <div className={styles.feature}>
-                  <span className={styles.check}>⏳</span>
+                  <span className={styles.check}>In Progress</span>
                   <span>Development in Progress</span>
                 </div>
                 <div className={styles.feature}>
-                  <span className={styles.check}>🎯</span>
+                  <span className={styles.check}>Soon</span>
                   <span>Coming Next Week</span>
                 </div>
               </div>

@@ -69,8 +69,14 @@
 }
 
 .comingSoonCard .icon {
-  font-size: 4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
   margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 8px;
+  background: var(--ifm-color-primary-lightest);
 }
 
 .comingSoonCard h2 {
@@ -101,7 +107,9 @@
 }
 
 .check {
-  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ifm-color-success);
+  min-width: 100px;
 }
 
 @media screen and (max-width: 768px) {

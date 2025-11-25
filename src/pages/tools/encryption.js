@@ -9,7 +9,7 @@ export default function EncryptionPage() {
       description="Free online encryption and decryption tools. Base64, MD5, SHA256, URL encoding/decoding. All processing happens in your browser."
     >
       <ToolPage
-        title="🔐 Encryption & Decryption Tools"
+        title="Encryption & Decryption Tools"
         description="Encode, decode, and hash text with various encryption methods. All tools run locally in your browser for maximum privacy."
         comingSoon={true}
       />

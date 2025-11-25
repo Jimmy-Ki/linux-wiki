@@ -5,7 +5,7 @@ const toolsCategories = [
   {
     title: 'Cryptography & Security',
     description: 'Encryption, keys, and security tools',
-    icon: '🔐',
+    icon: 'Lock',
     tools: [
       { title: 'Encryption Tools', description: 'Base64, MD5, SHA256, URL encoding', path: '/tools/encryption', difficulty: 'easy' },
       { title: 'Key Generator', description: 'SSH keys, API keys, passwords', path: '/tools/keygen', difficulty: 'easy' },
@@ -16,7 +16,7 @@ const toolsCategories = [
   {
     title: 'Network & IP Tools',
     description: 'Network diagnostics and IP utilities',
-    icon: '🌐',
+    icon: 'Globe',
     tools: [
       { title: 'IP Lookup', description: 'IP geolocation and info', path: '/tools/ip-lookup', difficulty: 'easy' },
       { title: 'WHOIS Lookup', description: 'Domain information', path: '/tools/whois', difficulty: 'medium' },
@@ -27,7 +27,7 @@ const toolsCategories = [
   {
     title: 'Developer Tools',
     description: 'Coding and development utilities',
-    icon: '💻',
+    icon: 'Code',
     tools: [
       { title: 'Regex Tester', description: 'Test regex patterns', path: '/tools/regex', difficulty: 'medium' },
       { title: 'JSON Formatter', description: 'Format and validate JSON', path: '/tools/json', difficulty: 'easy' },
@@ -38,7 +38,7 @@ const toolsCategories = [
   {
     title: 'Linux Utilities',
     description: 'Linux-specific tools and helpers',
-    icon: '🐧',
+    icon: 'Terminal',
     tools: [
       { title: 'Command Generator', description: 'Cron, systemd helpers', path: '/tools/linux-commands', difficulty: 'medium' },
       { title: 'CTF Toolkit', description: 'Ciphers and decoders', path: '/tools/ctf', difficulty: 'hard' },
@@ -47,7 +47,7 @@ const toolsCategories = [
   {
     title: 'Creative & Fun',
     description: 'Entertainment and creative tools',
-    icon: '🎨',
+    icon: 'Palette',
     tools: [
       { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', difficulty: 'easy' },
       { title: 'Meme Generator', description: 'Create funny memes', path: '/tools/meme', difficulty: 'medium' },
@@ -58,7 +58,7 @@ const toolsCategories = [
   {
     title: 'Converters & Calculators',
     description: 'Unit conversion and calculation tools',
-    icon: '🔢',
+    icon: 'Calculator',
     tools: [
       { title: 'Calculator', description: 'Scientific calculator', path: '/tools/calculator', difficulty: 'medium' },
       { title: 'Color Picker', description: 'Color tools & palettes', path: '/tools/color', difficulty: 'easy' },
@@ -121,9 +121,9 @@ export default function ToolsGrid() {
             All tools run in your browser - no server required!
           </p>
           <div className={styles.stats}>
-            <span>🛠️ 25+ Tools</span>
-            <span>🌐 Free Forever</span>
-            <span>🔒 Privacy First</span>
+            <span>25+ Tools</span>
+            <span>Free Forever</span>
+            <span>Privacy First</span>
           </div>
         </div>
 

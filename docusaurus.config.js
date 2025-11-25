@@ -136,7 +136,7 @@ const config = {
             label: 'Tutorials',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/tools', label: '🛠️ Tools', position: 'left'},
+          {to: '/tools', label: 'Tools', position: 'left'},
           {to: '/credits', label: 'Credits', position: 'right'},
           {
             href: 'https://github.com/Jimmy-Ki',
