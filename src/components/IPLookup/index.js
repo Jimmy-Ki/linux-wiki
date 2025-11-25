@@ -56,34 +56,26 @@ export default function IPLookup() {
     }
   }
 
-  // Native DNS resolution using browser capabilities
+  // DNS resolution using public DNS API
   async function resolveDomain(domain) {
     try {
-      // Use the browser's built-in DNS resolution through fetch
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-      const response = await fetch(`https://${domain}`, {
-        method: 'HEAD',
-        mode: 'no-cors',
-        signal: controller.signal
-      });
-
-      clearTimeout(timeoutId);
-      return null; // We can't get the actual IP due to CORS, but this confirms the domain exists
-    } catch (err) {
-      // Fallback to public DNS API for actual resolution
-      try {
-        const dnsResponse = await fetch(`https://dns.google/resolve?name=${domain}&type=A`);
-        const dnsData = await dnsResponse.json();
-
-        if (dnsData.Answer && dnsData.Answer.length > 0) {
-          return dnsData.Answer[0].data;
+      const response = await fetch(`https://cloudflare-dns.com/dns-query?name=${domain}&type=A`, {
+        headers: {
+          'Accept': 'application/dns-json'
         }
-        return null;
-      } catch (dnsErr) {
-        return null;
+      });
+      const data = await response.json();
+
+      if (data.Answer && data.Answer.length > 0) {
+        // Find A record (IPv4)
+        const aRecord = data.Answer.find(answer => answer.type === 1);
+        if (aRecord) {
+          return aRecord.data;
+        }
       }
+      return null;
+    } catch (err) {
+      return null;
     }
   }
 
@@ -158,47 +150,86 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Use a single, reliable API service
+      // Use ipapi.co for IP geolocation (supports CORS)
       let ipData = null;
-
       try {
-        // Primary: ip-api.com (most reliable, no API key required)
-        const apiResponse = await fetch(`https://ipapi.co/json/`);
-        if (input === currentIP || input === targetIP) {
-          // For current IP lookup, use ipapi's current IP endpoint
-          const currentData = await apiResponse.json();
-          if (currentData && currentData.ip) {
+        const response = await fetch(`https://ipapi.co/${targetIP}/json/`);
+        if (response.ok) {
+          const data = await response.json();
+          if (!data.error) {
             ipData = {
-              country: currentData.country_name,
-              countryCode: currentData.country_code,
-              region: currentData.region,
-              city: currentData.city,
-              zip: currentData.postal,
-              lat: currentData.latitude,
-              lon: currentData.longitude,
-              timezone: currentData.timezone,
-              isp: currentData.org,
-              org: currentData.org,
-              as: 'Unknown',
+              country: data.country_name,
+              countryCode: data.country_code,
+              region: data.region,
+              city: data.city,
+              zip: data.postal,
+              lat: data.latitude,
+              lon: data.longitude,
+              timezone: data.timezone,
+              isp: data.org,
+              org: data.org,
+              as: data.asn || 'Unknown',
               query: targetIP
             };
           }
         }
       } catch (err) {
-        console.warn('Current IP lookup failed');
+        console.warn('ipapi.co lookup failed');
       }
 
-      // If we don't have data yet, try ip-api.com for specific IP
-      if (!ipData && input !== currentIP) {
+      // If ipapi.co fails, try ip-api.com via CORS proxy
+      if (!ipData) {
         try {
-          const ipInfoResponse = await fetch(`http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`);
-          const ipInfoData = await ipInfoResponse.json();
-
-          if (ipInfoData.status === 'success') {
-            ipData = ipInfoData;
+          // Use a CORS proxy for ip-api.com
+          const proxyUrl = `https://cors-anywhere.herokuapp.com/http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`;
+          const response = await fetch(proxyUrl);
+          if (response.ok) {
+            const data = await response.json();
+            if (data.status === 'success') {
+              ipData = {
+                country: data.country,
+                countryCode: data.countryCode,
+                region: data.region || data.regionName,
+                city: data.city,
+                zip: data.zip,
+                lat: data.lat,
+                lon: data.lon,
+                timezone: data.timezone,
+                isp: data.isp,
+                org: data.org,
+                as: data.as,
+                query: data.query
+              };
+            }
           }
         } catch (err) {
-          console.warn('IP-specific lookup failed');
+          console.warn('ip-api.com via proxy lookup failed');
+        }
+      }
+
+      // If still no data, try abstractapi.com (free tier)
+      if (!ipData) {
+        try {
+          const response = await fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=free&ip_address=${targetIP}`);
+          if (response.ok) {
+            const data = await response.json();
+            ipData = {
+              country: data.country_name,
+              countryCode: data.country_code2,
+              region: data.region_name,
+              city: data.city,
+              zip: data.zip_code,
+              lat: data.latitude,
+              lon: data.longitude,
+              timezone: data.timezone && data.timezone.name,
+              isp: data.connection && data.connection.isp_name,
+              org: data.connection && data.connection.organization_name,
+              as: data.connection && data.connection.autonomous_system_number,
+              query: targetIP
+            };
+          }
+        } catch (err) {
+          console.warn('abstractapi lookup failed');
         }
       }
 
@@ -227,7 +258,7 @@ export default function IPLookup() {
         location: {
           country: ipData.country || 'Unknown',
           countryCode: ipData.countryCode || 'XX',
-          region: ipData.region || ipData.regionName || 'Unknown',
+          region: ipData.region || 'Unknown',
           city: ipData.city || 'Unknown',
           postalCode: ipData.zip || 'Unknown',
           latitude: ipData.lat,
@@ -241,7 +272,7 @@ export default function IPLookup() {
           connectionType: null,
         },
         security: {
-          isProxy: false, // Disabled to avoid API calls
+          isProxy: false,
           isVpn: false,
           isTor: false,
           isHosting: false,
@@ -360,7 +391,7 @@ export default function IPLookup() {
         {error && (
           <div className={styles.errorSection}>
             <div className={styles.errorBox}>
-              <h3>❌ Error</h3>
+              <h3>Error</h3>
               <p>{error}</p>
             </div>
           </div>
@@ -389,7 +420,7 @@ export default function IPLookup() {
 
               {/* Basic Information */}
               <div className={styles.infoGroup}>
-                <h3>📍 Basic Information</h3>
+                <h3>Basic Information</h3>
                 <div className={styles.infoGrid}>
                   <div className={styles.infoItem}>
                     <label>IP Address:</label>
@@ -410,7 +441,7 @@ export default function IPLookup() {
 
               {/* Location Information */}
               <div className={styles.infoGroup}>
-                <h3>🌍 Location</h3>
+                <h3>Location</h3>
                 <div className={styles.infoGrid}>
                   <div className={styles.infoItem}>
                     <label>Country:</label>
@@ -441,7 +472,7 @@ export default function IPLookup() {
 
               {/* Network Information */}
               <div className={styles.infoGroup}>
-                <h3>🌐 Network</h3>
+                <h3>Network</h3>
                 <div className={styles.infoGrid}>
                   <div className={styles.infoItem}>
                     <label>ISP:</label>
@@ -468,14 +499,14 @@ export default function IPLookup() {
                   onClick={() => navigator.clipboard.writeText(ipInfo.ip)}
                   className={styles.actionButton}
                 >
-                  📋 Copy IP
+                  Copy IP
                 </button>
                 {ipInfo.location.latitude && ipInfo.location.longitude && (
                   <button
                     onClick={() => window.open(`https://www.google.com/maps?q=${ipInfo.location.latitude},${ipInfo.location.longitude}`, '_blank')}
                     className={styles.actionButton}
                   >
-                    🗺️ View on Map
+                    View on Map
                   </button>
                 )}
                 <button
@@ -485,7 +516,7 @@ export default function IPLookup() {
                   }}
                   className={styles.actionButton}
                 >
-                  📄 Copy All Info
+                  Copy All Info
                 </button>
               </div>
             </div>
