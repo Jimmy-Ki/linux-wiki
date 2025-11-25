@@ -23,6 +23,7 @@ export default function IPLookup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentIP, setCurrentIP] = useState(null);
+  const [lastRequestTime, setLastRequestTime] = useState(0);
 
   // Get current IP on component mount
   useEffect(() => {
@@ -57,12 +58,21 @@ export default function IPLookup() {
 
   async function performLookup(input) {
     if (!input.trim()) {
-      setError('Please enter an IP address or domain');
+      setError('请输入IP地址或域名');
+      return;
+    }
+
+    // Add rate limiting - prevent requests within 2 seconds
+    const now = Date.now();
+    const timeSinceLastRequest = now - lastRequestTime;
+    if (timeSinceLastRequest < 2000 && input !== query) {
+      setError('请求过于频繁，请稍等2秒后重试');
       return;
     }
 
     setLoading(true);
     setError(null);
+    setLastRequestTime(now);
 
     try {
       let targetIP = input;
@@ -97,51 +107,76 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Get IP geolocation information
-      const geoResponse = await fetch(`https://ipapi.co/${targetIP}/json/`);
-      if (!geoResponse.ok) {
-        throw new Error('Failed to fetch IP information');
+      // Try primary API first (ip-api.com - more reliable)
+      let ipData = null;
+      try {
+        const ipInfoResponse = await fetch(`http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`);
+        const ipInfoData = await ipInfoResponse.json();
+
+        if (ipInfoData.status === 'success') {
+          ipData = ipInfoData;
+        }
+      } catch (err) {
+        console.warn('ip-api.com failed, trying backup API');
       }
 
-      const geoData = await geoResponse.json();
-
-      if (geoData.error) {
-        throw new Error(geoData.error || 'IP information not available');
+      // Fallback to secondary API if primary fails
+      if (!ipData) {
+        try {
+          const geoResponse = await fetch(`https://ipapi.co/${targetIP}/json/`);
+          if (geoResponse.ok) {
+            const geoData = await geoResponse.json();
+            if (!geoData.error) {
+              ipData = {
+                country: geoData.country_name,
+                countryCode: geoData.country_code,
+                region: geoData.region,
+                city: geoData.city,
+                zip: geoData.postal,
+                lat: geoData.latitude,
+                lon: geoData.longitude,
+                timezone: geoData.timezone,
+                isp: geoData.org,
+                org: null,
+                as: null,
+                query: targetIP
+              };
+            }
+          }
+        } catch (err) {
+          console.warn('Backup API also failed');
+        }
       }
 
-      // Get additional IP information
-      const ipInfoResponse = await fetch(`http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`);
-      const ipInfoData = await ipInfoResponse.json();
-
-      if (ipInfoData.status === 'fail') {
-        throw new Error(ipInfoData.message || 'Failed to get detailed IP information');
+      if (!ipData) {
+        throw new Error('无法获取IP信息，请稍后重试');
       }
 
-      // Combine all information
+      // Build IP information
       const combinedInfo = {
         ip: targetIP,
         domain: input !== targetIP ? input : null,
         location: {
-          country: geoData.country_name || ipInfoData.country,
-          countryCode: geoData.country_code || ipInfoData.countryCode,
-          region: geoData.region || ipInfoData.regionName,
-          city: geoData.city || ipInfoData.city,
-          postalCode: geoData.postal || ipInfoData.zip,
-          latitude: geoData.latitude || ipInfoData.lat,
-          longitude: geoData.longitude || ipInfoData.lon,
-          timezone: geoData.timezone || ipInfoData.timezone,
+          country: ipData.country || '未知',
+          countryCode: ipData.countryCode || 'XX',
+          region: ipData.region || '未知',
+          city: ipData.city || '未知',
+          postalCode: ipData.zip || '未知',
+          latitude: ipData.lat || null,
+          longitude: ipData.lon || null,
+          timezone: ipData.timezone || '未知',
         },
         network: {
-          isp: geoData.org || ipInfoData.isp,
-          organization: ipInfoData.org,
-          asn: ipInfoData.as,
-          connectionType: geoData.network || null,
+          isp: ipData.isp || '未知',
+          organization: ipData.org || '未知',
+          asn: ipData.as || '未知',
+          connectionType: null,
         },
         security: {
-          isProxy: geoData.privacy?.proxy || false,
-          isVpn: geoData.privacy?.vpn || false,
-          isTor: geoData.privacy?.tor || false,
-          isHosting: geoData.privacy?.hosting || false,
+          isProxy: false, // 简化版本，不检测安全状态
+          isVpn: false,
+          isTor: false,
+          isHosting: false,
         },
         meta: {
           type: isValidIPv6(targetIP) ? 'IPv6' : 'IPv4',
@@ -152,7 +187,10 @@ export default function IPLookup() {
 
       setIpInfo(combinedInfo);
     } catch (err) {
-      setError(err.message || 'Failed to lookup IP information');
+      const errorMsg = err.message.includes('Too many') || err.message.includes('rapid requests')
+        ? 'API请求过于频繁，请稍等几秒后重试'
+        : err.message || '无法查询IP信息，请检查输入并重试';
+      setError(errorMsg);
       setIpInfo(null);
     } finally {
       setLoading(false);
