@@ -321,7 +321,7 @@ export default function RegexTester() {
                       <span>0 or 1</span>
                     </div>
                     <div className={styles.referenceItem}>
-                      <code>\{n,m\}</code>
+                      <code>{'\\{n,m\\}'}</code>
                       <span>n to m times</span>
                     </div>
                   </div>

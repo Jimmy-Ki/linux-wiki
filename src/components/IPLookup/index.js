@@ -54,14 +54,14 @@ export default function IPLookup() {
           ) : (
             <div className={styles.ipResult}>
               <div className={styles.ipValue}>
-                {currentIP}
+                Your IP Address: {currentIP}
               </div>
               <div className={styles.ipActions}>
                 <button
                   onClick={() => navigator.clipboard.writeText(currentIP)}
                   className={styles.copyButton}
                 >
-                  Copy IP
+                  Copy IP Address
                 </button>
                 <button onClick={handleRefresh} className={styles.refreshButton}>
                   Refresh
