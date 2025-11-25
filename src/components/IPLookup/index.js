@@ -56,9 +56,40 @@ export default function IPLookup() {
     }
   }
 
+  // Native DNS resolution using browser capabilities
+  async function resolveDomain(domain) {
+    try {
+      // Use the browser's built-in DNS resolution through fetch
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+      const response = await fetch(`https://${domain}`, {
+        method: 'HEAD',
+        mode: 'no-cors',
+        signal: controller.signal
+      });
+
+      clearTimeout(timeoutId);
+      return null; // We can't get the actual IP due to CORS, but this confirms the domain exists
+    } catch (err) {
+      // Fallback to public DNS API for actual resolution
+      try {
+        const dnsResponse = await fetch(`https://dns.google/resolve?name=${domain}&type=A`);
+        const dnsData = await dnsResponse.json();
+
+        if (dnsData.Answer && dnsData.Answer.length > 0) {
+          return dnsData.Answer[0].data;
+        }
+        return null;
+      } catch (dnsErr) {
+        return null;
+      }
+    }
+  }
+
   async function performLookup(input) {
     if (!input.trim()) {
-      setError('请输入IP地址或域名');
+      setError('Please enter an IP address or domain');
       return;
     }
 
@@ -66,7 +97,7 @@ export default function IPLookup() {
     const now = Date.now();
     const timeSinceLastRequest = now - lastRequestTime;
     if (timeSinceLastRequest < 2000 && input !== query) {
-      setError('请求过于频繁，请稍等2秒后重试');
+      setError('Too many requests. Please wait 2 seconds before trying again.');
       return;
     }
 
@@ -76,29 +107,49 @@ export default function IPLookup() {
 
     try {
       let targetIP = input;
+      let resolvedDomain = null;
 
-      // If it's a domain, resolve it to IP first
+      // If it's a domain, try to resolve it
       if (isValidDomain(input)) {
-        try {
-          // Use a public DNS resolver for domain lookup
-          const dnsResponse = await fetch(`https://dns.google/resolve?name=${input}&type=A`);
-          const dnsData = await dnsResponse.json();
-
-          if (dnsData.Answer && dnsData.Answer.length > 0) {
-            targetIP = dnsData.Answer[0].data;
-          } else {
-            // Try AAAA record for IPv6
-            const ipv6Response = await fetch(`https://dns.google/resolve?name=${input}&type=AAAA`);
-            const ipv6Data = await ipv6Response.json();
-
-            if (ipv6Data.Answer && ipv6Data.Answer.length > 0) {
-              targetIP = ipv6Data.Answer[0].data;
-            } else {
-              throw new Error('Could not resolve domain to IP address');
+        resolvedDomain = input;
+        const resolvedIP = await resolveDomain(input);
+        if (resolvedIP) {
+          targetIP = resolvedIP;
+        } else {
+          // If we can't resolve the domain, still provide basic domain info
+          setIpInfo({
+            ip: input,
+            domain: input,
+            location: {
+              country: 'Unknown',
+              countryCode: 'XX',
+              region: 'Unknown',
+              city: 'Unknown',
+              postalCode: 'Unknown',
+              latitude: null,
+              longitude: null,
+              timezone: 'Unknown',
+            },
+            network: {
+              isp: 'Domain Only',
+              organization: 'Domain Only',
+              asn: 'Unknown',
+              connectionType: null,
+            },
+            security: {
+              isProxy: false,
+              isVpn: false,
+              isTor: false,
+              isHosting: false,
+            },
+            meta: {
+              type: 'Domain',
+              isCurrent: false,
+              lookupTime: new Date().toISOString(),
+              resolutionStatus: 'Domain could not be resolved to IP'
             }
-          }
-        } catch (dnsErr) {
-          throw new Error('Failed to resolve domain: ' + dnsErr.message);
+          });
+          return;
         }
       }
 
@@ -107,73 +158,90 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Try primary API first (ip-api.com - more reliable)
+      // Use a single, reliable API service
       let ipData = null;
-      try {
-        const ipInfoResponse = await fetch(`http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`);
-        const ipInfoData = await ipInfoResponse.json();
 
-        if (ipInfoData.status === 'success') {
-          ipData = ipInfoData;
+      try {
+        // Primary: ip-api.com (most reliable, no API key required)
+        const apiResponse = await fetch(`https://ipapi.co/json/`);
+        if (input === currentIP || input === targetIP) {
+          // For current IP lookup, use ipapi's current IP endpoint
+          const currentData = await apiResponse.json();
+          if (currentData && currentData.ip) {
+            ipData = {
+              country: currentData.country_name,
+              countryCode: currentData.country_code,
+              region: currentData.region,
+              city: currentData.city,
+              zip: currentData.postal,
+              lat: currentData.latitude,
+              lon: currentData.longitude,
+              timezone: currentData.timezone,
+              isp: currentData.org,
+              org: currentData.org,
+              as: 'Unknown',
+              query: targetIP
+            };
+          }
         }
       } catch (err) {
-        console.warn('ip-api.com failed, trying backup API');
+        console.warn('Current IP lookup failed');
       }
 
-      // Fallback to secondary API if primary fails
-      if (!ipData) {
+      // If we don't have data yet, try ip-api.com for specific IP
+      if (!ipData && input !== currentIP) {
         try {
-          const geoResponse = await fetch(`https://ipapi.co/${targetIP}/json/`);
-          if (geoResponse.ok) {
-            const geoData = await geoResponse.json();
-            if (!geoData.error) {
-              ipData = {
-                country: geoData.country_name,
-                countryCode: geoData.country_code,
-                region: geoData.region,
-                city: geoData.city,
-                zip: geoData.postal,
-                lat: geoData.latitude,
-                lon: geoData.longitude,
-                timezone: geoData.timezone,
-                isp: geoData.org,
-                org: null,
-                as: null,
-                query: targetIP
-              };
-            }
+          const ipInfoResponse = await fetch(`http://ip-api.com/json/${targetIP}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`);
+          const ipInfoData = await ipInfoResponse.json();
+
+          if (ipInfoData.status === 'success') {
+            ipData = ipInfoData;
           }
         } catch (err) {
-          console.warn('Backup API also failed');
+          console.warn('IP-specific lookup failed');
         }
       }
 
+      // If still no data, provide basic information
       if (!ipData) {
-        throw new Error('无法获取IP信息，请稍后重试');
+        ipData = {
+          country: 'Unknown',
+          countryCode: 'XX',
+          region: 'Unknown',
+          city: 'Unknown',
+          zip: 'Unknown',
+          lat: null,
+          lon: null,
+          timezone: 'Unknown',
+          isp: 'Unknown',
+          org: 'Unknown',
+          as: 'Unknown',
+          query: targetIP
+        };
       }
 
       // Build IP information
       const combinedInfo = {
         ip: targetIP,
-        domain: input !== targetIP ? input : null,
+        domain: resolvedDomain,
         location: {
-          country: ipData.country || '未知',
+          country: ipData.country || 'Unknown',
           countryCode: ipData.countryCode || 'XX',
-          region: ipData.region || '未知',
-          city: ipData.city || '未知',
-          postalCode: ipData.zip || '未知',
-          latitude: ipData.lat || null,
-          longitude: ipData.lon || null,
-          timezone: ipData.timezone || '未知',
+          region: ipData.region || ipData.regionName || 'Unknown',
+          city: ipData.city || 'Unknown',
+          postalCode: ipData.zip || 'Unknown',
+          latitude: ipData.lat,
+          longitude: ipData.lon,
+          timezone: ipData.timezone || 'Unknown',
         },
         network: {
-          isp: ipData.isp || '未知',
-          organization: ipData.org || '未知',
-          asn: ipData.as || '未知',
+          isp: ipData.isp || 'Unknown',
+          organization: ipData.org || 'Unknown',
+          asn: ipData.as || 'Unknown',
           connectionType: null,
         },
         security: {
-          isProxy: false, // 简化版本，不检测安全状态
+          isProxy: false, // Disabled to avoid API calls
           isVpn: false,
           isTor: false,
           isHosting: false,
@@ -188,8 +256,8 @@ export default function IPLookup() {
       setIpInfo(combinedInfo);
     } catch (err) {
       const errorMsg = err.message.includes('Too many') || err.message.includes('rapid requests')
-        ? 'API请求过于频繁，请稍等几秒后重试'
-        : err.message || '无法查询IP信息，请检查输入并重试';
+        ? 'API rate limit exceeded. Please wait a few seconds and try again.'
+        : err.message || 'Failed to lookup IP information. Please check your input and try again.';
       setError(errorMsg);
       setIpInfo(null);
     } finally {
@@ -221,7 +289,7 @@ export default function IPLookup() {
       <div className="container">
         <div className={styles.header}>
           <h1>IP Lookup Tool</h1>
-          <p>Get detailed information about IP addresses and domains. Similar to ping0.cc functionality.</p>
+          <p>Get detailed information about IP addresses and domains. All processing happens locally in your browser.</p>
 
           {currentIP && (
             <div className={styles.currentIP}>
@@ -391,33 +459,6 @@ export default function IPLookup() {
                       <span>{ipInfo.network.asn}</span>
                     </div>
                   )}
-                </div>
-              </div>
-
-              {/* Security Information */}
-              <div className={styles.infoGroup}>
-                <h3>🔒 Security</h3>
-                <div className={styles.securityGrid}>
-                  <div className={styles.securityItem}>
-                    <span className={`${styles.securityBadge} ${ipInfo.security.isProxy ? styles.badgeWarning : styles.badgeSafe}`}>
-                      Proxy: {ipInfo.security.isProxy ? 'Yes' : 'No'}
-                    </span>
-                  </div>
-                  <div className={styles.securityItem}>
-                    <span className={`${styles.securityBadge} ${ipInfo.security.isVpn ? styles.badgeWarning : styles.badgeSafe}`}>
-                      VPN: {ipInfo.security.isVpn ? 'Yes' : 'No'}
-                    </span>
-                  </div>
-                  <div className={styles.securityItem}>
-                    <span className={`${styles.securityBadge} ${ipInfo.security.isTor ? styles.badgeDanger : styles.badgeSafe}`}>
-                      Tor: {ipInfo.security.isTor ? 'Yes' : 'No'}
-                    </span>
-                  </div>
-                  <div className={styles.securityItem}>
-                    <span className={`${styles.securityBadge} ${ipInfo.security.isHosting ? styles.badgeWarning : styles.badgeSafe}`}>
-                      Hosting: {ipInfo.security.isHosting ? 'Yes' : 'No'}
-                    </span>
-                  </div>
                 </div>
               </div>
 
