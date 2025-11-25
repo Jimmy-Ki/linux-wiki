@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { lookupIPLocal } from './ipDatabase';
 import { resolveDomainLocal } from './localDNS';
 import { lookupIPReal } from './realIPDatabase';
+import { lookupIPCloudflare, isCloudflareIP } from './cloudflareIPDatabase';
 
 // IP validation functions
 function isValidIPv4(ip) {
@@ -127,28 +128,36 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Lookup IP in real database first, then fallback to local database
-      const realData = lookupIPReal(targetIP);
-      const localData = realData.source === 'Real IP Database - Not Found' ? lookupIPLocal(targetIP) : realData;
+      // Check if it's Cloudflare IP first, then try real database, then fallback to local database
+      const cloudflareData = lookupIPCloudflare(targetIP);
+      const isCFIP = isCloudflareIP(targetIP);
+
+      let finalData;
+      if (isCFIP) {
+        finalData = cloudflareData;
+      } else {
+        const realData = lookupIPReal(targetIP);
+        finalData = realData.source === 'Real IP Database - Not Found' ? lookupIPLocal(targetIP) : realData;
+      }
 
       // Build IP information
       const combinedInfo = {
         ip: targetIP,
         domain: resolvedDomain,
         location: {
-          country: localData.country,
-          countryCode: localData.countryCode,
-          region: localData.region,
-          city: localData.city,
-          postalCode: localData.postalCode,
-          latitude: localData.latitude,
-          longitude: localData.longitude,
-          timezone: localData.timezone,
+          country: finalData.country,
+          countryCode: finalData.countryCode,
+          region: finalData.region,
+          city: finalData.city,
+          postalCode: finalData.postalCode,
+          latitude: finalData.latitude,
+          longitude: finalData.longitude,
+          timezone: finalData.timezone,
         },
         network: {
-          isp: localData.isp,
-          organization: localData.organization,
-          asn: localData.asn,
+          isp: finalData.isp,
+          organization: finalData.organization,
+          asn: finalData.asn,
           connectionType: null,
         },
         security: {
@@ -161,7 +170,8 @@ export default function IPLookup() {
           type: isValidIPv6(targetIP) ? 'IPv6' : 'IPv4',
           isCurrent: targetIP === currentIP,
           lookupTime: new Date().toISOString(),
-          source: localData.source
+          source: finalData.source,
+          isCloudflare: isCFIP
         }
       };
 
@@ -294,6 +304,9 @@ export default function IPLookup() {
                 <h2>IP Information</h2>
                 {ipInfo.meta.isCurrent && (
                   <span className={styles.currentBadge}>Your IP</span>
+                )}
+                {ipInfo.meta.isCloudflare && (
+                  <span className={styles.cloudflareBadge}>Cloudflare</span>
                 )}
                 <span className={styles.sourceBadge}>{ipInfo.meta.source}</span>
               </div>
