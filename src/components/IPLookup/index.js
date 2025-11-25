@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-import { lookupIPLocal, getDatabaseStats } from './ipDatabase';
-import { resolveDomainLocal, getDNSCacheStats } from './localDNS';
+import { lookupIPLocal } from './ipDatabase';
+import { resolveDomainLocal } from './localDNS';
+import { lookupIPReal } from './realIPDatabase';
 
 // IP validation functions
 function isValidIPv4(ip) {
@@ -25,15 +26,7 @@ export default function IPLookup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentIP, setCurrentIP] = useState(null);
-  const [stats, setStats] = useState(null);
-
-  // Get database stats on mount
-  useEffect(() => {
-    const dbStats = getDatabaseStats();
-    const dnsStats = getDNSCacheStats();
-    setStats({ ...dbStats, ...dnsStats });
-  }, []);
-
+  
   // Get current IP on component mount (still need external API for this)
   useEffect(() => {
     getCurrentIP();
@@ -134,8 +127,9 @@ export default function IPLookup() {
         throw new Error('Invalid IP address format');
       }
 
-      // Lookup IP in local database
-      const localData = lookupIPLocal(targetIP);
+      // Lookup IP in real database first, then fallback to local database
+      const realData = lookupIPReal(targetIP);
+      const localData = realData.source === 'Real IP Database - Not Found' ? lookupIPLocal(targetIP) : realData;
 
       // Build IP information
       const combinedInfo = {
@@ -167,8 +161,7 @@ export default function IPLookup() {
           type: isValidIPv6(targetIP) ? 'IPv6' : 'IPv4',
           isCurrent: targetIP === currentIP,
           lookupTime: new Date().toISOString(),
-          source: localData.source,
-          databaseVersion: stats?.lastUpdated || 'Unknown'
+          source: localData.source
         }
       };
 
@@ -207,29 +200,7 @@ export default function IPLookup() {
           <h1>IP Lookup Tool</h1>
           <p>Get detailed information about IP addresses and domains using our local database. Completely offline operation.</p>
 
-          {/* Database Statistics */}
-          {stats && (
-            <div className={styles.statsSection}>
-              <div className={styles.statsBox}>
-                <h4>Local Database Stats</h4>
-                <div className={styles.statsGrid}>
-                  <div className={styles.statItem}>
-                    <span className={styles.statLabel}>Countries:</span>
-                    <span className={styles.statValue}>{stats.countries}</span>
-                  </div>
-                  <div className={styles.statItem}>
-                    <span className={styles.statLabel}>IP Ranges:</span>
-                    <span className={styles.statValue}>{stats.totalRanges}</span>
-                  </div>
-                  <div className={styles.statItem}>
-                    <span className={styles.statLabel}>Domains:</span>
-                    <span className={styles.statValue}>{stats.totalDomains}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
+  
           {currentIP && (
             <div className={styles.currentIP}>
               <span className={styles.currentIPLabel}>Your IP:</span>

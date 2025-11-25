@@ -164,7 +164,7 @@ const ipDatabase = {
 };
 
 // Convert IP string to number for comparison
-function ipToNumber(ip) {
+export function ipToNumber(ip) {
   const parts = ip.split('.').map(Number);
   return (parts[0] << 24) + (parts[1] << 16) + (parts[2] << 8) + parts[3];
 }
