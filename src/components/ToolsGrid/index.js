@@ -16,7 +16,7 @@ const toolsCategories = [
     description: 'Network diagnostics and IP utilities',
     icon: 'Globe',
     tools: [
-      { title: 'IP Lookup', description: 'IP geolocation and info', path: '/tools/ip-lookup', difficulty: 'easy' },
+      { title: 'IP Lookup', description: 'IP geolocation and info', path: '/tools/ip', difficulty: 'easy' },
       { title: 'WHOIS Lookup', description: 'Domain information', path: '/tools/whois', difficulty: 'medium' },
       { title: 'Network Tools', description: 'Ping, port scanner, DNS', path: '/tools/network', difficulty: 'hard' },
       { title: 'URL Shortener', description: 'Create short links', path: '/tools/url-shortener', difficulty: 'medium' },
