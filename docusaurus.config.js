@@ -136,6 +136,7 @@ const config = {
             label: 'Tutorials',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/crypto-tools', label: 'Crypto Tools', position: 'left'},
           {to: '/tools', label: 'Tools', position: 'left'},
           {to: '/credits', label: 'Credits', position: 'right'},
           {
