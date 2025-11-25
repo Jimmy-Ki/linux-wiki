@@ -22,6 +22,51 @@
   line-height: 1.6;
 }
 
+.statsSection {
+  margin-bottom: 2rem;
+}
+
+.statsBox {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.statsBox h4 {
+  color: var(--ifm-color-primary);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statLabel {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.statValue {
+  color: var(--ifm-color-emphasis-900);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .currentIP {
   display: flex;
   align-items: center;
@@ -225,12 +270,15 @@
   background: var(--ifm-color-emphasis-100);
   padding: 1.5rem;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .resultHeader h2 {
   color: var(--ifm-color-primary);
   margin: 0;
   font-size: 1.5rem;
+  flex: 1;
 }
 
 .currentBadge {
@@ -240,6 +288,15 @@
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.sourceBadge {
+  background: var(--ifm-color-info);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .infoGroup {
