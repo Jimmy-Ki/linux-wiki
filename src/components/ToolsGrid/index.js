@@ -8,7 +8,7 @@ const toolsCategories = [
     icon: 'Lock',
     tools: [
       { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', difficulty: 'easy' },
-      { title: 'Key Generator', description: 'SSH keys, API keys, passwords', path: '/tools/keygen', difficulty: 'easy' },
+      { title: 'Crypto Tools', description: 'Vanity addresses, mnemonic, keys, blockchain', path: '/tools/keygen', difficulty: 'medium' },
     ]
   },
   {

@@ -1,18 +1,14 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import ToolPage from '@site/src/components/ToolPage';
+import CryptoTools from '@site/src/components/CryptoTools';
 
 export default function KeygenPage() {
   return (
     <Layout
-      title="Key Generator - SSH, API Keys, Passwords Generator"
-      description="Free online key generator. Generate SSH keys, API keys, strong passwords, and random strings. Secure and private - everything happens in your browser."
+      title="加密货币工具箱 - 靓号生成器、助记词、密钥生成器、区块链浏览器"
+      description="专业的加密货币工具套件，包含靓号生成器、助记词生成器、私钥公钥生成器和区块链浏览器。所有计算本地完成，安全可靠。"
     >
-      <ToolPage
-        title="Key Generator"
-        description="Generate secure SSH keys, API keys, passwords, and random strings. All generation happens locally for maximum security."
-        comingSoon={true}
-      />
+      <CryptoTools />
     </Layout>
   );
 }
