@@ -76,6 +76,16 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/linux-social-card.jpg',
+
+      // AdSense configuration
+      scripts: [
+        {
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+          async: true,
+          'data-ad-client': 'ca-pub-1920044696501149',
+          crossorigin: 'anonymous',
+        },
+      ],
       colorMode: {
         respectPrefersColorScheme: true,
       },
