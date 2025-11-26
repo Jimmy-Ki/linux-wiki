@@ -86,7 +86,8 @@
   color: var(--ifm-color-emphasis-800);
 }
 
-.input {
+.input,
+.select {
   padding: 0.75rem;
   border: 2px solid var(--ifm-color-emphasis-200);
   border-radius: 8px;
@@ -94,9 +95,11 @@
   background: var(--ifm-background-color);
   color: var(--ifm-color-emphasis-900);
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-.input:focus {
+.input:focus,
+.select:focus {
   outline: none;
   border-color: var(--ifm-color-primary);
   box-shadow: 0 0 0 3px rgba(74, 20, 140, 0.1);
@@ -260,11 +263,72 @@
   font-weight: 500;
 }
 
-/* Wallet Section Styles */
+/* Vanity Generator Enhanced Styles */
+.vanityOptions {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionGroup {
+  margin-bottom: 1.5rem;
+}
+
+.optionGroup:last-child {
+  margin-bottom: 0;
+}
+
+.optionGroup h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1rem;
+}
+
+.optionsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.resultStats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.time {
+  color: var(--ifm-color-info);
+}
+
+/* Enhanced Wallet Generator Styles */
 .walletSection {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.generateWalletBtn {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  min-width: 300px;
+}
+
+.walletDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.walletSection {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
 .mnemonicSection h3 {
