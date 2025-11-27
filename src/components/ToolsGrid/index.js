@@ -1,5 +1,4 @@
 import React from 'react';
-import { Shield, Check, X, Clock } from '@tabler/icons-react';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -69,18 +68,18 @@ const toolsCategories = [
 ];
 
 const getIconComponent = (iconName, size = 'small') => {
+  // Use simple text symbols to avoid import issues
   const iconMap = {
-    // Use basic icons for now
-    'available': Check,
-    'unavailable': X,
-    'coming-soon': Clock,
-    'security': Shield,
-    'default': Shield
+    'available': '✓',
+    'unavailable': '✗',
+    'coming-soon': '⏳',
+    'security': '🔒',
+    'default': '📄'
   };
 
-  const IconComponent = iconMap[iconName] || Shield;
+  const symbol = iconMap[iconName] || '📄';
 
-  return <IconComponent size={16} />;
+  return <span style={{ fontSize: '16px' }}>{symbol}</span>;
 };
 
 const getStatusConfig = (status) => {
@@ -118,7 +117,7 @@ function ToolCard({ tool }) {
     <>
       <div className={styles.toolContent}>
         <div className={styles.toolHeader}>
-          {getIconComponent(tool.icon, 'small')}
+          <span style={{ fontSize: '16px', marginRight: '8px' }}>🔧</span>
           <h3 className={styles.toolTitle}>{tool.title}</h3>
         </div>
         <p className={styles.toolDescription}>{tool.description}</p>
@@ -150,7 +149,7 @@ function ToolsCategory({ category }) {
     <div className={styles.category}>
       <div className={styles.categoryHeader}>
         <div className={`${styles.categoryIcon} ${getCategoryIconClass(category.icon)}`}>
-          {getIconComponent(category.icon, 'large')}
+          <span style={{ fontSize: '32px' }}>🔧</span>
         </div>
         <div>
           <h2 className={styles.categoryTitle}>{category.title}</h2>
