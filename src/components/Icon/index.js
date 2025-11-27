@@ -222,7 +222,7 @@ export default function Icon({ name, size = 'medium', className = '', style = {}
 
   return (
     <span
-      className={`${styles.iconWrapper} ${styles[size} ${className}`}
+      className={`${styles.iconWrapper} ${styles[size]} ${className}`}
       style={style}
     >
       {icon}
