@@ -1,28 +1,5 @@
 import React from 'react';
-import {
-  Shield,
-  World,
-  Code,
-  Terminal,
-  Sparkles,
-  MathFunction,
-  Hash,
-  Search,
-  Settings,
-  Link,
-  GitMerge,
-  FileText,
-  Qrcode,
-  Photo,
-  DeviceGamepad2,
-  Palette,
-  Clock,
-  File,
-  CircleCheck,
-  CircleX,
-  AlertTriangle,
-  Loader
-} from '@tabler/icons-react';
+import { Shield, Check, X, Clock } from '@tabler/icons-react';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -93,41 +70,15 @@ const toolsCategories = [
 
 const getIconComponent = (iconName, size = 'small') => {
   const iconMap = {
-    // Category icons
+    // Use basic icons for now
+    'available': Check,
+    'unavailable': X,
+    'coming-soon': Clock,
     'security': Shield,
-    'network': World,
-    'code': Code,
-    'linux': Terminal,
-    'creative': Sparkles,
-    'calculator': MathFunction,
-
-    // Tool icons
-    'password': Shield,
-    'hash': Hash,
-    'search': Search,
-    'settings': Settings,
-    'link': Link,
-    'regex': GitMerge,
-    'json': FileText,
-    'markdown': FileText,
-    'uuid': File,
-    'base64': FileText,
-    'qrcode': Qrcode,
-    'ascii': FileText,
-    'image': Photo,
-    'games': DeviceGamepad2,
-    'color': Palette,
-    'time': Clock,
-    'file': File,
-
-    // Status icons
-    'available': CircleCheck,
-    'unavailable': CircleX,
-    'suspended': AlertTriangle,
-    'comingSoon': Loader
+    'default': Shield
   };
 
-  const IconComponent = iconMap[iconName] || File;
+  const IconComponent = iconMap[iconName] || Shield;
 
   return <IconComponent size={16} />;
 };
