@@ -108,6 +108,20 @@ Start typing in the editor on the left to see the magic happen!`);
     setCharCount(markdown.length);
   }, [markdown]);
 
+  // Handle body overflow when in fullscreen mode
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isFullscreen]);
+
   const handleExportMarkdown = () => {
     const blob = new Blob([markdown], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
