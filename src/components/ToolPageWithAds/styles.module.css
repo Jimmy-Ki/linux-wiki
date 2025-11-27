@@ -1,0 +1,40 @@
+.toolPageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.toolContent {
+  margin: 2rem 0;
+}
+
+.topAd, .middleAd, .bottomAd {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.topAd {
+  margin-top: 0;
+}
+
+.bottomAd {
+  margin-bottom: 0;
+}
+
+/* Responsive ad adjustments */
+@media (max-width: 768px) {
+  .toolPageContainer {
+    padding: 0.5rem;
+  }
+
+  .topAd, .middleAd, .bottomAd {
+    margin: 1rem auto;
+  }
+}
+
+/* Ensure ads don't break layout */
+.adsbygoogle {
+  display: block !important;
+}

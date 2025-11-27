@@ -1,0 +1,120 @@
+.coming-soon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.coming-soon-card {
+  max-width: 600px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--ifm-global-shadow-lw);
+  border: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.features {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.check {
+  font-size: 1.2rem;
+  color: var(--ifm-color-success);
+  flex-shrink: 0;
+}
+
+.feature span:last-child {
+  color: var(--ifm-color-content);
+  font-weight: 500;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-badge {
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.coming-soon {
+  background: var(--ifm-color-warning-light);
+  color: var(--ifm-color-warning-darker);
+  border: 2px solid var(--ifm-color-warning);
+}
+
+.status-badge.unavailable {
+  background: var(--ifm-color-danger-light);
+  color: var(--ifm-color-danger-darker);
+  border: 2px solid var(--ifm-color-danger);
+}
+
+.status-text {
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-container {
+    min-height: 50vh;
+    padding: 1rem;
+  }
+
+  .coming-soon-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .icon {
+    font-size: 3rem;
+  }
+
+  .coming-soon-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

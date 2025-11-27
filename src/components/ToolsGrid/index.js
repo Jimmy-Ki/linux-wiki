@@ -5,88 +5,113 @@ const toolsCategories = [
   {
     title: 'Cryptography & Security',
     description: 'Encryption, encoding, and hashing tools',
-    icon: 'Lock',
+    icon: '🔐',
     tools: [
-      { title: 'Password Generator', description: 'Strong passwords with customizable options', path: '/tools/password', difficulty: 'easy' },
-      { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', difficulty: 'easy' },
-      { title: 'Hash Generator', description: 'Various hash functions and algorithms', path: '/tools/hash', difficulty: 'medium' },
+      { title: 'Password Generator', description: 'Strong passwords with customizable options', path: '/tools/password', status: 'available' },
+      { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', status: 'available' },
+      { title: 'Hash Generator', description: 'Various hash functions and algorithms', path: '/tools/hash', status: 'available' },
     ]
   },
   {
     title: 'Network & IP Tools',
     description: 'Network diagnostics and IP utilities',
-    icon: 'Globe',
+    icon: '🌐',
     tools: [
-      { title: 'IP Address', description: 'Get your current IP address', path: '/tools/ip', difficulty: 'easy' },
-      { title: 'WHOIS Lookup', description: 'Domain information', path: '/tools/whois', difficulty: 'medium' },
-      { title: 'Network Tools', description: 'Ping, port scanner, DNS', path: '/tools/network', difficulty: 'hard' },
-      { title: 'URL Shortener', description: 'Create short links', path: '/tools/url-shortener', difficulty: 'medium' },
+      { title: 'IP Address', description: 'Get your current IP address', path: '/tools/ip', status: 'available' },
+      { title: 'WHOIS Lookup', description: 'Domain information lookup service', path: '/tools/whois', status: 'unavailable' },
+      { title: 'Network Tools', description: 'Ping, port scanner, DNS tools', path: '/tools/network', status: 'unavailable' },
+      { title: 'URL Shortener', description: 'Create short links service', path: '/tools/url-shortener', status: 'unavailable' },
     ]
   },
   {
     title: 'Developer Tools',
     description: 'Coding and development utilities',
-    icon: 'Code',
+    icon: '💻',
     tools: [
-      { title: 'Regex Tester', description: 'Test regex patterns', path: '/tools/regex', difficulty: 'medium' },
-      { title: 'JSON Formatter', description: 'Format and validate JSON', path: '/tools/json', difficulty: 'easy' },
-      { title: 'Markdown Editor', description: 'Live preview editor', path: '/tools/markdown', difficulty: 'easy' },
-      { title: 'UUID Generator', description: 'Generate unique identifiers', path: '/tools/uuid', difficulty: 'easy' },
-      { title: 'Base64 Encoder', description: 'Encode and decode Base64 text', path: '/tools/base64', difficulty: 'easy' },
+      { title: 'Regex Tester', description: 'Test regex patterns in real-time', path: '/tools/regex', status: 'available' },
+      { title: 'JSON Formatter', description: 'Format and validate JSON data', path: '/tools/json', status: 'available' },
+      { title: 'Markdown Editor', description: 'Live preview markdown editor', path: '/tools/markdown', status: 'coming-soon' },
+      { title: 'UUID Generator', description: 'Generate unique identifiers', path: '/tools/uuid', status: 'available' },
+      { title: 'Base64 Encoder', description: 'Encode and decode Base64 text', path: '/tools/base64', status: 'available' },
     ]
   },
   {
     title: 'Linux Utilities',
     description: 'Linux-specific tools and helpers',
-    icon: 'Terminal',
+    icon: '🐧',
     tools: [
-      { title: 'Command Generator', description: 'Cron, systemd helpers', path: '/tools/linux-commands', difficulty: 'medium' },
+      { title: 'Command Generator', description: 'Cron jobs, systemd helpers', path: '/tools/linux-commands', status: 'coming-soon' },
     ]
   },
   {
     title: 'Creative & Fun',
     description: 'Entertainment and creative tools',
-    icon: 'Palette',
+    icon: '🎨',
     tools: [
-      { title: 'QR Code Generator', description: 'Create custom QR codes', path: '/tools/qrcode', difficulty: 'easy' },
-      { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', difficulty: 'easy' },
-      { title: 'Meme Generator', description: 'Create funny memes', path: '/tools/meme', difficulty: 'medium' },
-      { title: '2048 Game', description: 'Classic puzzle game', path: '/tools/2048', difficulty: 'medium' },
+      { title: 'QR Code Generator', description: 'Create custom QR codes', path: '/tools/qrcode', status: 'available' },
+      { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', status: 'available' },
+      { title: 'Meme Generator', description: 'Create funny memes with text', path: '/tools/meme', status: 'unavailable' },
+      { title: '2048 Game', description: 'Classic 2048 puzzle game', path: '/tools/2048', status: 'coming-soon' },
     ]
   },
   {
     title: 'Converters & Calculators',
     description: 'Unit conversion and calculation tools',
-    icon: 'Calculator',
+    icon: '🧮',
     tools: [
-      { title: 'Calculator', description: 'Scientific calculator', path: '/tools/calculator', difficulty: 'medium' },
-      { title: 'Color Picker', description: 'Color tools & palettes', path: '/tools/color', difficulty: 'easy' },
-      { title: 'Timezone Converter', description: 'World clock & timezone', path: '/tools/timezone', difficulty: 'medium' },
-      { title: 'File Converter', description: 'Image & file conversion', path: '/tools/converter', difficulty: 'hard' },
+      { title: 'Scientific Calculator', description: 'Advanced calculator with functions', path: '/tools/calculator', status: 'coming-soon' },
+      { title: 'Color Picker', description: 'Color tools & palette generator', path: '/tools/color', status: 'available' },
+      { title: 'Timezone Converter', description: 'World clock & timezone converter', path: '/tools/timezone', status: 'unavailable' },
+      { title: 'File Converter', description: 'Image & file format converter', path: '/tools/converter', status: 'unavailable' },
     ]
   },
 ];
 
-const getDifficultyColor = (difficulty) => {
-  switch (difficulty) {
-    case 'easy': return '#10b981'; // green
-    case 'medium': return '#f59e0b'; // amber
-    case 'hard': return '#ef4444'; // red
-    default: return '#6b7280'; // gray
+const getStatusConfig = (status) => {
+  switch (status) {
+    case 'available':
+      return { color: '#10b981', text: 'Available', icon: '✅' };
+    case 'unavailable':
+      return { color: '#ef4444', text: 'Unavailable', icon: '❌' };
+    case 'suspended':
+      return { color: '#f59e0b', text: 'Suspended', icon: '⏸️' };
+    case 'coming-soon':
+      return { color: '#6b7280', text: 'Coming Soon', icon: '🚧' };
+    default:
+      return { color: '#6b7280', text: 'Unknown', icon: '❓' };
   }
 };
 
 function ToolCard({ tool }) {
+  const statusConfig = getStatusConfig(tool.status);
+  const isClickable = tool.status === 'available';
+
+  if (isClickable) {
+    return (
+      <a href={tool.path} className={styles.toolCard}>
+        <div className={styles.toolContent}>
+          <h3 className={styles.toolTitle}>{tool.title}</h3>
+          <p className={styles.toolDescription}>{tool.description}</p>
+        </div>
+        <div className={styles.statusBadge} style={{ backgroundColor: statusConfig.color }}>
+          <span className={styles.statusIcon}>{statusConfig.icon}</span>
+          <span className={styles.statusText}>{statusConfig.text}</span>
+        </div>
+      </a>
+    );
+  }
+
   return (
-    <a href={tool.path} className={styles.toolCard}>
+    <div className={`${styles.toolCard} ${styles.disabled}`}>
       <div className={styles.toolContent}>
         <h3 className={styles.toolTitle}>{tool.title}</h3>
         <p className={styles.toolDescription}>{tool.description}</p>
       </div>
-      <div className={styles.difficultyBadge} style={{ backgroundColor: getDifficultyColor(tool.difficulty) }}>
-        {tool.difficulty}
+      <div className={styles.statusBadge} style={{ backgroundColor: statusConfig.color }}>
+        <span className={styles.statusIcon}>{statusConfig.icon}</span>
+        <span className={styles.statusText}>{statusConfig.text}</span>
       </div>
-    </a>
+    </div>
   );
 }
 

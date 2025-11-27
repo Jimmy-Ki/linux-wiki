@@ -128,7 +128,7 @@
   margin: 0;
 }
 
-.difficultyBadge {
+.statusBadge {
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -137,6 +137,28 @@
   color: white;
   white-space: nowrap;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statusIcon {
+  font-size: 0.8rem;
+}
+
+.statusText {
+  font-weight: 500;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 @media screen and (max-width: 768px) {
