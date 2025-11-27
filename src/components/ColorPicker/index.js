@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import {
-  ArrowPathIcon,
-  ArrowDownTrayIcon,
-  ClipboardDocumentIcon
-} from '@heroicons/react/24/outline';
+  IconRefresh,
+  IconDownload,
+  IconCopy
+} from '@tabler/icons-react';
 
 export default function ColorPicker() {
   const [hexColor, setHexColor] = useState('#3B82F6');
@@ -221,10 +221,10 @@ export default function ColorPicker() {
 
               <div className={styles.colorActions}>
                 <button onClick={generateRandomColor} className={styles.randomButton}>
-                  <ArrowPathIcon className="w-4 h-4" /> Random
+                  <IconRefresh size={16} /> Random
                 </button>
                 <button onClick={saveColor} className={styles.saveButton}>
-                  <ArrowDownTrayIcon className="w-4 h-4" /> Save
+                  <IconDownload size={16} /> Save
                 </button>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(hexColor)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-4 h-4" />
+                    <IconCopy size={16} />
                   </button>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-4 h-4" />
+                    <IconCopy size={16} />
                   </button>
                 </div>
               </div>
@@ -339,7 +339,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`hsl(${hslColor.h}, ${hslColor.s}%, ${hslColor.l}%)`)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-4 h-4" />
+                    <IconCopy size={16} />
                   </button>
                 </div>
               </div>

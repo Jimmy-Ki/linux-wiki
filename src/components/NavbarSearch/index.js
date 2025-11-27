@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { IconSearch } from '@tabler/icons-react';
 import commandsData from '../../data/commands.json';
 import styles from './NavbarSearch.module.css';
 
@@ -94,7 +94,7 @@ export default function NavbarSearch() {
           className={styles.searchInput}
         />
         <div className={styles.searchIcon}>
-          <MagnifyingGlassIcon className="w-4 h-4" />
+          <IconSearch size={16} />
         </div>
       </div>
 

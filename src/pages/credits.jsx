@@ -1,16 +1,16 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import {
-  CommandLineIcon,
-  LinkIcon,
-  CodeBracketIcon,
-  DocumentIcon,
-  CogIcon,
-  SparklesIcon,
-  ArrowUpTrayIcon,
-  ShieldCheckIcon,
-  CheckIcon
-} from '@heroicons/react/24/outline';
+  IconTerminal,
+  IconLink,
+  IconCode,
+  IconFileText,
+  IconSettings,
+  IconSparkles,
+  IconUpload,
+  IconShieldCheck,
+  IconCheck
+} from '@tabler/icons-react';
 import styles from './credits.module.css';
 
 export default function Credits() {
@@ -30,7 +30,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2><CommandLineIcon className="w-4 h-4 inline" /> Linux Command Reference Foundation</h2>
+                <h2><IconTerminal size={16} className="inline" /> Linux Command Reference Foundation</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -41,10 +41,10 @@ export default function Credits() {
                   <p>A complete Linux command reference project by <strong>jaywcjlove</strong></p>
                   <div className={styles.projectLinks}>
                     <a href="https://github.com/jaywcjlove/linux-command" target="_blank" rel="noopener noreferrer" className="button button--primary">
-                      <LinkIcon className="w-4 h-4 inline" /> View on GitHub
+                      <IconLink size={16} className="inline" /> View on GitHub
                     </a>
                     <a href="https://wangchujiang.com/linux-command/" target="_blank" rel="noopener noreferrer" className="button button--secondary">
-                      <LinkIcon className="w-4 h-4 inline" /> Live Demo
+                      <IconLink size={16} className="inline" /> Live Demo
                     </a>
                   </div>
                   <p className={styles.licenseInfo}>
@@ -65,7 +65,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2><CodeBracketIcon className="w-4 h-4 inline" /> Framework & Technology</h2>
+                <h2><IconCode size={16} className="inline" /> Framework & Technology</h2>
               </div>
               <div className="card__body">
                 <div className={styles.techGrid}>
@@ -100,7 +100,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2><DocumentIcon className="w-4 h-4 inline" /> How to Contribute</h2>
+                <h2><IconFileText size={16} className="inline" /> How to Contribute</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -108,7 +108,7 @@ export default function Credits() {
                 </p>
                 <div className={styles.contributeWays}>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}><CogIcon className="w-4 h-4" /></span>
+                    <span className={styles.icon}><IconSettings size={16} /></span>
                     <h4>Fix Errors</h4>
                     <p>Report and fix documentation errors</p>
                   </div>
@@ -123,14 +123,14 @@ export default function Credits() {
                     <p>Help translate content to other languages</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}><SparklesIcon className="w-4 h-4" /></span>
+                    <span className={styles.icon}><IconSparkles size={16} /></span>
                     <h4>Improve Examples</h4>
                     <p>Add better examples and use cases</p>
                   </div>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '2rem'}}>
                   <a href="https://github.com/Jimmy-Ki/linux-wiki" target="_blank" rel="noopener noreferrer" className="button button--primary button--lg">
-                    <ArrowUpTrayIcon className="w-4 h-4 inline" /> Contribute on GitHub
+                    <IconUpload size={16} className="inline" /> Contribute on GitHub
                   </a>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2><ShieldCheckIcon className="w-4 h-4 inline" /> License Information</h2>
+                <h2><IconShieldCheck size={16} className="inline" /> License Information</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -162,7 +162,7 @@ export default function Credits() {
         <div className="row margin-vert--lg">
           <div className="col col--8 col--offset-2 text--center">
             <p className={styles.footerNote}>
-              <CheckIcon className="w-4 h-4 inline" /> <strong>Thank you</strong> to everyone who contributes to making Linux knowledge
+              <IconCheck size={16} className="inline" /> <strong>Thank you</strong> to everyone who contributes to making Linux knowledge
               accessible and understandable for users around the world.
             </p>
             <p>

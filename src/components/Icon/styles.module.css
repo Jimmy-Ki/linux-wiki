@@ -3,47 +3,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: currentColor;
+  vertical-align: middle;
 }
 
-.icon {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-/* Size variants */
-.small {
-  font-size: 16px;
-}
-
-.medium {
-  font-size: 20px;
-}
-
-.large {
-  font-size: 24px;
-}
-
-.xlarge {
-  font-size: 32px;
-}
-
-/* Status specific styling */
-.statusIcon {
-  width: 16px;
-  height: 16px;
-}
-
-.actionIcon {
-  width: 18px;
-  height: 18px;
-}
-
-.checkIcon {
-  width: 14px;
-  height: 14px;
-  color: var(--ifm-color-success);
-}
+/* Icon size is now handled by the size prop passed to Tabler icons */
 
 /* Category specific colors */
 .categorySecurity {

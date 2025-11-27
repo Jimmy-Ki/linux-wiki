@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import {
-  XMarkIcon
-} from '@heroicons/react/24/outline';
+  IconX
+} from '@tabler/icons-react';
 
 export default function RegexTester() {
   const [pattern, setPattern] = useState('');
@@ -229,7 +229,7 @@ export default function RegexTester() {
               <h3>Results</h3>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}><XMarkIcon className="w-4 h-4" /></span>
+                  <span className={styles.errorIcon}><IconX size={16} /></span>
                   {error}
                 </div>
               )}

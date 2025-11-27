@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
 import {
-  ShieldCheckIcon,
-  ArrowPathIcon,
-  DocumentIcon,
-  ClipboardDocumentIcon,
-  ArrowDownTrayIcon,
-  XMarkIcon
-} from '@heroicons/react/24/outline';
+  IconShieldCheck,
+  IconRefresh,
+  IconFileText,
+  IconCopy,
+  IconDownload,
+  IconX
+} from '@tabler/icons-react';
 
 export default function Base64Encoder() {
   const [inputText, setInputText] = useState('');
@@ -203,20 +203,20 @@ export default function Base64Encoder() {
               onClick={() => setMode('encode')}
               className={`${styles.modeButton} ${mode === 'encode' ? styles.active : ''}`}
             >
-              <ShieldCheckIcon className="w-4 h-4" /> Encode
+              <IconShieldCheck size={16} /> Encode
             </button>
             <button
               onClick={() => setMode('decode')}
               className={`${styles.modeButton} ${mode === 'decode' ? styles.active : ''}`}
             >
-              <ShieldCheckIcon className="w-4 h-4" /> Decode
+              <IconShieldCheck size={16} /> Decode
             </button>
             <button
               onClick={swapInputOutput}
               className={styles.swapButton}
               disabled={!inputText && !outputText}
             >
-              <ArrowPathIcon className="w-4 h-4" /> Swap
+              <IconRefresh size={16} /> Swap
             </button>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function Base64Encoder() {
                   onClick={() => fileInputRef.current?.click()}
                   className={styles.fileButton}
                 >
-                  <DocumentIcon className="w-4 h-4" /> Upload File
+                  <IconFileText size={16} /> Upload File
                 </button>
                 <input
                   ref={fileInputRef}
@@ -267,7 +267,7 @@ export default function Base64Encoder() {
                   className={styles.copyButton}
                   disabled={!inputText}
                 >
-                  <ClipboardDocumentIcon className="w-4 h-4" /> Copy
+                  <IconCopy size={16} /> Copy
                 </button>
               </div>
             </div>
@@ -312,21 +312,21 @@ export default function Base64Encoder() {
                   className={styles.downloadButton}
                   disabled={!outputText}
                 >
-                  <ArrowDownTrayIcon className="w-4 h-4" /> Download
+                  <IconDownload size={16} /> Download
                 </button>
                 <button
                   onClick={copyToClipboard}
                   className={styles.copyButton}
                   disabled={!outputText}
                 >
-                  <ClipboardDocumentIcon className="w-4 h-4" /> Copy
+                  <IconCopy size={16} /> Copy
                 </button>
               </div>
             </div>
 
             {error ? (
               <div className={styles.error}>
-                <h4><XMarkIcon className="w-4 h-4" /> Error</h4>
+                <h4><IconX size={16} /> Error</h4>
                 <p>{error}</p>
               </div>
             ) : (
@@ -350,7 +350,7 @@ export default function Base64Encoder() {
 
         <div className={styles.actionButtons}>
           <button onClick={clearAll} className={styles.clearButton}>
-            <XMarkIcon className="w-4 h-4" /> Clear All
+            <IconX size={16} /> Clear All
           </button>
         </div>
 
@@ -368,7 +368,7 @@ export default function Base64Encoder() {
                     onClick={() => loadFromHistory(item)}
                     className={styles.historyButton}
                   >
-                    <DocumentIcon className="w-4 h-4" /> Load
+                    <IconFileText size={16} /> Load
                   </button>
                 </div>
               ))}
