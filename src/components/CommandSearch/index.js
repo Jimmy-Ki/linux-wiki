@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import commandsData from '../../data/commands.json';
-import Icon from '../Icon';
 import styles from './CommandSearch.module.css';
 
 export default function CommandSearch() {
@@ -110,7 +110,7 @@ export default function CommandSearch() {
             className={styles.clearButton}
             onClick={() => setSearchTerm('')}
           >
-            <Icon name="close" size="small" />
+            <XMarkIcon className="w-4 h-4" />
           </button>
         )}
       </div>
@@ -145,7 +145,7 @@ export default function CommandSearch() {
       {!isLoading && searchTerm.length >= 2 && searchResults.length === 0 && (
         <div className={styles.noResults}>
           <div className={styles.noResultsIcon}>
-            <Icon name="search" size="medium" />
+            <MagnifyingGlassIcon className="w-6 h-6" />
           </div>
           <div className={styles.noResultsText}>
             No commands found for "{searchTerm}"

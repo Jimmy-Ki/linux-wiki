@@ -1,6 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import QRCode from 'qrcode';
-import Icon from '../Icon';
+import {
+  ClipboardDocumentIcon,
+  ArrowDownTrayIcon,
+  PhotoIcon,
+  DocumentIcon,
+  LinkIcon,
+  SparklesIcon,
+  ArrowPathIcon,
+  ShieldCheckIcon
+} from '@heroicons/react/24/outline';
 import styles from './styles.module.css';
 
 export default function QRCodeGenerator() {
@@ -132,15 +141,26 @@ export default function QRCodeGenerator() {
   };
 
   const getSampleTexts = () => [
-    { label: 'URL', value: 'https://linux.wiki', icon: 'link' },
-    { label: 'Email', value: 'mailto:contact@linux.wiki', icon: 'file' },
-    { label: 'Phone', value: 'tel:+1234567890', icon: 'link' },
-    { label: 'WiFi', value: 'WIFI:T:WPA;S:MyNetwork;P:MyPassword;;', icon: 'link' },
-    { label: 'vCard', value: 'BEGIN:VCARD\nVERSION:3.0\nFN:Linux Wiki\nTEL:+1234567890\nEMAIL:contact@linux.wiki\nEND:VCARD', icon: 'file' },
-    { label: 'Location', value: 'geo:37.7749,-122.4194', icon: 'link' },
-    { label: 'SMS', value: 'sms:+1234567890?body=Hello Linux Wiki!', icon: 'file' },
-    { label: 'Plain Text', value: 'Hello from Linux Wiki!', icon: 'file' }
+    { label: 'URL', value: 'https://linux.wiki', icon: 'LinkIcon' },
+    { label: 'Email', value: 'mailto:contact@linux.wiki', icon: 'DocumentIcon' },
+    { label: 'Phone', value: 'tel:+1234567890', icon: 'LinkIcon' },
+    { label: 'WiFi', value: 'WIFI:T:WPA;S:MyNetwork;P:MyPassword;;', icon: 'LinkIcon' },
+    { label: 'vCard', value: 'BEGIN:VCARD\nVERSION:3.0\nFN:Linux Wiki\nTEL:+1234567890\nEMAIL:contact@linux.wiki\nEND:VCARD', icon: 'DocumentIcon' },
+    { label: 'Location', value: 'geo:37.7749,-122.4194', icon: 'LinkIcon' },
+    { label: 'SMS', value: 'sms:+1234567890?body=Hello Linux Wiki!', icon: 'DocumentIcon' },
+    { label: 'Plain Text', value: 'Hello from Linux Wiki!', icon: 'DocumentIcon' }
   ];
+
+  const getIconComponent = (iconName) => {
+    switch (iconName) {
+      case 'LinkIcon':
+        return <LinkIcon className="w-4 h-4" />;
+      case 'DocumentIcon':
+        return <DocumentIcon className="w-4 h-4" />;
+      default:
+        return <DocumentIcon className="w-4 h-4" />;
+    }
+  };
 
   const getErrorCorrectionInfo = () => ({
     L: { level: 'L', name: 'Low', capacity: '~7%', description: 'Lowest redundancy, most data capacity' },
@@ -176,7 +196,7 @@ export default function QRCodeGenerator() {
                     className={styles.sampleButton}
                     title={sample.label}
                   >
-                    <span className={styles.sampleIcon}><Icon name={sample.icon} size="small" /></span>
+                    <span className={styles.sampleIcon}>{getIconComponent(sample.icon)}</span>
                     <span className={styles.sampleLabel}>{sample.label}</span>
                   </button>
                 ))}
@@ -313,7 +333,7 @@ export default function QRCodeGenerator() {
                   onClick={copyToClipboard}
                   className={styles.copyButton}
                 >
-                  <Icon name="copy" size="small" /> Copy Image
+                  <ClipboardDocumentIcon className="w-4 h-4" /> Copy Image
                 </button>
 
                 <div className={styles.downloadButtons}>
@@ -321,19 +341,19 @@ export default function QRCodeGenerator() {
                     onClick={() => downloadQRCode('png')}
                     className={styles.downloadButton}
                   >
-                    <Icon name="download" size="small" /> PNG
+                    <ArrowDownTrayIcon className="w-4 h-4" /> PNG
                   </button>
                   <button
                     onClick={() => downloadQRCode('jpg')}
                     className={styles.downloadButton}
                   >
-                    <Icon name="image" size="small" /> JPG
+                    <PhotoIcon className="w-4 h-4" /> JPG
                   </button>
                   <button
                     onClick={() => downloadQRCode('svg')}
                     className={styles.downloadButton}
                   >
-                    <Icon name="file" size="small" /> SVG
+                    <DocumentIcon className="w-4 h-4" /> SVG
                   </button>
                 </div>
               </div>
@@ -367,27 +387,27 @@ export default function QRCodeGenerator() {
           <h2>Features & Use Cases</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.feature}>
-              <h4><Icon name="link" size="small" /> Multiple Formats</h4>
+              <h4><LinkIcon className="w-4 h-4" /> Multiple Formats</h4>
               <p>Generate QR codes for URLs, email addresses, phone numbers, WiFi credentials, contact cards, and more</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="color" size="small" /> Custom Design</h4>
+              <h4><SparklesIcon className="w-4 h-4" /> Custom Design</h4>
               <p>Customize colors, size, and error correction level to match your branding or requirements</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="link" size="small" /> Universal Compatibility</h4>
+              <h4><LinkIcon className="w-4 h-4" /> Universal Compatibility</h4>
               <p>Works with all smartphone cameras and QR code scanner apps</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="download" size="small" /> Multiple Export Formats</h4>
+              <h4><ArrowDownTrayIcon className="w-4 h-4" /> Multiple Export Formats</h4>
               <p>Download as PNG, JPG, or SVG for use in print, web, or applications</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="refresh" size="small" /> Instant Generation</h4>
+              <h4><ArrowPathIcon className="w-4 h-4" /> Instant Generation</h4>
               <p>Real-time QR code generation as you type or modify settings</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="security" size="small" /> Reliable Error Correction</h4>
+              <h4><ShieldCheckIcon className="w-4 h-4" /> Reliable Error Correction</h4>
               <p>Multiple error correction levels ensure QR codes remain scannable even when damaged</p>
             </div>
           </div>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
-import Icon from '../Icon';
+import {
+  XMarkIcon,
+  CheckIcon,
+  ClockIcon
+} from '@heroicons/react/24/outline';
 
 export default function JSONFormatter() {
   const [input, setInput] = useState('');
@@ -117,7 +121,7 @@ export default function JSONFormatter() {
             <div className={styles.outputContainer}>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}><Icon name="close" size="small" /></span>
+                  <span className={styles.errorIcon}><XMarkIcon className="w-4 h-4" /></span>
                   {error}
                 </div>
               )}
@@ -148,7 +152,7 @@ export default function JSONFormatter() {
             <div className={styles.stat}>
               <span className={styles.statLabel}>Status:</span>
               <span className={`${styles.statValue} ${isValid ? styles.valid : styles.invalid}`}>
-                {isValid ? <><Icon name="check" size="small" /> Valid JSON</> : (input ? <><Icon name="close" size="small" /> Invalid</> : <><Icon name="time" size="small" /> Waiting</>)}
+                {isValid ? <><CheckIcon className="w-4 h-4" /> Valid JSON</> : (input ? <><XMarkIcon className="w-4 h-4" /> Invalid</> : <><ClockIcon className="w-4 h-4" /> Waiting</>)}
               </span>
             </div>
           </div>

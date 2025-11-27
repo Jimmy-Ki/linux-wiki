@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './styles.module.css';
-import Icon from '../Icon';
+import {
+  ClipboardDocumentIcon,
+  ArrowDownTrayIcon,
+  ArrowPathIcon,
+  XMarkIcon,
+  CheckIcon,
+  DocumentIcon,
+  ShieldCheckIcon,
+  CogIcon
+} from '@heroicons/react/24/outline';
 
 export default function UUIDGenerator() {
   const [uuids, setUuids] = useState([]);
@@ -266,13 +275,13 @@ export default function UUIDGenerator() {
             <h3>Generated UUIDs ({uuids.length})</h3>
             <div className={styles.outputActions}>
               <button onClick={generateUUIDs} className={styles.regenerateButton}>
-                <Icon name="refresh" size="small" /> Regenerate
+                <ArrowPathIcon className="w-4 h-4" /> Regenerate
               </button>
               <button onClick={copyAllToClipboard} className={styles.copyAllButton}>
-                <Icon name="copy" size="small" /> Copy All
+                <ClipboardDocumentIcon className="w-4 h-4" /> Copy All
               </button>
               <button onClick={downloadAsFile} className={styles.downloadButton}>
-                <Icon name="download" size="small" /> Download
+                <ArrowDownTrayIcon className="w-4 h-4" /> Download
               </button>
             </div>
           </div>
@@ -288,14 +297,14 @@ export default function UUIDGenerator() {
                       className={styles.copyButton}
                       title="Copy UUID"
                     >
-                      <Icon name="copy" size="small" />
+                      <ClipboardDocumentIcon className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => copyFormatted(uuid)}
                       className={styles.copyFormattedButton}
                       title="Copy with formatting"
                     >
-                      <Icon name="file" size="small" />
+                      <DocumentIcon className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -312,7 +321,7 @@ export default function UUIDGenerator() {
               <p>{getUUIDInfo()[version].description}</p>
               <div className={styles.prosCons}>
                 <div className={styles.pros}>
-                  <h4><Icon name="check" size="small" /> Advantages</h4>
+                  <h4><CheckIcon className="w-4 h-4" /> Advantages</h4>
                   <ul>
                     {getUUIDInfo()[version].pros.map((pro, index) => (
                       <li key={index}>{pro}</li>
@@ -320,7 +329,7 @@ export default function UUIDGenerator() {
                   </ul>
                 </div>
                 <div className={styles.cons}>
-                  <h4><Icon name="close" size="small" /> Disadvantages</h4>
+                  <h4><XMarkIcon className="w-4 h-4" /> Disadvantages</h4>
                   <ul>
                     {getUUIDInfo()[version].cons.map((con, index) => (
                       <li key={index}>{con}</li>
@@ -363,27 +372,27 @@ export default function UUIDGenerator() {
           <h2>Features</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.feature}>
-              <h4><Icon name="refresh" size="small" /> Multiple Versions</h4>
+              <h4><ArrowPathIcon className="w-4 h-4" /> Multiple Versions</h4>
               <p>Support for UUID v1 (time-based), v4 (random), and v7 (time-ordered)</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="file" size="small" /> Flexible Formatting</h4>
+              <h4><DocumentIcon className="w-4 h-4" /> Flexible Formatting</h4>
               <p>Various output formats including code snippets for different programming languages</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="refresh" size="small" /> Bulk Generation</h4>
+              <h4><ArrowPathIcon className="w-4 h-4" /> Bulk Generation</h4>
               <p>Generate multiple UUIDs at once, up to 100 in a single batch</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="copy" size="small" /> Easy Copy & Export</h4>
+              <h4><ClipboardDocumentIcon className="w-4 h-4" /> Easy Copy & Export</h4>
               <p>One-click copy for individual UUIDs or bulk download as text file</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="settings" size="small" /> Customizable Options</h4>
+              <h4><CogIcon className="w-4 h-4" /> Customizable Options</h4>
               <p>Choose uppercase, remove dashes, or apply different formatting styles</p>
             </div>
             <div className={styles.feature}>
-              <h4><Icon name="security" size="small" /> Cryptographically Secure</h4>
+              <h4><ShieldCheckIcon className="w-4 h-4" /> Cryptographically Secure</h4>
               <p>Uses browser's native crypto API for secure random number generation</p>
             </div>
           </div>

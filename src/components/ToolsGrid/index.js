@@ -1,5 +1,28 @@
 import React from 'react';
-import Icon from '../Icon';
+import {
+  ShieldCheckIcon,
+  GlobeAltIcon,
+  CodeBracketIcon,
+  CommandLineIcon,
+  SparklesIcon,
+  CalculatorIcon,
+  HashtagIcon,
+  MagnifyingGlassIcon,
+  CogIcon,
+  LinkIcon,
+  CursorArrowRaysIcon,
+  DocumentTextIcon,
+  QrCodeIcon,
+  PhotoIcon,
+  GamepadIcon,
+  SwatchIcon,
+  ClockIcon,
+  DocumentIcon,
+  CheckCircleIcon,
+  XCircleIcon,
+  ExclamationTriangleIcon,
+  ClockIcon as ComingSoonIcon
+} from '@heroicons/react/24/outline';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -68,6 +91,48 @@ const toolsCategories = [
   },
 ];
 
+const getIconComponent = (iconName, size = 'small') => {
+  const iconMap = {
+    // Category icons
+    'security': ShieldCheckIcon,
+    'network': GlobeAltIcon,
+    'code': CodeBracketIcon,
+    'linux': CommandLineIcon,
+    'creative': SparklesIcon,
+    'calculator': CalculatorIcon,
+
+    // Tool icons
+    'password': ShieldCheckIcon,
+    'hash': HashtagIcon,
+    'search': MagnifyingGlassIcon,
+    'settings': CogIcon,
+    'link': LinkIcon,
+    'regex': CursorArrowRaysIcon,
+    'json': DocumentTextIcon,
+    'markdown': DocumentTextIcon,
+    'uuid': DocumentTextIcon,
+    'base64': DocumentTextIcon,
+    'qrcode': QrCodeIcon,
+    'ascii': DocumentTextIcon,
+    'image': PhotoIcon,
+    'games': GamepadIcon,
+    'color': SwatchIcon,
+    'time': ClockIcon,
+    'file': DocumentIcon,
+
+    // Status icons
+    'available': CheckCircleIcon,
+    'unavailable': XCircleIcon,
+    'suspended': ExclamationTriangleIcon,
+    'comingSoon': ComingSoonIcon
+  };
+
+  const IconComponent = iconMap[iconName] || DocumentIcon;
+  const sizeClass = size === 'large' ? 'w-8 h-8' : 'w-5 h-5';
+
+  return <IconComponent className={sizeClass} />;
+};
+
 const getStatusConfig = (status) => {
   switch (status) {
     case 'available':
@@ -103,13 +168,13 @@ function ToolCard({ tool }) {
     <>
       <div className={styles.toolContent}>
         <div className={styles.toolHeader}>
-          <Icon name={tool.icon} size="small" className={styles.toolIcon} />
+          {getIconComponent(tool.icon, 'small')}
           <h3 className={styles.toolTitle}>{tool.title}</h3>
         </div>
         <p className={styles.toolDescription}>{tool.description}</p>
       </div>
       <div className={styles.statusBadge} style={{ backgroundColor: statusConfig.color }}>
-        <Icon name={statusConfig.icon} size="small" className={`${styles.statusIcon} ${statusConfig.className}`} />
+        {getIconComponent(statusConfig.icon, 'small')}
         <span className={styles.statusText}>{statusConfig.text}</span>
       </div>
     </>
@@ -134,7 +199,9 @@ function ToolsCategory({ category }) {
   return (
     <div className={styles.category}>
       <div className={styles.categoryHeader}>
-        <Icon name={category.icon} size="large" className={`${styles.categoryIcon} ${getCategoryIconClass(category.icon)}`} />
+        <div className={`${styles.categoryIcon} ${getCategoryIconClass(category.icon)}`}>
+          {getIconComponent(category.icon, 'large')}
+        </div>
         <div>
           <h2 className={styles.categoryTitle}>{category.title}</h2>
           <p className={styles.categoryDescription}>{category.description}</p>
