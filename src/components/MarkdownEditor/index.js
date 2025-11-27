@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   IconMarkdown,
   IconCopy,
@@ -17,13 +17,17 @@ import {
   IconCode,
   IconLink,
   IconPhoto,
-  IconTable
+  IconTable,
+  IconArrowBackUp,
+  IconArrowForwardUp
 } from '@tabler/icons-react';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import styles from './styles.module.css';
 
 export default function MarkdownEditor() {
+  const editorRef = useRef(null);
+  const previewRef = useRef(null);
   const [markdown, setMarkdown] = useState(`# Welcome to the Markdown Editor
 
 This is a **live preview** markdown editor with real-time rendering.
@@ -94,6 +98,8 @@ Start typing in the editor on the left to see the magic happen!`);
   const [showPreview, setShowPreview] = useState(true);
   const [wordCount, setWordCount] = useState(0);
   const [charCount, setCharCount] = useState(0);
+  const [history, setHistory] = useState([markdown]);
+  const [historyIndex, setHistoryIndex] = useState(0);
 
   useEffect(() => {
     const html = marked(markdown, {
@@ -121,6 +127,100 @@ Start typing in the editor on the left to see the magic happen!`);
       document.body.style.overflow = '';
     };
   }, [isFullscreen]);
+
+  // Sync scrolling between editor and preview
+  const handleEditorScroll = () => {
+    if (editorRef.current && previewRef.current) {
+      const editor = editorRef.current;
+      const preview = previewRef.current;
+      const scrollPercentage = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
+      preview.scrollTop = scrollPercentage * (preview.scrollHeight - preview.clientHeight);
+    }
+  };
+
+  const handlePreviewScroll = () => {
+    if (editorRef.current && previewRef.current) {
+      const editor = editorRef.current;
+      const preview = previewRef.current;
+      const scrollPercentage = preview.scrollTop / (preview.scrollHeight - preview.clientHeight);
+      editor.scrollTop = scrollPercentage * (editor.scrollHeight - editor.clientHeight);
+    }
+  };
+
+  // Add to history for undo/redo
+  const addToHistory = (newMarkdown) => {
+    const newHistory = history.slice(0, historyIndex + 1);
+    newHistory.push(newMarkdown);
+    setHistory(newHistory);
+    setHistoryIndex(newHistory.length - 1);
+  };
+
+  // Undo function
+  const undo = () => {
+    if (historyIndex > 0) {
+      const newIndex = historyIndex - 1;
+      setHistoryIndex(newIndex);
+      setMarkdown(history[newIndex]);
+    }
+  };
+
+  // Redo function
+  const redo = () => {
+    if (historyIndex < history.length - 1) {
+      const newIndex = historyIndex + 1;
+      setHistoryIndex(newIndex);
+      setMarkdown(history[newIndex]);
+    }
+  };
+
+  // Select all function
+  const selectAll = () => {
+    const textarea = document.getElementById('markdown-editor');
+    textarea.select();
+  };
+
+  // Handle keyboard shortcuts
+  const handleKeyDown = (e) => {
+    if (e.ctrlKey || e.metaKey) {
+      switch (e.key) {
+        case 'z':
+          if (e.shiftKey) {
+            e.preventDefault();
+            redo();
+          } else {
+            e.preventDefault();
+            undo();
+          }
+          break;
+        case 'y':
+          e.preventDefault();
+          redo();
+          break;
+        case 'a':
+          e.preventDefault();
+          selectAll();
+          break;
+        case 's':
+          e.preventDefault();
+          handleExportMarkdown();
+          break;
+        case 'b':
+          e.preventDefault();
+          insertMarkdown('**', '**');
+          break;
+        case 'i':
+          e.preventDefault();
+          insertMarkdown('*', '*');
+          break;
+        case 'k':
+          e.preventDefault();
+          insertMarkdown('[', '](url)');
+          break;
+        default:
+          break;
+      }
+    }
+  };
 
   const handleExportMarkdown = () => {
     const blob = new Blob([markdown], { type: 'text/markdown' });
@@ -175,21 +275,69 @@ Start typing in the editor on the left to see the magic happen!`);
 
     let replacement;
 
+    // Handle smart list toggling
+    if ((before === '- ' || before === '1. ') && !selectedText) {
+      // Check if current line already has list formatting
+      const textBeforeCursor = markdown.substring(0, start);
+      const lineStart = textBeforeCursor.lastIndexOf('\n') + 1;
+      const currentLine = markdown.substring(lineStart, start);
+
+      if (before === '- ' && currentLine.startsWith('- ')) {
+        // Remove bullet list
+        const newLine = currentLine.substring(2);
+        replacement = newLine;
+        const newMarkdown = markdown.substring(0, lineStart) + newLine + markdown.substring(start);
+        setMarkdown(newMarkdown);
+        addToHistory(newMarkdown);
+        setTimeout(() => {
+          textarea.setSelectionRange(lineStart + newLine.length, lineStart + newLine.length);
+          textarea.focus();
+        }, 0);
+        return;
+      } else if (before === '1. ' && /^\d+\.\s/.test(currentLine)) {
+        // Remove numbered list
+        const newLine = currentLine.replace(/^\d+\.\s/, '');
+        replacement = newLine;
+        const newMarkdown = markdown.substring(0, lineStart) + newLine + markdown.substring(start);
+        setMarkdown(newMarkdown);
+        addToHistory(newMarkdown);
+        setTimeout(() => {
+          textarea.setSelectionRange(lineStart + newLine.length, lineStart + newLine.length);
+          textarea.focus();
+        }, 0);
+        return;
+      }
+    }
+
     // Handle multi-line list formatting
     if ((before === '- ' || before === '1. ') && selectedText.includes('\n')) {
       const lines = selectedText.split('\n');
       if (before === '1. ') {
-        // Numbered list - add numbering to each line
-        replacement = lines.map((line, index) => {
-          const trimmedLine = line.trim();
-          return trimmedLine ? `${index + 1}. ${trimmedLine}` : line;
-        }).join('\n');
+        // Check if lines are already numbered
+        const areAlreadyNumbered = lines.every(line => /^\d+\.\s/.test(line.trim()));
+        if (areAlreadyNumbered) {
+          // Remove numbering
+          replacement = lines.map(line => line.trim().replace(/^\d+\.\s/, '')).join('\n');
+        } else {
+          // Add numbering
+          replacement = lines.map((line, index) => {
+            const trimmedLine = line.trim();
+            return trimmedLine ? `${index + 1}. ${trimmedLine}` : line;
+          }).join('\n');
+        }
       } else {
-        // Bullet list - add bullet to each non-empty line
-        replacement = lines.map(line => {
-          const trimmedLine = line.trim();
-          return trimmedLine ? `${before}${trimmedLine}` : line;
-        }).join('\n');
+        // Check if lines already have bullets
+        const areAlreadyBulleted = lines.every(line => line.trim().startsWith('- '));
+        if (areAlreadyBulleted) {
+          // Remove bullets
+          replacement = lines.map(line => line.trim().substring(2)).join('\n');
+        } else {
+          // Add bullets
+          replacement = lines.map(line => {
+            const trimmedLine = line.trim();
+            return trimmedLine ? `${before}${trimmedLine}` : line;
+          }).join('\n');
+        }
       }
     } else {
       replacement = before + selectedText + after;
@@ -197,6 +345,7 @@ Start typing in the editor on the left to see the magic happen!`);
 
     const newMarkdown = markdown.substring(0, start) + replacement + markdown.substring(end);
     setMarkdown(newMarkdown);
+    addToHistory(newMarkdown);
 
     // Set cursor position
     setTimeout(() => {
@@ -207,6 +356,18 @@ Start typing in the editor on the left to see the magic happen!`);
   };
 
   const toolbarActions = [
+    {
+      icon: IconArrowBackUp,
+      label: 'Undo (Ctrl+Z)',
+      action: undo,
+      disabled: historyIndex <= 0
+    },
+    {
+      icon: IconArrowForwardUp,
+      label: 'Redo (Ctrl+Y)',
+      action: redo,
+      disabled: historyIndex >= history.length - 1
+    },
     {
       icon: IconBold,
       label: 'Bold',
@@ -268,6 +429,13 @@ Start typing in the editor on the left to see the magic happen!`);
     setIsFullscreen(!isFullscreen);
   };
 
+  // Handle text input with history
+  const handleTextChange = (e) => {
+    const newMarkdown = e.target.value;
+    setMarkdown(newMarkdown);
+    addToHistory(newMarkdown);
+  };
+
   return (
     <div className={`${styles.container} ${isFullscreen ? styles.fullscreen : ''}`}>
       <div className={styles.header}>
@@ -316,8 +484,9 @@ Start typing in the editor on the left to see the magic happen!`);
           <button
             key={index}
             onClick={action.action}
-            className={styles.toolbarButton}
+            className={`${styles.toolbarButton} ${action.disabled ? styles.toolbarButtonDisabled : ''}`}
             title={action.label}
+            disabled={action.disabled}
           >
             <action.icon size={16} />
           </button>
@@ -334,9 +503,12 @@ Start typing in the editor on the left to see the magic happen!`);
             </div>
           </div>
           <textarea
+            ref={editorRef}
             id="markdown-editor"
             value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
+            onChange={handleTextChange}
+            onKeyDown={handleKeyDown}
+            onScroll={handleEditorScroll}
             className={styles.editor}
             placeholder="Start typing your markdown here..."
             spellCheck="false"
@@ -349,7 +521,9 @@ Start typing in the editor on the left to see the magic happen!`);
               <h3>Preview</h3>
             </div>
             <div
+              ref={previewRef}
               className={styles.preview}
+              onScroll={handlePreviewScroll}
               dangerouslySetInnerHTML={{ __html: previewHtml }}
             />
           </div>

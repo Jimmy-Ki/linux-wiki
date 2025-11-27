@@ -136,6 +136,18 @@ body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
   border-color: var(--ifm-color-primary);
 }
 
+.toolbarButtonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbarButtonDisabled:hover {
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  transform: none;
+  border-color: var(--ifm-color-emphasis-200);
+}
+
 .editorContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
