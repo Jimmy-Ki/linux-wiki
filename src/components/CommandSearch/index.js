@@ -110,7 +110,7 @@ export default function CommandSearch() {
             className={styles.clearButton}
             onClick={() => setSearchTerm('')}
           >
-            <XMarkIcon className="w-4 h-4" />
+            <XMarkIcon className="w-5 h-5" />
           </button>
         )}
       </div>

@@ -120,7 +120,7 @@ export default function HashGenerator() {
                   accept=".txt,.md,.js,.json,.xml,.csv"
                   style={{ display: 'none' }}
                 />
-                <DocumentIcon className="w-4 h-4" /> Load File
+                <DocumentIcon className="w-5 h-5" /> Load File
               </label>
               <button onClick={clearAll} className={styles.clearButton}>
                 Clear
@@ -158,7 +158,7 @@ export default function HashGenerator() {
                   <p>{algo.description}</p>
                 </div>
                 <div className={styles.checkbox}>
-                  {activeHashes[algo.key] && <CheckIcon className="w-4 h-4" />}
+                  {activeHashes[algo.key] && <CheckIcon className="w-5 h-5" />}
                 </div>
               </label>
             ))}
@@ -175,7 +175,7 @@ export default function HashGenerator() {
                 </span>
                 {compareHashes().collisions > 0 && (
                   <span className={styles.collisionBadge}>
-                    <XMarkIcon className="w-4 h-4" /> {compareHashes().collisions} collision{compareHashes().collisions > 1 ? 's' : ''}
+                    <XMarkIcon className="w-5 h-5" /> {compareHashes().collisions} collision{compareHashes().collisions > 1 ? 's' : ''}
                   </span>
                 )}
               </div>
@@ -193,7 +193,7 @@ export default function HashGenerator() {
                         className={styles.copyButton}
                         title="Copy hash"
                       >
-                        <ClipboardDocumentIcon className="w-4 h-4" />
+                        <ClipboardDocumentIcon className="w-5 h-5" />
                       </button>
                     </div>
                     <div className={styles.hashContent}>
@@ -219,49 +219,49 @@ export default function HashGenerator() {
           <h2>Features & Information</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.feature}>
-              <h4><ShieldCheckIcon className="w-4 h-4" /> Multiple Algorithms</h4>
+              <h4><ShieldCheckIcon className="w-5 h-5" /> Multiple Algorithms</h4>
               <p>Generate MD5, SHA-1, SHA-2, SHA-3, and RIPEMD-160 hashes simultaneously</p>
             </div>
             <div className={styles.feature}>
-              <h4><ArrowPathIcon className="w-4 h-4" /> Real-time Updates</h4>
+              <h4><ArrowPathIcon className="w-5 h-5" /> Real-time Updates</h4>
               <p>Hashes update instantly as you type or modify the input text</p>
             </div>
             <div className={styles.feature}>
-              <h4><DocumentIcon className="w-4 h-4" /> File Support</h4>
+              <h4><DocumentIcon className="w-5 h-5" /> File Support</h4>
               <p>Upload text files to generate hashes of their content</p>
             </div>
             <div className={styles.feature}>
-              <h4><ClipboardDocumentIcon className="w-4 h-4" /> Easy Copy</h4>
+              <h4><ClipboardDocumentIcon className="w-5 h-5" /> Easy Copy</h4>
               <p>One-click copying of hash values to clipboard</p>
             </div>
             <div className={styles.feature}>
-              <h4><MagnifyingGlassIcon className="w-4 h-4" /> Collision Detection</h4>
+              <h4><MagnifyingGlassIcon className="w-5 h-5" /> Collision Detection</h4>
               <p>Automatically detects and warns about hash collisions</p>
             </div>
             <div className={styles.feature}>
-              <h4><SwatchIcon className="w-4 h-4" /> Detailed Info</h4>
+              <h4><SwatchIcon className="w-5 h-5" /> Detailed Info</h4>
               <p>Shows hash length in both characters and bits for each algorithm</p>
             </div>
           </div>
         </div>
 
         <div className={styles.securityInfo}>
-          <h2><ShieldCheckIcon className="w-4 h-4" /> Security Information</h2>
+          <h2><ShieldCheckIcon className="w-5 h-5" /> Security Information</h2>
           <div className={styles.securityGrid}>
             <div className={`${styles.securityCard} ${styles.deprecated}`}>
-              <h4><XMarkIcon className="w-4 h-4" /> Deprecated for Security</h4>
+              <h4><XMarkIcon className="w-5 h-5" /> Deprecated for Security</h4>
               <p><strong>MD5, SHA-1:</strong> These algorithms have known vulnerabilities and should not be used for security applications like password hashing or digital signatures.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.recommended}`}>
-              <h4><CheckIcon className="w-4 h-4" /> Recommended</h4>
+              <h4><CheckIcon className="w-5 h-5" /> Recommended</h4>
               <p><strong>SHA-256, SHA-512:</strong> These are currently recommended for most security applications. SHA-256 is widely used in blockchain and digital signatures.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.modern}`}>
-              <h4><ArrowPathIcon className="w-4 h-4" /> Modern Alternatives</h4>
+              <h4><ArrowPathIcon className="w-5 h-5" /> Modern Alternatives</h4>
               <p><strong>SHA-3:</strong> The latest hash function standard, using a different internal structure than SHA-2 for diversity in security options.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.specialized}`}>
-              <h4><MagnifyingGlassIcon className="w-4 h-4" /> Specialized Use</h4>
+              <h4><MagnifyingGlassIcon className="w-5 h-5" /> Specialized Use</h4>
               <p><strong>RIPEMD-160:</strong> Primarily used in Bitcoin and other cryptocurrencies as part of address generation.</p>
             </div>
           </div>

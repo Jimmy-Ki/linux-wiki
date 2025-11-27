@@ -203,20 +203,20 @@ export default function Base64Encoder() {
               onClick={() => setMode('encode')}
               className={`${styles.modeButton} ${mode === 'encode' ? styles.active : ''}`}
             >
-              <ShieldCheckIcon className="w-4 h-4" /> Encode
+              <ShieldCheckIcon className="w-5 h-5" /> Encode
             </button>
             <button
               onClick={() => setMode('decode')}
               className={`${styles.modeButton} ${mode === 'decode' ? styles.active : ''}`}
             >
-              <ShieldCheckIcon className="w-4 h-4" /> Decode
+              <ShieldCheckIcon className="w-5 h-5" /> Decode
             </button>
             <button
               onClick={swapInputOutput}
               className={styles.swapButton}
               disabled={!inputText && !outputText}
             >
-              <ArrowPathIcon className="w-4 h-4" /> Swap
+              <ArrowPathIcon className="w-5 h-5" /> Swap
             </button>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function Base64Encoder() {
                   onClick={() => fileInputRef.current?.click()}
                   className={styles.fileButton}
                 >
-                  <DocumentIcon className="w-4 h-4" /> Upload File
+                  <DocumentIcon className="w-5 h-5" /> Upload File
                 </button>
                 <input
                   ref={fileInputRef}
@@ -267,7 +267,7 @@ export default function Base64Encoder() {
                   className={styles.copyButton}
                   disabled={!inputText}
                 >
-                  <ClipboardDocumentIcon className="w-4 h-4" /> Copy
+                  <ClipboardDocumentIcon className="w-5 h-5" /> Copy
                 </button>
               </div>
             </div>
@@ -312,21 +312,21 @@ export default function Base64Encoder() {
                   className={styles.downloadButton}
                   disabled={!outputText}
                 >
-                  <ArrowDownTrayIcon className="w-4 h-4" /> Download
+                  <ArrowDownTrayIcon className="w-5 h-5" /> Download
                 </button>
                 <button
                   onClick={copyToClipboard}
                   className={styles.copyButton}
                   disabled={!outputText}
                 >
-                  <ClipboardDocumentIcon className="w-4 h-4" /> Copy
+                  <ClipboardDocumentIcon className="w-5 h-5" /> Copy
                 </button>
               </div>
             </div>
 
             {error ? (
               <div className={styles.error}>
-                <h4><XMarkIcon className="w-4 h-4" /> Error</h4>
+                <h4><XMarkIcon className="w-5 h-5" /> Error</h4>
                 <p>{error}</p>
               </div>
             ) : (
@@ -350,7 +350,7 @@ export default function Base64Encoder() {
 
         <div className={styles.actionButtons}>
           <button onClick={clearAll} className={styles.clearButton}>
-            <XMarkIcon className="w-4 h-4" /> Clear All
+            <XMarkIcon className="w-5 h-5" /> Clear All
           </button>
         </div>
 
@@ -368,7 +368,7 @@ export default function Base64Encoder() {
                     onClick={() => loadFromHistory(item)}
                     className={styles.historyButton}
                   >
-                    <DocumentIcon className="w-4 h-4" /> Load
+                    <DocumentIcon className="w-5 h-5" /> Load
                   </button>
                 </div>
               ))}

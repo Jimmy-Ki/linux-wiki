@@ -121,7 +121,7 @@ export default function JSONFormatter() {
             <div className={styles.outputContainer}>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}><XMarkIcon className="w-4 h-4" /></span>
+                  <span className={styles.errorIcon}><XMarkIcon className="w-5 h-5" /></span>
                   {error}
                 </div>
               )}
@@ -152,7 +152,7 @@ export default function JSONFormatter() {
             <div className={styles.stat}>
               <span className={styles.statLabel}>Status:</span>
               <span className={`${styles.statValue} ${isValid ? styles.valid : styles.invalid}`}>
-                {isValid ? <><CheckIcon className="w-4 h-4" /> Valid JSON</> : (input ? <><XMarkIcon className="w-4 h-4" /> Invalid</> : <><ClockIcon className="w-4 h-4" /> Waiting</>)}
+                {isValid ? <><CheckIcon className="w-5 h-5" /> Valid JSON</> : (input ? <><XMarkIcon className="w-5 h-5" /> Invalid</> : <><ClockIcon className="w-5 h-5" /> Waiting</>)}
               </span>
             </div>
           </div>
