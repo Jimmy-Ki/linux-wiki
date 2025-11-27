@@ -172,14 +172,35 @@ Start typing in the editor on the left to see the magic happen!`);
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
     const selectedText = markdown.substring(start, end);
-    const replacement = before + selectedText + after;
+
+    let replacement;
+
+    // Handle multi-line list formatting
+    if ((before === '- ' || before === '1. ') && selectedText.includes('\n')) {
+      const lines = selectedText.split('\n');
+      if (before === '1. ') {
+        // Numbered list - add numbering to each line
+        replacement = lines.map((line, index) => {
+          const trimmedLine = line.trim();
+          return trimmedLine ? `${index + 1}. ${trimmedLine}` : line;
+        }).join('\n');
+      } else {
+        // Bullet list - add bullet to each non-empty line
+        replacement = lines.map(line => {
+          const trimmedLine = line.trim();
+          return trimmedLine ? `${before}${trimmedLine}` : line;
+        }).join('\n');
+      }
+    } else {
+      replacement = before + selectedText + after;
+    }
 
     const newMarkdown = markdown.substring(0, start) + replacement + markdown.substring(end);
     setMarkdown(newMarkdown);
 
     // Set cursor position
     setTimeout(() => {
-      const newCursorPos = start + before.length + selectedText.length;
+      const newCursorPos = start + replacement.length;
       textarea.setSelectionRange(newCursorPos, newCursorPos);
       textarea.focus();
     }, 0);

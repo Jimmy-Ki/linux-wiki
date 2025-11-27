@@ -22,11 +22,19 @@
   overflow: hidden !important;
   background: var(--ifm-background-color) !important;
   box-shadow: none !important;
+  padding-bottom: 0 !important;
 }
 
 /* Global styles to prevent background scrolling when in fullscreen */
 body:has(.fullscreen) {
   overflow: hidden;
+}
+
+/* Hide footers and other overlay elements when editor is in fullscreen */
+body:has(.fullscreen) footer,
+body:has(.fullscreen) .navbar,
+body:has(.fullscreen) .footer {
+  display: none !important;
 }
 
 .header {
@@ -181,7 +189,7 @@ body:has(.fullscreen) {
 /* Ensure proper scrollbar styling for both editor and preview */
 .editor::-webkit-scrollbar,
 .preview::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 .editor::-webkit-scrollbar-track,
@@ -192,12 +200,20 @@ body:has(.fullscreen) {
 .editor::-webkit-scrollbar-thumb,
 .preview::-webkit-scrollbar-thumb {
   background: var(--ifm-color-emphasis-400);
-  border-radius: 4px;
+  border-radius: 6px;
+  border: 2px solid var(--ifm-color-emphasis-100);
 }
 
 .editor::-webkit-scrollbar-thumb:hover,
 .preview::-webkit-scrollbar-thumb:hover {
   background: var(--ifm-color-emphasis-600);
+}
+
+/* Firefox scrollbar styling */
+.editor,
+.preview {
+  scrollbar-width: auto;
+  scrollbar-color: var(--ifm-color-emphasis-400) var(--ifm-color-emphasis-100);
 }
 
 /* Markdown Preview Styles */
