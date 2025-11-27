@@ -1,28 +1,28 @@
 import React from 'react';
 import {
-  ShieldCheckIcon,
-  GlobeAltIcon,
-  CodeBracketIcon,
-  CommandLineIcon,
-  SparklesIcon,
-  CalculatorIcon,
-  HashtagIcon,
-  MagnifyingGlassIcon,
-  CogIcon,
-  LinkIcon,
-  CursorArrowRaysIcon,
-  DocumentTextIcon,
-  QrCodeIcon,
-  PhotoIcon,
-  GamepadIcon,
-  SwatchIcon,
-  ClockIcon,
-  DocumentIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  ExclamationTriangleIcon,
-  ClockIcon as ComingSoonIcon
-} from '@heroicons/react/24/outline';
+  Shield,
+  World,
+  Code,
+  Terminal,
+  Sparkles,
+  MathFunction,
+  Hash,
+  Search,
+  Settings,
+  Link,
+  GitMerge,
+  FileText,
+  Qrcode,
+  Photo,
+  DeviceGamepad2,
+  Palette,
+  Clock,
+  File,
+  CircleCheck,
+  CircleX,
+  AlertTriangle,
+  Loader
+} from '@tabler/icons-react';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -94,43 +94,42 @@ const toolsCategories = [
 const getIconComponent = (iconName, size = 'small') => {
   const iconMap = {
     // Category icons
-    'security': ShieldCheckIcon,
-    'network': GlobeAltIcon,
-    'code': CodeBracketIcon,
-    'linux': CommandLineIcon,
-    'creative': SparklesIcon,
-    'calculator': CalculatorIcon,
+    'security': Shield,
+    'network': World,
+    'code': Code,
+    'linux': Terminal,
+    'creative': Sparkles,
+    'calculator': MathFunction,
 
     // Tool icons
-    'password': ShieldCheckIcon,
-    'hash': HashtagIcon,
-    'search': MagnifyingGlassIcon,
-    'settings': CogIcon,
-    'link': LinkIcon,
-    'regex': CursorArrowRaysIcon,
-    'json': DocumentTextIcon,
-    'markdown': DocumentTextIcon,
-    'uuid': DocumentTextIcon,
-    'base64': DocumentTextIcon,
-    'qrcode': QrCodeIcon,
-    'ascii': DocumentTextIcon,
-    'image': PhotoIcon,
-    'games': GamepadIcon,
-    'color': SwatchIcon,
-    'time': ClockIcon,
-    'file': DocumentIcon,
+    'password': Shield,
+    'hash': Hash,
+    'search': Search,
+    'settings': Settings,
+    'link': Link,
+    'regex': GitMerge,
+    'json': FileText,
+    'markdown': FileText,
+    'uuid': File,
+    'base64': FileText,
+    'qrcode': Qrcode,
+    'ascii': FileText,
+    'image': Photo,
+    'games': DeviceGamepad2,
+    'color': Palette,
+    'time': Clock,
+    'file': File,
 
     // Status icons
-    'available': CheckCircleIcon,
-    'unavailable': XCircleIcon,
-    'suspended': ExclamationTriangleIcon,
-    'comingSoon': ComingSoonIcon
+    'available': CircleCheck,
+    'unavailable': CircleX,
+    'suspended': AlertTriangle,
+    'comingSoon': Loader
   };
 
-  const IconComponent = iconMap[iconName] || DocumentIcon;
-  const sizeClass = 'w-4 h-4';
+  const IconComponent = iconMap[iconName] || File;
 
-  return <IconComponent className={sizeClass} />;
+  return <IconComponent size={16} />;
 };
 
 const getStatusConfig = (status) => {
