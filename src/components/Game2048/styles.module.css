@@ -1,0 +1,340 @@
+.container {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gameInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scoreContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.scoreBox {
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 80px;
+  border: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.scoreLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.scoreValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.newGameButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newGameButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.gameContainer {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  background: #bbada0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  aspect-ratio: 1;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  background: #cdc1b4;
+}
+
+.tile:hover {
+  transform: scale(1.02);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.overlayContent {
+  text-align: center;
+  padding: 2rem;
+}
+
+.overlayContent h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.overlayContent p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+}
+
+.playAgainButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--ifm-color-success);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.playAgainButton:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.controls {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+
+.controls h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.controls p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.arrowKeys {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(2, 60px);
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowButton:hover:not(:disabled) {
+  background: var(--ifm-color-primary-dark);
+  transform: scale(1.05);
+}
+
+.arrowButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrowButton:nth-child(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.arrowButton:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.arrowButton:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.arrowButton:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.instructions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.instructionSection {
+  background: var(--ifm-card-background-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.instructionSection h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.instructionSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructionSection li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+.instructionSection li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem 0 3rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .gameInfo {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .scoreContainer {
+    justify-content: center;
+  }
+
+  .gameContainer {
+    margin: 0 1rem 2rem;
+  }
+
+  .tile {
+    font-size: 1.5rem;
+  }
+
+  .arrowKeys {
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 0.25rem;
+  }
+
+  .instructions {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0 1rem;
+  }
+}
+
+[data-theme='dark'] .gameContainer {
+  background: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .tile {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme='dark'] .instructionSection {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}

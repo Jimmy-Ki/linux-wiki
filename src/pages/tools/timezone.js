@@ -1,12 +1,14 @@
 import React from 'react';
-import ToolPage from '../../components/ToolPage';
+import ToolPageWithAds from '../../components/ToolPageWithAds';
+import TimezoneConverter from '../../components/TimezoneConverter';
 
 export default function TimezoneConverterPage() {
   return (
-    <ToolPage
-      title="Timezone Converter"
-      description="World clock and timezone conversion tool"
-      comingSoon={true}
-    />
+    <ToolPageWithAds
+      title="Timezone Converter - Linux Wiki Tools"
+      description="World clock and timezone conversion tool with real-time updates"
+    >
+      <TimezoneConverter />
+    </ToolPageWithAds>
   );
 }

@@ -1,0 +1,393 @@
+.container {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.controlsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeControl,
+.timezoneControl {
+  background: var(--ifm-card-background-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.timeControl h3,
+.timezoneControl h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.timeInput {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.currentTimeDisplay {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--ifm-color-primary-lightest);
+  border-radius: 8px;
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.currentTimeDisplay svg {
+  color: var(--ifm-color-primary);
+}
+
+.time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.datetimeInput {
+  padding: 0.75rem;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.datetimeInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.toggleButton {
+  padding: 0.75rem 1rem;
+  background: var(--ifm-color-secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleButton:hover {
+  background: var(--ifm-color-secondary-dark);
+  transform: translateY(-1px);
+}
+
+.timezoneSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.timezoneSelect:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.conversionSection {
+  margin-bottom: 3rem;
+}
+
+.conversionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.conversionHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.conversionActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.copyButton,
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copyButton {
+  background: var(--ifm-color-info);
+  color: white;
+}
+
+.copyButton:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+.addButton {
+  background: var(--ifm-color-success);
+  color: white;
+}
+
+.addButton:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.timezoneGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.timezoneCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.timezoneCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timezoneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.labelInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.labelInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.removeButton {
+  padding: 0.5rem;
+  background: var(--ifm-color-danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.removeButton:hover {
+  background: #dc2626;
+}
+
+.timeDisplay {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.timeDisplay .time {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeDisplay .date {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.5rem;
+}
+
+.timezoneName {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-family: monospace;
+}
+
+.infoSection {
+  margin-top: 4rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.infoCard {
+  background: var(--ifm-card-background-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.infoCard h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.infoCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoCard li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+.infoCard li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem 0 3rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .controlsSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0 1rem 2rem;
+  }
+
+  .timeControl,
+  .timezoneControl {
+    padding: 1rem;
+  }
+
+  .currentTimeDisplay {
+    padding: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .time {
+    font-size: 1.3rem;
+  }
+
+  .conversionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0 1rem 1rem;
+  }
+
+  .timezoneGrid {
+    grid-template-columns: 1fr;
+    margin: 0 1rem;
+  }
+
+  .timezoneCard {
+    padding: 1rem;
+  }
+
+  .timezoneHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .removeButton {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+
+  .timeDisplay .time {
+    font-size: 1.5rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0 1rem;
+  }
+}
+
+[data-theme='dark'] .timeControl,
+[data-theme='dark'] .timezoneControl,
+[data-theme='dark'] .timezoneCard,
+[data-theme='dark'] .infoCard {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .currentTimeDisplay {
+  background: var(--ifm-color-emphasis-200);
+}

@@ -31,7 +31,7 @@ const toolsCategories = [
     tools: [
       { title: 'Regex Tester', description: 'Test regex patterns in real-time', path: '/tools/regex', status: 'available', icon: 'regex' },
       { title: 'JSON Formatter', description: 'Format and validate JSON data', path: '/tools/json', status: 'available', icon: 'json' },
-      { title: 'Markdown Editor', description: 'Live preview markdown editor', path: '/tools/markdown', status: 'coming-soon', icon: 'markdown' },
+      { title: 'Markdown Editor', description: 'Live preview markdown editor', path: '/tools/markdown', status: 'available', icon: 'markdown' },
       { title: 'UUID Generator', description: 'Generate unique identifiers', path: '/tools/uuid', status: 'available', icon: 'uuid' },
       { title: 'Base64 Encoder', description: 'Encode and decode Base64 text', path: '/tools/base64', status: 'available', icon: 'base64' },
     ]
@@ -41,7 +41,7 @@ const toolsCategories = [
     description: 'Linux-specific tools and helpers',
     icon: 'linux',
     tools: [
-      { title: 'Command Generator', description: 'Cron jobs, systemd helpers', path: '/tools/linux-commands', status: 'coming-soon', icon: 'cpu' },
+      { title: 'Command Generator', description: 'Cron jobs, systemd helpers', path: '/tools/linux-commands', status: 'available', icon: 'cpu' },
     ]
   },
   {
@@ -52,7 +52,7 @@ const toolsCategories = [
       { title: 'QR Code Generator', description: 'Create custom QR codes', path: '/tools/qrcode', status: 'available', icon: 'qrcode' },
       { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', status: 'available', icon: 'ascii' },
       { title: 'Meme Generator', description: 'Create funny memes with text', path: '/tools/meme', status: 'unavailable', icon: 'image' },
-      { title: '2048 Game', description: 'Classic 2048 puzzle game', path: '/tools/2048', status: 'coming-soon', icon: 'games' },
+      { title: '2048 Game', description: 'Classic 2048 puzzle game', path: '/tools/2048', status: 'available', icon: 'games' },
     ]
   },
   {
@@ -60,9 +60,9 @@ const toolsCategories = [
     description: 'Unit conversion and calculation tools',
     icon: 'calculator',
     tools: [
-      { title: 'Scientific Calculator', description: 'Advanced calculator with functions', path: '/tools/calculator', status: 'coming-soon', icon: 'calculator' },
+      { title: 'Scientific Calculator', description: 'Advanced calculator with functions', path: '/tools/calculator', status: 'available', icon: 'calculator' },
       { title: 'Color Picker', description: 'Color tools & palette generator', path: '/tools/color', status: 'available', icon: 'color' },
-      { title: 'Timezone Converter', description: 'World clock & timezone converter', path: '/tools/timezone', status: 'unavailable', icon: 'time' },
+      { title: 'Timezone Converter', description: 'World clock & timezone converter', path: '/tools/timezone', status: 'available', icon: 'time' },
       { title: 'File Converter', description: 'Image & file format converter', path: '/tools/converter', status: 'unavailable', icon: 'file' },
     ]
   },

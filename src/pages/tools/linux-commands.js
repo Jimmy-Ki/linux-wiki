@@ -1,12 +1,14 @@
 import React from 'react';
-import ToolPage from '../../components/ToolPage';
+import ToolPageWithAds from '../../components/ToolPageWithAds';
+import LinuxCommandsGenerator from '../../components/LinuxCommandsGenerator';
 
 export default function LinuxCommandsPage() {
   return (
-    <ToolPage
-      title="Command Generator"
-      description="Cron jobs, systemd helpers and Linux command generators"
-      comingSoon={true}
-    />
+    <ToolPageWithAds
+      title="Linux Command Generator - Linux Wiki Tools"
+      description="Generate and customize Linux commands for system administration, networking, and development"
+    >
+      <LinuxCommandsGenerator />
+    </ToolPageWithAds>
   );
 }

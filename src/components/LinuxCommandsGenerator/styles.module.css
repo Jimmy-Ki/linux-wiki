@@ -1,0 +1,488 @@
+.container {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.categories {
+  background: var(--ifm-card-background-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: fit-content;
+}
+
+.categories h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.categoryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem;
+  background: var(--ifm-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.categoryCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.categoryCard.active {
+  background: var(--ifm-color-primary-lightest);
+  border-color: var(--ifm-color-primary);
+}
+
+.categoryCard svg {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.categoryCard h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.categoryCard p {
+  font-size: 0.875rem;
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+.commandsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.commandsList {
+  background: var(--ifm-card-background-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.commandsList h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.commandCards {
+  display: grid;
+  gap: 1rem;
+}
+
+.commandCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1.25rem;
+  background: var(--ifm-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.commandCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.commandCard.active {
+  background: var(--ifm-color-primary-lightest);
+  border-color: var(--ifm-color-primary);
+}
+
+.commandCard h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.commandCard p {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+.commandPreview {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.8rem;
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-900);
+  margin: 0;
+}
+
+.generatorPanel {
+  background: var(--ifm-card-background-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.generatorPanel h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.parameters {
+  margin-bottom: 2rem;
+}
+
+.parameters h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1rem;
+}
+
+.parameter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.parameter label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.textInput,
+.numberInput,
+.passwordInput,
+.selectInput {
+  padding: 0.75rem;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-900);
+  transition: border-color 0.2s ease;
+}
+
+.textInput:focus,
+.numberInput:focus,
+.passwordInput:focus,
+.selectInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.generatedCommand {
+  margin-bottom: 2rem;
+}
+
+.generatedCommand h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1rem;
+}
+
+.commandOutput {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+
+.commandOutput pre {
+  margin: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  color: #fff;
+  overflow-x: auto;
+}
+
+.commandOutput code {
+  background: none;
+}
+
+.commandActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.commandInfo {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 1.5rem;
+}
+
+.commandInfo h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 0.75rem;
+}
+
+.commandInfo p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.warningNote {
+  background: var(--ifm-color-warning-lightest);
+  border: 1px solid var(--ifm-color-warning);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-warning-dark);
+}
+
+.warningNote strong {
+  color: var(--ifm-color-warning-darker);
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--ifm-card-background-color);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.feature h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.feature p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .categories {
+    order: 1;
+  }
+
+  .commandsSection {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem 0 3rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .categories,
+  .commandsList,
+  .generatorPanel {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
+  .categoryCard {
+    padding: 0.75rem;
+  }
+
+  .commandCard {
+    padding: 1rem;
+  }
+
+  .commandOutput {
+    padding: 0.75rem;
+  }
+
+  .commandOutput pre {
+    font-size: 0.8rem;
+  }
+
+  .commandActions {
+    flex-wrap: wrap;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0 1rem;
+  }
+
+  .feature {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .categoryCard,
+  .commandCard {
+    padding: 0.75rem;
+  }
+
+  .categoryCard h4,
+  .commandCard h4 {
+    font-size: 0.95rem;
+  }
+
+  .categoryCard p,
+  .commandCard p {
+    font-size: 0.8rem;
+  }
+
+  .commandPreview {
+    font-size: 0.75rem;
+  }
+
+  .actionButton {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .actionButton span:not(:first-child) {
+    display: none;
+  }
+}
+
+[data-theme='dark'] .categories,
+[data-theme='dark'] .commandsList,
+[data-theme='dark'] .generatorPanel {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .categoryCard,
+[data-theme='dark'] .commandCard {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .categoryCard.active,
+[data-theme='dark'] .commandCard.active {
+  background: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .textInput,
+[data-theme='dark'] .numberInput,
+[data-theme='dark'] .passwordInput,
+[data-theme='dark'] .selectInput {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .feature {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .warningNote {
+  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-warning-dark);
+}
