@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - 200px);
-  max-height: calc(100vh - 200px);
   background: var(--ifm-background-color);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--ifm-color-emphasis-200);
-  min-height: 0;
 }
 
 .fullscreen {
@@ -26,6 +24,22 @@
   box-shadow: none !important;
   padding-bottom: 0 !important;
   margin: 0 !important;
+}
+
+/* Ensure z-index consistency across all themes */
+[data-theme='dark'] .fullscreen,
+[data-theme='light'] .fullscreen {
+  z-index: 999999 !important;
+}
+
+/* Fix heights in fullscreen mode */
+.fullscreen .editorContainer {
+  height: calc(100vh - 120px) !important;
+}
+
+.fullscreen .editor,
+.fullscreen .preview {
+  height: calc(100% - 60px) !important;
 }
 
 /* Global styles to prevent background scrolling when in fullscreen */
@@ -125,20 +139,20 @@ body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
 .editorContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  flex: 1;
+  height: calc(100% - 120px);
   overflow: hidden;
-  min-height: 0;
 }
 
 .editorOnly {
   grid-template-columns: 1fr;
+  height: calc(100% - 120px);
 }
 
 .editorPanel,
 .previewPanel {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -166,7 +180,7 @@ body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
 }
 
 .editor {
-  flex: 1;
+  height: calc(100% - 60px);
   padding: 1.5rem;
   border: none;
   background: var(--ifm-background-color);
@@ -176,10 +190,9 @@ body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
   line-height: 1.6;
   resize: none;
   outline: none;
-  overflow-y: auto;
+  overflow-y: scroll !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  min-height: 0;
 }
 
 .editor::placeholder {
@@ -187,15 +200,14 @@ body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
 }
 
 .preview {
-  flex: 1;
+  height: calc(100% - 60px);
   padding: 1.5rem;
-  overflow-y: auto;
+  overflow-y: scroll !important;
   overflow-x: hidden;
   background: var(--ifm-background-color);
   color: var(--ifm-color-emphasis-800);
   line-height: 1.6;
   scroll-behavior: smooth;
-  min-height: 0;
 }
 
 /* Ensure proper scrollbar styling for both editor and preview */
