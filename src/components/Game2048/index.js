@@ -179,20 +179,24 @@ export default function Game2048() {
   const handleKeyPress = useCallback((e) => {
     if (gameOver && !won) return;
 
-    switch (e.key) {
-      case 'ArrowLeft':
+    switch (e.key.toLowerCase()) {
+      case 'arrowleft':
+      case 'a':
         e.preventDefault();
         move('left');
         break;
-      case 'ArrowRight':
+      case 'arrowright':
+      case 'd':
         e.preventDefault();
         move('right');
         break;
-      case 'ArrowUp':
+      case 'arrowup':
+      case 'w':
         e.preventDefault();
         move('up');
         break;
-      case 'ArrowDown':
+      case 'arrowdown':
+      case 's':
         e.preventDefault();
         move('down');
         break;
@@ -295,7 +299,7 @@ export default function Game2048() {
 
         <div className={styles.controls}>
           <h3>How to Play</h3>
-          <p>Use arrow keys to move tiles. When two tiles with the same number touch, they merge into one!</p>
+          <p>Use arrow keys or WASD to move tiles. When two tiles with the same number touch, they merge into one!</p>
           <div className={styles.arrowKeys}>
             <div></div>
             <button
@@ -334,7 +338,7 @@ export default function Game2048() {
           <div className={styles.instructionSection}>
             <h4>Game Rules</h4>
             <ul>
-              <li>Use arrow keys to move tiles in any direction</li>
+              <li>Use arrow keys or WASD to move tiles in any direction</li>
               <li>When two tiles with the same number touch, they merge into one</li>
               <li>After each move, a new tile (2 or 4) appears randomly</li>
               <li>The goal is to create a tile with the number 2048</li>
