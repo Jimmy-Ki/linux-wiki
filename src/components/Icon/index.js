@@ -5,7 +5,7 @@ import {
   // Status Icons
   IconCircleCheck, IconCircleX, IconPlayerPlay, IconClock,
   // Tool Specific Icons
-  IconLock, IconQrcode, IconId, IconBinary, IconMarkdown, IconRegex, IconBrackets, IconHash, IconLetterCase, IconPalette,
+  IconLock, IconQrcode, IconId, IconBinary, IconMarkdown, IconRegex, IconBrackets, IconHash, IconLetterCase, IconPalette, IconCpu,
   // Action Icons
   IconCopy, IconDownload, IconUpload, IconRefresh, IconCheck, IconX,
   // File Type Icons
@@ -63,7 +63,10 @@ const icons = {
   time: IconClockHour3,
 
   // UI Icons
-  settings: IconSettings
+  settings: IconSettings,
+
+  // Additional icons
+  cpu: IconCpu
 };
 
 export default function Icon({ name, size = 'medium', className = '', style = {} }) {

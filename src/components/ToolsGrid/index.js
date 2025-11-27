@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '@site/src/components/Icon';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -8,7 +9,7 @@ const toolsCategories = [
     icon: 'security',
     tools: [
       { title: 'Password Generator', description: 'Strong passwords with customizable options', path: '/tools/password', status: 'available', icon: 'password' },
-      { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', status: 'available', icon: 'hash' },
+      { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', status: 'available', icon: 'base64' },
       { title: 'Hash Generator', description: 'Various hash functions and algorithms', path: '/tools/hash', status: 'available', icon: 'hash' },
     ]
   },
@@ -40,7 +41,7 @@ const toolsCategories = [
     description: 'Linux-specific tools and helpers',
     icon: 'linux',
     tools: [
-      { title: 'Command Generator', description: 'Cron jobs, systemd helpers', path: '/tools/linux-commands', status: 'coming-soon', icon: 'code' },
+      { title: 'Command Generator', description: 'Cron jobs, systemd helpers', path: '/tools/linux-commands', status: 'coming-soon', icon: 'cpu' },
     ]
   },
   {
@@ -68,18 +69,8 @@ const toolsCategories = [
 ];
 
 const getIconComponent = (iconName, size = 'small') => {
-  // Use simple text symbols to avoid import issues
-  const iconMap = {
-    'available': '✓',
-    'unavailable': '✗',
-    'coming-soon': '⏳',
-    'security': '🔒',
-    'default': '📄'
-  };
-
-  const symbol = iconMap[iconName] || '📄';
-
-  return <span style={{ fontSize: '16px' }}>{symbol}</span>;
+  // Use our Icon component now
+  return <Icon name={iconName} size={size} />;
 };
 
 const getStatusConfig = (status) => {
@@ -117,7 +108,7 @@ function ToolCard({ tool }) {
     <>
       <div className={styles.toolContent}>
         <div className={styles.toolHeader}>
-          <span style={{ fontSize: '16px', marginRight: '8px' }}>🔧</span>
+          <Icon name={tool.icon} size="medium" />
           <h3 className={styles.toolTitle}>{tool.title}</h3>
         </div>
         <p className={styles.toolDescription}>{tool.description}</p>
@@ -149,7 +140,7 @@ function ToolsCategory({ category }) {
     <div className={styles.category}>
       <div className={styles.categoryHeader}>
         <div className={`${styles.categoryIcon} ${getCategoryIconClass(category.icon)}`}>
-          <span style={{ fontSize: '32px' }}>🔧</span>
+          <Icon name={category.icon} size="xlarge" />
         </div>
         <div>
           <h2 className={styles.categoryTitle}>{category.title}</h2>
