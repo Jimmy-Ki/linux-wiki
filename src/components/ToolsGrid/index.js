@@ -128,7 +128,7 @@ const getIconComponent = (iconName, size = 'small') => {
   };
 
   const IconComponent = iconMap[iconName] || DocumentIcon;
-  const sizeClass = size === 'large' ? 'w-8 h-8' : 'w-5 h-5';
+  const sizeClass = 'w-4 h-4';
 
   return <IconComponent className={sizeClass} />;
 };

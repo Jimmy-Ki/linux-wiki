@@ -221,10 +221,10 @@ export default function ColorPicker() {
 
               <div className={styles.colorActions}>
                 <button onClick={generateRandomColor} className={styles.randomButton}>
-                  <ArrowPathIcon className="w-5 h-5" /> Random
+                  <ArrowPathIcon className="w-4 h-4" /> Random
                 </button>
                 <button onClick={saveColor} className={styles.saveButton}>
-                  <ArrowDownTrayIcon className="w-5 h-5" /> Save
+                  <ArrowDownTrayIcon className="w-4 h-4" /> Save
                 </button>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(hexColor)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-5 h-5" />
+                    <ClipboardDocumentIcon className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-5 h-5" />
+                    <ClipboardDocumentIcon className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -339,7 +339,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`hsl(${hslColor.h}, ${hslColor.s}%, ${hslColor.l}%)`)}
                     className={styles.copyButton}
                   >
-                    <ClipboardDocumentIcon className="w-5 h-5" />
+                    <ClipboardDocumentIcon className="w-4 h-4" />
                   </button>
                 </div>
               </div>

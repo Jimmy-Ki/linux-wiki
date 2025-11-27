@@ -110,7 +110,7 @@ export default function CommandSearch() {
             className={styles.clearButton}
             onClick={() => setSearchTerm('')}
           >
-            <XMarkIcon className="w-5 h-5" />
+            <XMarkIcon className="w-4 h-4" />
           </button>
         )}
       </div>
@@ -145,7 +145,7 @@ export default function CommandSearch() {
       {!isLoading && searchTerm.length >= 2 && searchResults.length === 0 && (
         <div className={styles.noResults}>
           <div className={styles.noResultsIcon}>
-            <MagnifyingGlassIcon className="w-6 h-6" />
+            <MagnifyingGlassIcon className="w-4 h-4" />
           </div>
           <div className={styles.noResultsText}>
             No commands found for "{searchTerm}"

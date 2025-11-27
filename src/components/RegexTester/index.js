@@ -229,7 +229,7 @@ export default function RegexTester() {
               <h3>Results</h3>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}><XMarkIcon className="w-5 h-5" /></span>
+                  <span className={styles.errorIcon}><XMarkIcon className="w-4 h-4" /></span>
                   {error}
                 </div>
               )}

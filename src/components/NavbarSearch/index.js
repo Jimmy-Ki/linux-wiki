@@ -94,7 +94,7 @@ export default function NavbarSearch() {
           className={styles.searchInput}
         />
         <div className={styles.searchIcon}>
-          <MagnifyingGlassIcon className="w-5 h-5" />
+          <MagnifyingGlassIcon className="w-4 h-4" />
         </div>
       </div>
 
