@@ -15,7 +15,7 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  z-index: 99999 !important;
+  z-index: 999999 !important;
   height: 100vh !important;
   width: 100vw !important;
   border-radius: 0 !important;
@@ -23,6 +23,7 @@
   background: var(--ifm-background-color) !important;
   box-shadow: none !important;
   padding-bottom: 0 !important;
+  margin: 0 !important;
 }
 
 /* Global styles to prevent background scrolling when in fullscreen */
@@ -33,7 +34,12 @@ body:has(.fullscreen) {
 /* Hide footers and other overlay elements when editor is in fullscreen */
 body:has(.fullscreen) footer,
 body:has(.fullscreen) .navbar,
-body:has(.fullscreen) .footer {
+body:has(.fullscreen) .footer,
+body:has(.fullscreen) .sponsor,
+body:has(.fullscreen) [class*="sponsor"],
+body:has(.fullscreen) [class*="ads"],
+body:has(.fullscreen) [class*="advertisement"],
+body:has(.fullscreen) div[style*="position: fixed"][style*="bottom"] {
   display: none !important;
 }
 
@@ -166,7 +172,7 @@ body:has(.fullscreen) .footer {
   line-height: 1.6;
   resize: none;
   outline: none;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -178,7 +184,7 @@ body:has(.fullscreen) .footer {
 .preview {
   flex: 1;
   padding: 1.5rem;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   background: var(--ifm-background-color);
   color: var(--ifm-color-emphasis-800);
