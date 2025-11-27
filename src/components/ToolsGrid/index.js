@@ -7,7 +7,9 @@ const toolsCategories = [
     description: 'Encryption, encoding, and hashing tools',
     icon: 'Lock',
     tools: [
+      { title: 'Password Generator', description: 'Strong passwords with customizable options', path: '/tools/password', difficulty: 'easy' },
       { title: 'Encryption Tools', description: 'Base64, AES, MD5, SHA, Caesar cipher and more', path: '/tools/encryption', difficulty: 'easy' },
+      { title: 'Hash Generator', description: 'Various hash functions and algorithms', path: '/tools/hash', difficulty: 'medium' },
     ]
   },
   {
@@ -29,7 +31,8 @@ const toolsCategories = [
       { title: 'Regex Tester', description: 'Test regex patterns', path: '/tools/regex', difficulty: 'medium' },
       { title: 'JSON Formatter', description: 'Format and validate JSON', path: '/tools/json', difficulty: 'easy' },
       { title: 'Markdown Editor', description: 'Live preview editor', path: '/tools/markdown', difficulty: 'easy' },
-      { title: 'Hash Generator', description: 'Various hash functions', path: '/tools/hash', difficulty: 'medium' },
+      { title: 'UUID Generator', description: 'Generate unique identifiers', path: '/tools/uuid', difficulty: 'easy' },
+      { title: 'Base64 Encoder', description: 'Encode and decode Base64 text', path: '/tools/base64', difficulty: 'easy' },
     ]
   },
   {
@@ -45,10 +48,10 @@ const toolsCategories = [
     description: 'Entertainment and creative tools',
     icon: 'Palette',
     tools: [
+      { title: 'QR Code Generator', description: 'Create custom QR codes', path: '/tools/qrcode', difficulty: 'easy' },
       { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', difficulty: 'easy' },
       { title: 'Meme Generator', description: 'Create funny memes', path: '/tools/meme', difficulty: 'medium' },
       { title: '2048 Game', description: 'Classic puzzle game', path: '/tools/2048', difficulty: 'medium' },
-      { title: 'Fun Tools', description: 'Productivity calculators', path: '/tools/fun', difficulty: 'medium' },
     ]
   },
   {
@@ -107,17 +110,20 @@ function ToolsCategory({ category }) {
 }
 
 export default function ToolsGrid() {
+  // Count total tools
+  const totalTools = toolsCategories.reduce((sum, category) => sum + category.tools.length, 0);
+
   return (
     <div className={styles.toolsContainer}>
       <div className="container">
         <div className={styles.header}>
           <h1 className={styles.title}>Linux Wiki Tools Collection</h1>
           <p className={styles.subtitle}>
-            25+ free online tools for developers, sysadmins, and tech enthusiasts.
+            {totalTools}+ free online tools for developers, sysadmins, and tech enthusiasts.
             All tools run in your browser - no server required!
           </p>
           <div className={styles.stats}>
-            <span>25+ Tools</span>
+            <span>{totalTools}+ Tools</span>
             <span>Free Forever</span>
             <span>Privacy First</span>
           </div>

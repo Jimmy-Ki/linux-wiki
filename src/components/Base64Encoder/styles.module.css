@@ -1,0 +1,520 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.modeSelector {
+  margin-bottom: 2rem;
+}
+
+.modeSelector h3 {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-content);
+  font-size: 1.2rem;
+}
+
+.modeButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.modeButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modeButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.modeButton.active {
+  background: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+}
+
+.swapButton {
+  padding: 0.75rem 1rem;
+  background: var(--ifm-color-secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.swapButton:hover:not(:disabled) {
+  background: var(--ifm-color-secondary-dark);
+}
+
+.swapButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.encodingSelector {
+  margin-bottom: 2rem;
+}
+
+.encodingSelector h3 {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-content);
+  font-size: 1.2rem;
+}
+
+.encodingOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.encodingButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.encodingButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.encodingButton.active {
+  background: var(--ifm-color-primary-light);
+  border-color: var(--ifm-color-primary);
+}
+
+.encodingHeader {
+  margin-bottom: 0.5rem;
+}
+
+.encodingHeader strong {
+  color: var(--ifm-color-content);
+  font-size: 1.1rem;
+}
+
+.encodingDescription {
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.encodingUseCase {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.inputSection, .outputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeader h3 {
+  margin: 0;
+  color: var(--ifm-color-content);
+  font-size: 1.2rem;
+}
+
+.inputActions, .outputActions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.fileButton, .copyButton, .downloadButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.fileButton {
+  background: var(--ifm-color-info);
+  color: white;
+}
+
+.fileButton:hover {
+  background: var(--ifm-color-info-dark);
+}
+
+.copyButton {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.copyButton:hover:not(:disabled) {
+  background: var(--ifm-color-primary-dark);
+}
+
+.copyButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.downloadButton {
+  background: var(--ifm-color-success);
+  color: white;
+}
+
+.downloadButton:hover:not(:disabled) {
+  background: var(--ifm-color-success-dark);
+}
+
+.downloadButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.processing {
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 1rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  resize: vertical;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
+  line-height: 1.5;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-color);
+}
+
+.textarea.readonly {
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+}
+
+.inputStats, .outputStats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.samplesSection {
+  margin-top: 1rem;
+}
+
+.samplesSection h4 {
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-content);
+  font-size: 1rem;
+}
+
+.sampleButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sampleButton {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sampleButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.error {
+  background: var(--ifm-color-danger-light);
+  border: 2px solid var(--ifm-color-danger);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--ifm-color-danger-darker);
+}
+
+.error h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.error p {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.clearButton {
+  padding: 0.75rem 2rem;
+  background: var(--ifm-color-danger);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  background: var(--ifm-color-danger-dark);
+  transform: translateY(-1px);
+}
+
+.historySection {
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.historySection h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-content);
+  font-size: 1.2rem;
+}
+
+.historyGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.historyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.historyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.historyHeader strong {
+  color: var(--ifm-color-content);
+}
+
+.historyHeader span {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.historyButton {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.historyButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.infoSection {
+  margin-top: 3rem;
+}
+
+.infoSection h2 {
+  text-align: center;
+  color: var(--ifm-color-content);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.infoCard {
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.infoCard h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.1rem;
+}
+
+.infoCard p {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.infoCard ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.infoCard li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.infoCard ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.infoCard ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.charset {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--ifm-color-content);
+}
+
+.charset strong {
+  color: var(--ifm-color-emphasis-800);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .modeButtons {
+    justify-content: center;
+  }
+
+  .encodingOptions {
+    grid-template-columns: 1fr;
+  }
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .inputActions, .outputActions {
+    justify-content: center;
+  }
+
+  .sampleButtons {
+    justify-content: center;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .historyHeader {
+    align-items: flex-start;
+  }
+
+  .historyItem {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .historyButton {
+    align-self: center;
+  }
+}
