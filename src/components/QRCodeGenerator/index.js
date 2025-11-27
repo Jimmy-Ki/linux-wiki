@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import QRCode from 'qrcode';
+import Icon from '../Icon';
 import styles from './styles.module.css';
 
 export default function QRCodeGenerator() {
@@ -131,14 +132,14 @@ export default function QRCodeGenerator() {
   };
 
   const getSampleTexts = () => [
-    { label: 'URL', value: 'https://linux.wiki', icon: '🌐' },
-    { label: 'Email', value: 'mailto:contact@linux.wiki', icon: '📧' },
-    { label: 'Phone', value: 'tel:+1234567890', icon: '📱' },
-    { label: 'WiFi', value: 'WIFI:T:WPA;S:MyNetwork;P:MyPassword;;', icon: '📶' },
-    { label: 'vCard', value: 'BEGIN:VCARD\nVERSION:3.0\nFN:Linux Wiki\nTEL:+1234567890\nEMAIL:contact@linux.wiki\nEND:VCARD', icon: '👤' },
-    { label: 'Location', value: 'geo:37.7749,-122.4194', icon: '📍' },
-    { label: 'SMS', value: 'sms:+1234567890?body=Hello Linux Wiki!', icon: '💬' },
-    { label: 'Plain Text', value: 'Hello from Linux Wiki!', icon: '📝' }
+    { label: 'URL', value: 'https://linux.wiki', icon: 'link' },
+    { label: 'Email', value: 'mailto:contact@linux.wiki', icon: 'file' },
+    { label: 'Phone', value: 'tel:+1234567890', icon: 'link' },
+    { label: 'WiFi', value: 'WIFI:T:WPA;S:MyNetwork;P:MyPassword;;', icon: 'link' },
+    { label: 'vCard', value: 'BEGIN:VCARD\nVERSION:3.0\nFN:Linux Wiki\nTEL:+1234567890\nEMAIL:contact@linux.wiki\nEND:VCARD', icon: 'file' },
+    { label: 'Location', value: 'geo:37.7749,-122.4194', icon: 'link' },
+    { label: 'SMS', value: 'sms:+1234567890?body=Hello Linux Wiki!', icon: 'file' },
+    { label: 'Plain Text', value: 'Hello from Linux Wiki!', icon: 'file' }
   ];
 
   const getErrorCorrectionInfo = () => ({
@@ -175,7 +176,7 @@ export default function QRCodeGenerator() {
                     className={styles.sampleButton}
                     title={sample.label}
                   >
-                    <span className={styles.sampleIcon}>{sample.icon}</span>
+                    <span className={styles.sampleIcon}><Icon name={sample.icon} size="small" /></span>
                     <span className={styles.sampleLabel}>{sample.label}</span>
                   </button>
                 ))}
@@ -312,7 +313,7 @@ export default function QRCodeGenerator() {
                   onClick={copyToClipboard}
                   className={styles.copyButton}
                 >
-                  📋 Copy Image
+                  <Icon name="copy" size="small" /> Copy Image
                 </button>
 
                 <div className={styles.downloadButtons}>
@@ -320,19 +321,19 @@ export default function QRCodeGenerator() {
                     onClick={() => downloadQRCode('png')}
                     className={styles.downloadButton}
                   >
-                    💾 PNG
+                    <Icon name="download" size="small" /> PNG
                   </button>
                   <button
                     onClick={() => downloadQRCode('jpg')}
                     className={styles.downloadButton}
                   >
-                    🖼️ JPG
+                    <Icon name="image" size="small" /> JPG
                   </button>
                   <button
                     onClick={() => downloadQRCode('svg')}
                     className={styles.downloadButton}
                   >
-                    🎨 SVG
+                    <Icon name="file" size="small" /> SVG
                   </button>
                 </div>
               </div>
@@ -366,27 +367,27 @@ export default function QRCodeGenerator() {
           <h2>Features & Use Cases</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.feature}>
-              <h4>🌐 Multiple Formats</h4>
+              <h4><Icon name="link" size="small" /> Multiple Formats</h4>
               <p>Generate QR codes for URLs, email addresses, phone numbers, WiFi credentials, contact cards, and more</p>
             </div>
             <div className={styles.feature}>
-              <h4>🎨 Custom Design</h4>
+              <h4><Icon name="color" size="small" /> Custom Design</h4>
               <p>Customize colors, size, and error correction level to match your branding or requirements</p>
             </div>
             <div className={styles.feature}>
-              <h4>📱 Universal Compatibility</h4>
+              <h4><Icon name="link" size="small" /> Universal Compatibility</h4>
               <p>Works with all smartphone cameras and QR code scanner apps</p>
             </div>
             <div className={styles.feature}>
-              <h4>💾 Multiple Export Formats</h4>
+              <h4><Icon name="download" size="small" /> Multiple Export Formats</h4>
               <p>Download as PNG, JPG, or SVG for use in print, web, or applications</p>
             </div>
             <div className={styles.feature}>
-              <h4>⚡ Instant Generation</h4>
+              <h4><Icon name="refresh" size="small" /> Instant Generation</h4>
               <p>Real-time QR code generation as you type or modify settings</p>
             </div>
             <div className={styles.feature}>
-              <h4>🔒 Reliable Error Correction</h4>
+              <h4><Icon name="security" size="small" /> Reliable Error Correction</h4>
               <p>Multiple error correction levels ensure QR codes remain scannable even when damaged</p>
             </div>
           </div>

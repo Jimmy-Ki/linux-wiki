@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import commandsData from '../../data/commands.json';
+import Icon from '../Icon';
 import styles from './NavbarSearch.module.css';
 
 export default function NavbarSearch() {
@@ -93,7 +94,7 @@ export default function NavbarSearch() {
           className={styles.searchInput}
         />
         <div className={styles.searchIcon}>
-          🔍
+          <Icon name="search" size="small" />
         </div>
       </div>
 

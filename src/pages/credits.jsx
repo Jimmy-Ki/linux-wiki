@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Icon from '../components/Icon';
 import styles from './credits.module.css';
 
 export default function Credits() {
@@ -19,7 +20,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2>🐧 Linux Command Reference Foundation</h2>
+                <h2><Icon name="linux" size="small" /> Linux Command Reference Foundation</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -30,10 +31,10 @@ export default function Credits() {
                   <p>A complete Linux command reference project by <strong>jaywcjlove</strong></p>
                   <div className={styles.projectLinks}>
                     <a href="https://github.com/jaywcjlove/linux-command" target="_blank" rel="noopener noreferrer" className="button button--primary">
-                      🔗 View on GitHub
+                      <Icon name="link" size="small" /> View on GitHub
                     </a>
                     <a href="https://wangchujiang.com/linux-command/" target="_blank" rel="noopener noreferrer" className="button button--secondary">
-                      🌐 Live Demo
+                      <Icon name="link" size="small" /> Live Demo
                     </a>
                   </div>
                   <p className={styles.licenseInfo}>
@@ -54,7 +55,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2>⚛️ Framework & Technology</h2>
+                <h2><Icon name="code" size="small" /> Framework & Technology</h2>
               </div>
               <div className="card__body">
                 <div className={styles.techGrid}>
@@ -89,7 +90,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2>📖 How to Contribute</h2>
+                <h2><Icon name="file" size="small" /> How to Contribute</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -97,29 +98,29 @@ export default function Credits() {
                 </p>
                 <div className={styles.contributeWays}>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}>🔧</span>
+                    <span className={styles.icon}><Icon name="settings" size="small" /></span>
                     <h4>Fix Errors</h4>
                     <p>Report and fix documentation errors</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}>📝</span>
+                    <span className={styles.icon}><Icon name="file" size="small" /></span>
                     <h4>Add Content</h4>
                     <p>Contribute new command documentation</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}>🌍</span>
+                    <span className={styles.icon}><Icon name="link" size="small" /></span>
                     <h4>Translate</h4>
                     <p>Help translate content to other languages</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}>💡</span>
+                    <span className={styles.icon}><Icon name="creative" size="small" /></span>
                     <h4>Improve Examples</h4>
                     <p>Add better examples and use cases</p>
                   </div>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '2rem'}}>
                   <a href="https://github.com/Jimmy-Ki/linux-wiki" target="_blank" rel="noopener noreferrer" className="button button--primary button--lg">
-                    🚀 Contribute on GitHub
+                    <Icon name="upload" size="small" /> Contribute on GitHub
                   </a>
                 </div>
               </div>
@@ -131,7 +132,7 @@ export default function Credits() {
           <div className="col col--8 col--offset-2">
             <div className="card">
               <div className="card__header">
-                <h2>⚖️ License Information</h2>
+                <h2><Icon name="security" size="small" /> License Information</h2>
               </div>
               <div className="card__body">
                 <p>
@@ -151,7 +152,7 @@ export default function Credits() {
         <div className="row margin-vert--lg">
           <div className="col col--8 col--offset-2 text--center">
             <p className={styles.footerNote}>
-              💝 <strong>Thank you</strong> to everyone who contributes to making Linux knowledge
+              <Icon name="check" size="small" /> <strong>Thank you</strong> to everyone who contributes to making Linux knowledge
               accessible and understandable for users around the world.
             </p>
             <p>

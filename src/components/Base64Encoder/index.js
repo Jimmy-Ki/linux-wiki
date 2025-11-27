@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
+import Icon from '../Icon';
 
 export default function Base64Encoder() {
   const [inputText, setInputText] = useState('');
@@ -195,20 +196,20 @@ export default function Base64Encoder() {
               onClick={() => setMode('encode')}
               className={`${styles.modeButton} ${mode === 'encode' ? styles.active : ''}`}
             >
-              🔐 Encode
+              <Icon name="security" size="small" /> Encode
             </button>
             <button
               onClick={() => setMode('decode')}
               className={`${styles.modeButton} ${mode === 'decode' ? styles.active : ''}`}
             >
-              🔓 Decode
+              <Icon name="security" size="small" /> Decode
             </button>
             <button
               onClick={swapInputOutput}
               className={styles.swapButton}
               disabled={!inputText && !outputText}
             >
-              🔄 Swap
+              <Icon name="refresh" size="small" /> Swap
             </button>
           </div>
         </div>
@@ -245,7 +246,7 @@ export default function Base64Encoder() {
                   onClick={() => fileInputRef.current?.click()}
                   className={styles.fileButton}
                 >
-                  📁 Upload File
+                  <Icon name="file" size="small" /> Upload File
                 </button>
                 <input
                   ref={fileInputRef}
@@ -259,7 +260,7 @@ export default function Base64Encoder() {
                   className={styles.copyButton}
                   disabled={!inputText}
                 >
-                  📋 Copy
+                  <Icon name="copy" size="small" /> Copy
                 </button>
               </div>
             </div>
@@ -304,21 +305,21 @@ export default function Base64Encoder() {
                   className={styles.downloadButton}
                   disabled={!outputText}
                 >
-                  💾 Download
+                  <Icon name="download" size="small" /> Download
                 </button>
                 <button
                   onClick={copyToClipboard}
                   className={styles.copyButton}
                   disabled={!outputText}
                 >
-                  📋 Copy
+                  <Icon name="copy" size="small" /> Copy
                 </button>
               </div>
             </div>
 
             {error ? (
               <div className={styles.error}>
-                <h4>⚠️ Error</h4>
+                <h4><Icon name="close" size="small" /> Error</h4>
                 <p>{error}</p>
               </div>
             ) : (
@@ -342,7 +343,7 @@ export default function Base64Encoder() {
 
         <div className={styles.actionButtons}>
           <button onClick={clearAll} className={styles.clearButton}>
-            🗑️ Clear All
+            <Icon name="close" size="small" /> Clear All
           </button>
         </div>
 
@@ -360,7 +361,7 @@ export default function Base64Encoder() {
                     onClick={() => loadFromHistory(item)}
                     className={styles.historyButton}
                   >
-                    📄 Load
+                    <Icon name="file" size="small" /> Load
                   </button>
                 </div>
               ))}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import Icon from '../Icon';
 import styles from './styles.module.css';
 
 export default function PasswordGenerator() {
@@ -154,13 +155,13 @@ export default function PasswordGenerator() {
             </div>
             <div className={styles.passwordActions}>
               <button onClick={copyToClipboard} className={styles.copyButton} disabled={!password}>
-                📋 Copy
+                <Icon name="copy" size="small" /> Copy
               </button>
               <button onClick={regeneratePassword} className={styles.regenerateButton}>
-                🔄 Regenerate
+                <Icon name="refresh" size="small" /> Regenerate
               </button>
               <button onClick={savePassword} className={styles.saveButton} disabled={!password || passwordHistory.includes(password)}>
-                💾 Save
+                <Icon name="download" size="small" /> Save
               </button>
             </div>
           </div>
@@ -272,10 +273,10 @@ export default function PasswordGenerator() {
               <h3>Password History</h3>
               <div className={styles.historyActions}>
                 <button onClick={copyAllPasswords} className={styles.copyAllButton}>
-                  📋 Copy All
+                  <Icon name="copy" size="small" /> Copy All
                 </button>
                 <button onClick={clearHistory} className={styles.clearButton}>
-                  🗑️ Clear
+                  <Icon name="close" size="small" /> Clear
                 </button>
               </div>
             </div>
@@ -287,7 +288,7 @@ export default function PasswordGenerator() {
                     onClick={() => navigator.clipboard.writeText(pwd)}
                     className={styles.historyCopy}
                   >
-                    📋
+                    <Icon name="copy" size="small" />
                   </button>
                 </div>
               ))}
@@ -298,7 +299,7 @@ export default function PasswordGenerator() {
         <div className={styles.infoSection}>
           <div className={styles.infoGrid}>
             <div className={styles.infoCard}>
-              <h4>🔒 Security Best Practices</h4>
+              <h4><Icon name="security" size="small" /> Security Best Practices</h4>
               <ul>
                 <li>Use at least 12 characters for important accounts</li>
                 <li>Include uppercase, lowercase, numbers, and symbols</li>
@@ -307,7 +308,7 @@ export default function PasswordGenerator() {
               </ul>
             </div>
             <div className={styles.infoCard}>
-              <h4>📊 Password Strength</h4>
+              <h4><Icon name="color" size="small" /> Password Strength</h4>
               <ul>
                 <li><strong>Weak:</strong> Short, simple patterns</li>
                 <li><strong>Fair:</strong> Mixed character types</li>
@@ -316,7 +317,7 @@ export default function PasswordGenerator() {
               </ul>
             </div>
             <div className={styles.infoCard}>
-              <h4>🛡️ Advanced Features</h4>
+              <h4><Icon name="security" size="small" /> Advanced Features</h4>
               <ul>
                 <li><strong>Exclude Similar:</strong> Removes confusing characters</li>
                 <li><strong>Exclude Ambiguous:</strong> Removes symbols that may cause issues</li>

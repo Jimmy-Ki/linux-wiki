@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
+import Icon from '../Icon';
 
 export default function JSONFormatter() {
   const [input, setInput] = useState('');
@@ -116,7 +117,7 @@ export default function JSONFormatter() {
             <div className={styles.outputContainer}>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}>⚠️</span>
+                  <span className={styles.errorIcon}><Icon name="close" size="small" /></span>
                   {error}
                 </div>
               )}
@@ -147,7 +148,7 @@ export default function JSONFormatter() {
             <div className={styles.stat}>
               <span className={styles.statLabel}>Status:</span>
               <span className={`${styles.statValue} ${isValid ? styles.valid : styles.invalid}`}>
-                {isValid ? '✅ Valid JSON' : (input ? '❌ Invalid' : '⏳ Waiting')}
+                {isValid ? <><Icon name="check" size="small" /> Valid JSON</> : (input ? <><Icon name="close" size="small" /> Invalid</> : <><Icon name="time" size="small" /> Waiting</>)}
               </span>
             </div>
           </div>

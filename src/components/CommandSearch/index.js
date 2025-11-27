@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
 import commandsData from '../../data/commands.json';
+import Icon from '../Icon';
 import styles from './CommandSearch.module.css';
 
 export default function CommandSearch() {
@@ -109,7 +110,7 @@ export default function CommandSearch() {
             className={styles.clearButton}
             onClick={() => setSearchTerm('')}
           >
-            ✕
+            <Icon name="close" size="small" />
           </button>
         )}
       </div>
@@ -143,7 +144,9 @@ export default function CommandSearch() {
 
       {!isLoading && searchTerm.length >= 2 && searchResults.length === 0 && (
         <div className={styles.noResults}>
-          <div className={styles.noResultsIcon}>🔍</div>
+          <div className={styles.noResultsIcon}>
+            <Icon name="search" size="medium" />
+          </div>
           <div className={styles.noResultsText}>
             No commands found for "{searchTerm}"
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import crypto from 'crypto-js';
+import Icon from '../Icon';
 
 export default function HashGenerator() {
   const [input, setInput] = useState('');
@@ -110,7 +111,7 @@ export default function HashGenerator() {
                   accept=".txt,.md,.js,.json,.xml,.csv"
                   style={{ display: 'none' }}
                 />
-                📁 Load File
+                <Icon name="file" size="small" /> Load File
               </label>
               <button onClick={clearAll} className={styles.clearButton}>
                 Clear
@@ -148,7 +149,7 @@ export default function HashGenerator() {
                   <p>{algo.description}</p>
                 </div>
                 <div className={styles.checkbox}>
-                  {activeHashes[algo.key] && '✓'}
+                  {activeHashes[algo.key] && <Icon name="check" size="small" />}
                 </div>
               </label>
             ))}
@@ -165,7 +166,7 @@ export default function HashGenerator() {
                 </span>
                 {compareHashes().collisions > 0 && (
                   <span className={styles.collisionBadge}>
-                    ⚠️ {compareHashes().collisions} collision{compareHashes().collisions > 1 ? 's' : ''}
+                    <Icon name="close" size="small" /> {compareHashes().collisions} collision{compareHashes().collisions > 1 ? 's' : ''}
                   </span>
                 )}
               </div>
@@ -183,7 +184,7 @@ export default function HashGenerator() {
                         className={styles.copyButton}
                         title="Copy hash"
                       >
-                        📋
+                        <Icon name="copy" size="small" />
                       </button>
                     </div>
                     <div className={styles.hashContent}>
@@ -209,49 +210,49 @@ export default function HashGenerator() {
           <h2>Features & Information</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.feature}>
-              <h4>🔐 Multiple Algorithms</h4>
+              <h4><Icon name="security" size="small" /> Multiple Algorithms</h4>
               <p>Generate MD5, SHA-1, SHA-2, SHA-3, and RIPEMD-160 hashes simultaneously</p>
             </div>
             <div className={styles.feature}>
-              <h4>⚡ Real-time Updates</h4>
+              <h4><Icon name="refresh" size="small" /> Real-time Updates</h4>
               <p>Hashes update instantly as you type or modify the input text</p>
             </div>
             <div className={styles.feature}>
-              <h4>📁 File Support</h4>
+              <h4><Icon name="file" size="small" /> File Support</h4>
               <p>Upload text files to generate hashes of their content</p>
             </div>
             <div className={styles.feature}>
-              <h4>📋 Easy Copy</h4>
+              <h4><Icon name="copy" size="small" /> Easy Copy</h4>
               <p>One-click copying of hash values to clipboard</p>
             </div>
             <div className={styles.feature}>
-              <h4>🔍 Collision Detection</h4>
+              <h4><Icon name="search" size="small" /> Collision Detection</h4>
               <p>Automatically detects and warns about hash collisions</p>
             </div>
             <div className={styles.feature}>
-              <h4>📊 Detailed Info</h4>
+              <h4><Icon name="color" size="small" /> Detailed Info</h4>
               <p>Shows hash length in both characters and bits for each algorithm</p>
             </div>
           </div>
         </div>
 
         <div className={styles.securityInfo}>
-          <h2>🔒 Security Information</h2>
+          <h2><Icon name="security" size="small" /> Security Information</h2>
           <div className={styles.securityGrid}>
             <div className={`${styles.securityCard} ${styles.deprecated}`}>
-              <h4>⚠️ Deprecated for Security</h4>
+              <h4><Icon name="close" size="small" /> Deprecated for Security</h4>
               <p><strong>MD5, SHA-1:</strong> These algorithms have known vulnerabilities and should not be used for security applications like password hashing or digital signatures.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.recommended}`}>
-              <h4>✅ Recommended</h4>
+              <h4><Icon name="check" size="small" /> Recommended</h4>
               <p><strong>SHA-256, SHA-512:</strong> These are currently recommended for most security applications. SHA-256 is widely used in blockchain and digital signatures.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.modern}`}>
-              <h4>🆕 Modern Alternatives</h4>
+              <h4><Icon name="refresh" size="small" /> Modern Alternatives</h4>
               <p><strong>SHA-3:</strong> The latest hash function standard, using a different internal structure than SHA-2 for diversity in security options.</p>
             </div>
             <div className={`${styles.securityCard} ${styles.specialized}`}>
-              <h4>🎯 Specialized Use</h4>
+              <h4><Icon name="search" size="small" /> Specialized Use</h4>
               <p><strong>RIPEMD-160:</strong> Primarily used in Bitcoin and other cryptocurrencies as part of address generation.</p>
             </div>
           </div>

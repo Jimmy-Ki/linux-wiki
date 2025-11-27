@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import Icon from '../Icon';
 
 export default function ColorPicker() {
   const [hexColor, setHexColor] = useState('#3B82F6');
@@ -216,10 +217,10 @@ export default function ColorPicker() {
 
               <div className={styles.colorActions}>
                 <button onClick={generateRandomColor} className={styles.randomButton}>
-                  🎲 Random
+                  <Icon name="refresh" size="small" /> Random
                 </button>
                 <button onClick={saveColor} className={styles.saveButton}>
-                  💾 Save
+                  <Icon name="download" size="small" /> Save
                 </button>
               </div>
             </div>
@@ -241,7 +242,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(hexColor)}
                     className={styles.copyButton}
                   >
-                    📋
+                    <Icon name="copy" size="small" />
                   </button>
                 </div>
               </div>
@@ -286,7 +287,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`)}
                     className={styles.copyButton}
                   >
-                    📋
+                    <Icon name="copy" size="small" />
                   </button>
                 </div>
               </div>
@@ -334,7 +335,7 @@ export default function ColorPicker() {
                     onClick={() => copyToClipboard(`hsl(${hslColor.h}, ${hslColor.s}%, ${hslColor.l}%)`)}
                     className={styles.copyButton}
                   >
-                    📋
+                    <Icon name="copy" size="small" />
                   </button>
                 </div>
               </div>

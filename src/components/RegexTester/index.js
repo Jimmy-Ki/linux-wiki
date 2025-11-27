@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import Icon from '../Icon';
 
 export default function RegexTester() {
   const [pattern, setPattern] = useState('');
@@ -226,7 +227,7 @@ export default function RegexTester() {
               <h3>Results</h3>
               {error && (
                 <div className={styles.error}>
-                  <span className={styles.errorIcon}>⚠️</span>
+                  <span className={styles.errorIcon}><Icon name="close" size="small" /></span>
                   {error}
                 </div>
               )}
