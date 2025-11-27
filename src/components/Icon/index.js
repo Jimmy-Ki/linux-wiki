@@ -1,17 +1,17 @@
 import React from 'react';
 import {
   // Category Icons
-  IconShield, IconNetwork, IconCode, IconBrandLinux, IconStar, IconCalculator,
+  IconShield, IconNetwork, IconCode, IconTerminal, IconStar, IconCalculator,
   // Status Icons
   IconCircleCheck, IconCircleX, IconPlayerPlay, IconClock,
   // Tool Specific Icons
-  IconLock, IconQrcode, IconId, IconBinary, IconMarkdown, IconRegex, IconBrackets, IconHashtag, IconLetterCase, IconPalette,
+  IconLock, IconQrcode, IconId, IconBinary, IconMarkdown, IconRegex, IconBrackets, IconHash, IconLetterCase, IconPalette,
   // Action Icons
   IconCopy, IconDownload, IconUpload, IconRefresh, IconCheck, IconX,
   // File Type Icons
   IconFile,
   // Additional Icons
-  IconSearch, IconLink, IconPhoto, IconGamepad, IconClockHour3,
+  IconSearch, IconLink, IconPhoto, IconDeviceGamepad2, IconClockHour3,
   // UI Icons
   IconSettings
 } from '@tabler/icons-react';
@@ -22,7 +22,7 @@ const icons = {
   security: IconShield,
   network: IconNetwork,
   code: IconCode,
-  linux: IconBrandLinux,
+  linux: IconTerminal,
   creative: IconStar,
   calculator: IconCalculator,
 
@@ -40,7 +40,7 @@ const icons = {
   markdown: IconMarkdown,
   regex: IconRegex,
   json: IconBrackets,
-  hash: IconHashtag,
+  hash: IconHash,
   ascii: IconLetterCase,
   color: IconPalette,
 
@@ -59,7 +59,7 @@ const icons = {
   search: IconSearch,
   link: IconLink,
   image: IconPhoto,
-  games: IconGamepad,
+  games: IconDeviceGamepad2,
   time: IconClockHour3,
 
   // UI Icons

@@ -113,12 +113,12 @@ export default function Credits() {
                     <p>Report and fix documentation errors</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}><DocumentIcon className="w-4 h-4" /></span>
+                    <span className={styles.icon}><IconFileText size={16} /></span>
                     <h4>Add Content</h4>
                     <p>Contribute new command documentation</p>
                   </div>
                   <div className={styles.contributeItem}>
-                    <span className={styles.icon}><LinkIcon className="w-4 h-4" /></span>
+                    <span className={styles.icon}><IconLink size={16} /></span>
                     <h4>Translate</h4>
                     <p>Help translate content to other languages</p>
                   </div>
