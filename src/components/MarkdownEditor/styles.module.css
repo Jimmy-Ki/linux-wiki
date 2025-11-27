@@ -15,9 +15,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1000;
+  z-index: 9999;
   height: 100vh;
+  width: 100vw;
   border-radius: 0;
+  overflow: hidden;
 }
 
 .header {
@@ -159,9 +161,29 @@
   flex: 1;
   padding: 1.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
   background: var(--ifm-background-color);
   color: var(--ifm-color-emphasis-800);
   line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper scrollbar styling */
+.preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.preview::-webkit-scrollbar-track {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.preview::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+}
+
+.preview::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-600);
 }
 
 /* Markdown Preview Styles */
