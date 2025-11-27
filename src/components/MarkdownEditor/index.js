@@ -128,25 +128,6 @@ Start typing in the editor on the left to see the magic happen!`);
     };
   }, [isFullscreen]);
 
-  // Sync scrolling between editor and preview
-  const handleEditorScroll = () => {
-    if (editorRef.current && previewRef.current) {
-      const editor = editorRef.current;
-      const preview = previewRef.current;
-      const scrollPercentage = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
-      preview.scrollTop = scrollPercentage * (preview.scrollHeight - preview.clientHeight);
-    }
-  };
-
-  const handlePreviewScroll = () => {
-    if (editorRef.current && previewRef.current) {
-      const editor = editorRef.current;
-      const preview = previewRef.current;
-      const scrollPercentage = preview.scrollTop / (preview.scrollHeight - preview.clientHeight);
-      editor.scrollTop = scrollPercentage * (editor.scrollHeight - editor.clientHeight);
-    }
-  };
-
   // Add to history for undo/redo
   const addToHistory = (newMarkdown) => {
     const newHistory = history.slice(0, historyIndex + 1);
@@ -508,7 +489,6 @@ Start typing in the editor on the left to see the magic happen!`);
             value={markdown}
             onChange={handleTextChange}
             onKeyDown={handleKeyDown}
-            onScroll={handleEditorScroll}
             className={styles.editor}
             placeholder="Start typing your markdown here..."
             spellCheck="false"
@@ -523,7 +503,6 @@ Start typing in the editor on the left to see the magic happen!`);
             <div
               ref={previewRef}
               className={styles.preview}
-              onScroll={handlePreviewScroll}
               dangerouslySetInnerHTML={{ __html: previewHtml }}
             />
           </div>
