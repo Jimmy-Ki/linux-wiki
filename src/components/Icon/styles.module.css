@@ -1,0 +1,107 @@
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+/* Size variants */
+.small {
+  font-size: 16px;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 24px;
+}
+
+.xlarge {
+  font-size: 32px;
+}
+
+/* Status specific styling */
+.statusIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.actionIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.checkIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--ifm-color-success);
+}
+
+/* Category specific colors */
+.categorySecurity {
+  color: var(--ifm-color-primary);
+}
+
+.categoryNetwork {
+  color: var(--ifm-color-info);
+}
+
+.categoryCode {
+  color: var(--ifm-color-success);
+}
+
+.categoryLinux {
+  color: var(--ifm-color-warning);
+}
+
+.categoryCreative {
+  color: var(--ifm-color-secondary);
+}
+
+.categoryCalculator {
+  color: var(--ifm-color-danger);
+}
+
+/* State specific colors */
+.stateAvailable {
+  color: var(--ifm-color-success);
+}
+
+.stateUnavailable {
+  color: var(--ifm-color-danger);
+}
+
+.stateSuspended {
+  color: var(--ifm-color-warning);
+}
+
+.stateComingSoon {
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Interactive icons */
+.interactive {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interactive:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:active {
+  transform: scale(0.95);
+}
