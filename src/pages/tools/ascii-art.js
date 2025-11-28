@@ -1,18 +1,16 @@
 import React from 'react';
-import Layout from '@theme/Layout';
-import ToolPage from '@site/src/components/ToolPage';
+import ToolPageWithAds from '../../components/ToolPageWithAds';
+import AsciiArtGenerator from '../../components/AsciiArtGenerator';
 
 export default function AsciiArtPage() {
   return (
-    <Layout
-      title="ASCII Art Generator - Text to ASCII Art Converter"
-      description="Free online ASCII art generator. Convert text to ASCII art with multiple styles and fonts. Create cool text art for your terminal or projects."
+    <ToolPageWithAds
+      title="ASCII Art Generator - Linux Wiki Tools"
+      description="Convert text and images to ASCII art. Create stunning text art and transform images into ASCII characters"
+      keywords={['ascii art', 'text art', 'ascii generator', 'image to ascii', 'text converter']}
+      toolType="webapp"
     >
-      <ToolPage
-        title="ASCII Art Generator"
-        description="Convert your text into stunning ASCII art with multiple fonts and styles. Perfect for terminal headers, signatures, and creative projects."
-        comingSoon={true}
-      />
-    </Layout>
+      <AsciiArtGenerator />
+    </ToolPageWithAds>
   );
 }

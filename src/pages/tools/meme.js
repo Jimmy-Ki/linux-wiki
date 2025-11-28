@@ -1,12 +1,16 @@
 import React from 'react';
-import ToolPage from '../../components/ToolPage';
+import ToolPageWithAds from '../../components/ToolPageWithAds';
+import MemeGenerator from '../../components/MemeGenerator';
 
 export default function MemeGeneratorPage() {
   return (
-    <ToolPage
-      title="Meme Generator"
-      description="Create funny memes with custom text"
-      comingSoon={true}
-    />
+    <ToolPageWithAds
+      title="Meme Generator - Linux Wiki Tools"
+      description="Create funny memes with custom text overlay. Choose from popular templates or upload your own images"
+      keywords={['meme generator', 'create memes', 'funny memes', 'image editor', 'text overlay']}
+      toolType="webapp"
+    >
+      <MemeGenerator />
+    </ToolPageWithAds>
   );
 }

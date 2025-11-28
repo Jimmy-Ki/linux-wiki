@@ -1,0 +1,727 @@
+/* 主布局容器 - 固定高度，左右布局 */
+.layout {
+  display: flex;
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
+  background: var(--ifm-background-color);
+  overflow: hidden; /* 防止整体滚动 */
+}
+
+/* 左侧边栏 - 固定宽度，固定高度，独立滚动 */
+.sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  height: 100%;
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+
+/* 右侧内容区域 - 自适应宽度，固定高度，独立滚动 */
+.mainContent {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--ifm-background-color);
+  position: relative;
+}
+
+/* Sidebar Styles */
+.sidebarContent {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statItem {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.categoriesList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Sidebar Category */
+.sidebarCategory {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidebarCategory:hover {
+  border-color: var(--ifm-color-primary-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+  background: var(--ifm-card-background-color);
+}
+
+.categoryHeader:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.categoryIcon {
+  color: var(--ifm-color-primary);
+  opacity: 0.8;
+}
+
+.categoryTitle {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin: 0;
+}
+
+.chevron {
+  color: var(--ifm-color-emphasis-600);
+  transition: transform 0.2s ease;
+}
+
+.categoryTools {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Sidebar Tool */
+.sidebarTool {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  background: var(--ifm-card-background-color);
+}
+
+.sidebarTool:last-child {
+  border-bottom: none;
+}
+
+.sidebarTool:hover {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.sidebarTool.active {
+  background: var(--ifm-color-primary-lightest);
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+.sidebarTool.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sidebarTool.disabled:hover {
+  background: transparent;
+}
+
+.toolMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
+.toolIcon {
+  color: var(--ifm-color-primary);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.toolTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.toolDescription {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+}
+
+.statusIndicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+  background: var(--ifm-color-emphasis-900);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s, visibility 0s;
+  transition-delay: 0.3s;
+  z-index: 1000;
+  max-width: 300px;
+  white-space: normal;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Main Content Styles - 独立滚动区域 */
+.overviewContent {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overviewHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  flex-shrink: 0;
+}
+
+.overviewTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.overviewSubtitle {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.overviewStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.overviewStat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  display: block;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.overviewFeatures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  flex: 1;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--ifm-card-background-color);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin-bottom: 0.75rem;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Tool Content Styles - 完整工具页面布局 */
+.toolContent {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  flex-shrink: 0;
+}
+
+.toolHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  color: var(--ifm-color-content);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.backButton:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.toolInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toolIcon {
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.mainToolTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ifm-color-content);
+  margin-bottom: 0.25rem;
+}
+
+.mainToolDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.toolHeaderRight {
+  flex-shrink: 0;
+}
+
+.externalToolButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.externalToolButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: white;
+}
+
+.toolBody {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--ifm-card-background-color);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 2rem;
+}
+
+/* Loading and Error States */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--ifm-color-emphasis-200);
+  border-top: 4px solid var(--ifm-color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.toolUnavailable, .toolError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.unavailableIcon, .errorIcon {
+  color: var(--ifm-color-warning);
+  margin-bottom: 1rem;
+}
+
+.toolUnavailable h2, .toolError h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin-bottom: 0.5rem;
+}
+
+.toolUnavailable p, .toolError p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .overviewStats {
+    gap: 2rem;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 40vh;
+    max-height: 400px;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .mainContent {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .overviewContent,
+  .toolContent {
+    padding: 1rem;
+  }
+
+  .overviewTitle {
+    font-size: 2rem;
+  }
+
+  .overviewSubtitle {
+    font-size: 1rem;
+  }
+
+  .overviewStats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .overviewFeatures {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature {
+    padding: 1rem;
+  }
+
+  .toolHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .toolHeaderLeft {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .toolInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .mainToolTitle {
+    font-size: 1.5rem;
+  }
+
+  .toolHeaderRight {
+    width: 100%;
+  }
+
+  .externalToolButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .loadingContainer,
+  .toolUnavailable,
+  .toolError {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebarContent {
+    padding: 0.75rem;
+  }
+
+  .overviewContent,
+  .toolContent {
+    padding: 0.75rem;
+  }
+
+  .overviewTitle {
+    font-size: 1.75rem;
+  }
+
+  .mainToolTitle {
+    font-size: 1.25rem;
+  }
+
+  .overviewStats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .externalToolButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .categoryHeader {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .sidebarTool {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* High refresh rate support (120Hz+) */
+@media (resolution: 120dpi), (resolution: 1.25dppx) {
+  .sidebar {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .sidebarTool {
+    will-change: transform, background-color;
+    transform: translateZ(0);
+  }
+
+  .toolMain,
+  .toolInfo,
+  .toolTitle,
+  .toolDescription {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* Optimize for high refresh rate displays */
+@media (prefers-reduced-motion: no-preference) {
+  .sidebarTool,
+  .categoryHeader {
+    animation-duration: 0.008s;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.8, 1);
+  }
+}
+
+/* Dark Theme Support */
+[data-theme='dark'] .sidebar {
+  border-color: var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .sidebarCategory {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .categoryHeader {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .categoryHeader:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .sidebarTool {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .sidebarTool:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .sidebarTool.active {
+  background: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .feature {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .toolBody {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}

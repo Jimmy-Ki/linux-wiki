@@ -15,7 +15,7 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  z-index: 999999 !important;
+  z-index: 2147483647 !important;
   height: 100vh !important;
   width: 100vw !important;
   border-radius: 0 !important;
@@ -26,10 +26,29 @@
   margin: 0 !important;
 }
 
-/* Ensure z-index consistency across all themes */
+/* Ensure z-index consistency across all themes and states */
 [data-theme='dark'] .fullscreen,
-[data-theme='light'] .fullscreen {
-  z-index: 999999 !important;
+[data-theme='light'] .fullscreen,
+html[data-theme='dark'] .fullscreen,
+html[data-theme='light'] .fullscreen,
+:root[data-theme='dark'] .fullscreen,
+:root[data-theme='light'] .fullscreen {
+  z-index: 2147483647 !important;
+}
+
+/* Also ensure any other potential selectors */
+body .fullscreen,
+#root .fullscreen,
+[class*='theme'] .fullscreen,
+* .fullscreen {
+  z-index: 2147483647 !important;
+}
+
+/* Global override */
+@media screen {
+  .fullscreen {
+    z-index: 2147483647 !important;
+  }
 }
 
 /* Fix heights in fullscreen mode */

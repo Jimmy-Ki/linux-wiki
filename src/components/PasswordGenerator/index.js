@@ -5,7 +5,8 @@ import {
   IconDownload,
   IconX,
   IconShieldCheck,
-  IconPalette
+  IconPalette,
+  IconClipboard
 } from '@tabler/icons-react';
 import styles from './styles.module.css';
 
@@ -295,7 +296,7 @@ export default function PasswordGenerator() {
                     onClick={() => navigator.clipboard.writeText(pwd)}
                     className={styles.historyCopy}
                   >
-                    <ClipboardDocumentIcon className="w-4 h-4" />
+                    <IconClipboard className="w-4 h-4" />
                   </button>
                 </div>
               ))}

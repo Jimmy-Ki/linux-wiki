@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '@site/src/components/Icon';
+import ToolsSidebarLayout from '@site/src/components/ToolsSidebarLayout';
 import styles from './styles.module.css';
 
 const toolsCategories = [
@@ -19,7 +20,6 @@ const toolsCategories = [
     icon: 'network',
     tools: [
       { title: 'IP Address', description: 'Get your current IP address', path: '/tools/ip', status: 'available', icon: 'network' },
-      { title: 'WHOIS Lookup', description: 'Domain information lookup service', path: '/tools/whois', status: 'unavailable', icon: 'search' },
       { title: 'Network Tools', description: 'Ping, port scanner, DNS tools', path: '/tools/network', status: 'unavailable', icon: 'settings' },
       { title: 'URL Shortener', description: 'Create short links service', path: '/tools/url-shortener', status: 'unavailable', icon: 'link' },
     ]
@@ -51,7 +51,9 @@ const toolsCategories = [
     tools: [
       { title: 'QR Code Generator', description: 'Create custom QR codes', path: '/tools/qrcode', status: 'available', icon: 'qrcode' },
       { title: 'ASCII Art', description: 'Text to ASCII generator', path: '/tools/ascii-art', status: 'available', icon: 'ascii' },
-      { title: 'Meme Generator', description: 'Create funny memes with text', path: '/tools/meme', status: 'unavailable', icon: 'image' },
+      { title: 'Meme Generator', description: 'Create funny memes with text', path: '/tools/meme', status: 'available', icon: 'image' },
+      { title: 'PetPet Generator', description: 'Create patting head GIF memes', path: '/tools/petpet', status: 'available', icon: 'image' },
+      { title: 'Emoji Generator', description: 'Find and copy emojis easily', path: '/tools/emoji-generator', status: 'available', icon: 'emoji' },
       { title: '2048 Game', description: 'Classic 2048 puzzle game', path: '/tools/2048', status: 'available', icon: 'games' },
     ]
   },
@@ -63,7 +65,6 @@ const toolsCategories = [
       { title: 'Scientific Calculator', description: 'Advanced calculator with functions', path: '/tools/calculator', status: 'available', icon: 'calculator' },
       { title: 'Color Picker', description: 'Color tools & palette generator', path: '/tools/color', status: 'available', icon: 'color' },
       { title: 'Timezone Converter', description: 'World clock & timezone converter', path: '/tools/timezone', status: 'available', icon: 'time' },
-      { title: 'File Converter', description: 'Image & file format converter', path: '/tools/converter', status: 'unavailable', icon: 'file' },
     ]
   },
 ];
@@ -157,12 +158,35 @@ function ToolsCategory({ category }) {
 }
 
 export default function ToolsGrid() {
+  const [viewMode, setViewMode] = useState('sidebar'); // 'grid' or 'sidebar'
+
   // Count total tools
   const totalTools = toolsCategories.reduce((sum, category) => sum + category.tools.length, 0);
+
+  if (viewMode === 'sidebar') {
+    return <ToolsSidebarLayout />;
+  }
 
   return (
     <div className={styles.toolsContainer}>
       <div className="container">
+        <div className={styles.viewToggle}>
+          <button
+            className={`${styles.viewButton} ${viewMode === 'sidebar' ? styles.active : ''}`}
+            onClick={() => setViewMode('sidebar')}
+          >
+            <Icon name="settings" size="small" />
+            Sidebar View
+          </button>
+          <button
+            className={`${styles.viewButton} ${viewMode === 'grid' ? styles.active : ''}`}
+            onClick={() => setViewMode('grid')}
+          >
+            <Icon name="calculator" size="small" />
+            Grid View
+          </button>
+        </div>
+
         <div className={styles.header}>
           <h1 className={styles.title}>Linux Wiki Tools Collection</h1>
           <p className={styles.subtitle}>
