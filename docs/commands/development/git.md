@@ -94,7 +94,7 @@ git [--version] [--help] [-C <path>] [-c <name>=<value>]
 - `--chmod=<+x|-x>` - Change file modes in the working tree
 
 #### Git Commit Options
-- `-m <msg>` - Use the given <msg> as the commit message
+- `-m <message>` - Use the given `<message>` as the commit message
 - `-a, --all` - Commit all modified and deleted files
 - `--amend` - Replace the tip of the current branch with a new commit
 - `--no-edit` - Use the existing commit message without editing

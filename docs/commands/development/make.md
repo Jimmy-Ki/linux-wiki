@@ -22,7 +22,7 @@ make [options] [target] ...
 - `-h, --help` - Print help message and exit
 - `-v, --version` - Print version information and exit
 - `-f <makefile>, --file=<makefile>, --makefile=<makefile>` - Use specified file as a makefile
-- `-C <dir>, --directory=<dir>` - Change to directory <dir> before reading makefiles
+- `-C <directory>, --directory=<directory>` - Change to directory `<directory>` before reading makefiles
 - `-j [jobs], --jobs[=jobs]` - Specify number of jobs to run simultaneously
 - `-k, --keep-going` - Continue as much as possible after an error
 - `-n, --just-print, --dry-run, --recon` - Print the commands but don't execute them
@@ -50,7 +50,7 @@ make [options] [target] ...
 - `-B, --always-make` - Unconditionally make all targets
 - `-r, --no-builtin-rules` - Disable the built-in implicit rules
 - `-R, --no-builtin-variables` - Disable the built-in variable settings
-- `-I <dir>, --include-dir=<dir>` - Search <dir> for included makefiles
+- `-I <directory>, --include-dir=<directory>` - Search `<directory>` for included makefiles
 
 ## Makefile Basics
 

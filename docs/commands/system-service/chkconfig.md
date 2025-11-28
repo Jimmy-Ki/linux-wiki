@@ -13,10 +13,10 @@ The `chkconfig` command is a system administration tool for managing which servi
 ## Basic Syntax
 
 ```bash
-chkconfig [--list] [--type <type>] [service]
-chkconfig --add <service>
-chkconfig --del <service>
-chkconfig [--level <levels>] <service> <on|off|reset|resetpriorities>
+chkconfig [--list] [--type \\ <type\\>] [service]
+chkconfig --add \\ <service\\>
+chkconfig --del \\ <service\\>
+chkconfig [--level \\ <levels\\>] \\ <service\\> <on|off|reset|resetpriorities>
 ```
 
 ## Common Actions
@@ -33,12 +33,12 @@ chkconfig [--level <levels>] <service> <on|off|reset|resetpriorities>
 
 ### Display Options
 - `--list` - List all services and their current configuration
-- `--type <type>` - Specify service type (sysv, xinetd)
+- `--type \\ <type\\>` - Specify service type (sysv, xinetd)
 - `--help` - Display help message
 - `--version` - Show version information
 
 ### Configuration Options
-- `--level <levels>` - Specify runlevels (0-6) for operation
+- `--level \\ <levels\\>` - Specify runlevels (0-6) for operation
 - `--add` - Add service to chkconfig management
 - `--del` - Remove service from chkconfig management
 

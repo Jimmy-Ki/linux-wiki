@@ -744,9 +744,9 @@ analyze_performance() {
 ### 文件管理相关命令
 
 - [tar](tar.md) - 磁带归档工具，可与 lha 结合使用
-- [cpio](cpio.md) - 另一种归档格式
-- [ar](ar.md) - 静态库归档工具
-- [pax](pax.md) - POSIX 归档工具
+- cpio - 另一种归档格式
+- ar - 静态库归档工具
+- pax - POSIX 归档工具
 
 ### 系统工具
 

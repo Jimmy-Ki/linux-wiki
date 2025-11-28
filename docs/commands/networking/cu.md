@@ -24,7 +24,7 @@ cu [options] [system | phone | "dir"]
 |--------|-------------|-------------|
 | `-a port` | `--port port` | Use named port for connection |
 | `-l line` | `--line line` | Use named device (e.g., ttyS0, ttyUSB0) |
-| `-s speed` | `--speed speed`<br>`--baud speed`<br>`-#` | Set connection speed/baud rate |
+| `-s speed` | `--speed speed` <br/> `--baud speed` <br/> `-#` | Set connection speed/baud rate |
 | `-c phone` | `--phone phone` | Phone number to call |
 | `-z system` | `--system system` | System name to call from UUCP config |
 | `-n` | `--prompt` | Prompt for phone number |

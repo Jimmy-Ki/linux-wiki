@@ -777,8 +777,8 @@ monitor_printer_status "office_printer"
 
 ### CUPS管理命令
 - [`cupsenable`](cupsenable.md) - 启用CUPS打印机和类
-- [`cupsaccept`](cupsaccept.md) - 接受打印作业到目标队列
-- [`cupsreject`](cupsreject.md) - 拒绝打印作业到目标队列
+- cupsaccept - 接受打印作业到目标队列
+- cupsreject - 拒绝打印作业到目标队列
 - [`lpadmin`](lpadmin.md) - 配置CUPS打印机和类
 - [`lpstat`](lpstat.md) - 显示CUPS状态信息
 
@@ -790,8 +790,8 @@ monitor_printer_status "office_printer"
 - [`lpc`](lpc.md) - 打印机控制程序
 
 ### 系统服务管理
-- [`systemctl`](../system-services/systemctl.md) - 系统和服务管理器
-- [`service`](../system-services/service.md) - 运行级系统服务管理
+- systemctl - 系统和服务管理器
+- service - 运行级系统服务管理
 
 ## 最佳实践
 

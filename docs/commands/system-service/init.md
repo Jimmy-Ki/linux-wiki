@@ -377,7 +377,7 @@ init -t 10 3  # With timeout
 ps aux | grep Z
 
 # Kill zombie processes manually
-kill -9 <PID>
+kill -9 \${PID}
 ```
 
 #### Service Init Failures

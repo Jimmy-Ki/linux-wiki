@@ -21,13 +21,13 @@ fdisk [OPTIONS] [DEVICE]
 ### Display Options
 - `-l, --list` - List partition tables for all devices or specified device
 - `-L, --color[=when]` - Colorize output (auto, always, never)
-- `-b, --sector-size <size>` - Display sector size in bytes
+- `-b, --sector-size=<size>` - Display sector size in bytes
 - `-u, --units[=<unit>]` - Display units (cylinders, sectors, or bytes)
 
 ### Modification Options
-- `-C, --cylinders <number>` - Specify number of cylinders
-- `-H, --heads <number>` - Specify number of heads
-- `-S, --sectors <number>` - Specify number of sectors per track
+- `-C, --cylinders \\ <number\\>` - Specify number of cylinders
+- `-H, --heads \\ <number\\>` - Specify number of heads
+- `-S, --sectors \\ <number\\>` - Specify number of sectors per track
 
 ### Output Options
 - `-V, --version` - Display version information

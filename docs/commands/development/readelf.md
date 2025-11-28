@@ -28,7 +28,7 @@ readelf [OPTIONS] FILENAME...
 - `-s, --symbols, --syms` - Display the symbol table
 - `--syms` - Display the symbol table (same as -s)
 - `--dyn-syms` - Display the dynamic symbol table
-- `-x, --hex-dump=<number/name>` - Dump the contents of section <number/name> as bytes
+- `-x, --hex-dump=<number-or-name>` - Dump the contents of section `<number-or-name>` as bytes
 
 ### Debug Information Options
 - `--debug-dump=<info>` - Display the contents of DWARF debug sections
@@ -51,7 +51,7 @@ readelf [OPTIONS] FILENAME...
 
 ### Notes and Comments Options
 - `-n, --notes` - Display the core notes (if present)
-- `-p, --string-dump=<number/name>` - Dump the contents of section <number/name> as strings
+- `-p, --string-dump=<number-or-name>` - Dump the contents of section `<number-or-name>` as strings
 - `-c, --archive-index` - Display the symbol/file index of an archive
 
 ### Output Control Options

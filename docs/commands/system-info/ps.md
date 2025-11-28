@@ -604,7 +604,7 @@ done
 
 ### Multi-Character State Codes
 - **s** - Session leader
-- **<** - High-priority (not nice to other users)
+- **\<** - High-priority (not nice to other users)
 - **N** - Low-priority (nice to other users)
 - **L** - Has pages locked into memory (for real-time and custom I/O)
 - **l** - Multi-threaded (using CLONE_THREAD, like NPTL pthreads)
@@ -1043,7 +1043,7 @@ The `ps` command displays process states using the following codes:
 
 Additional modifiers:
 ```
-- **<** - High priority process
+- **\<** - High priority process
 ```
 - **N** - Low priority process
 - **L** - Has pages locked in memory
