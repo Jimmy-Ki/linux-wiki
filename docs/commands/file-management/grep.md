@@ -1,364 +1,702 @@
 ---
-title: grep - Text Search Utility
-description: Search for patterns in files using regular expressions
+title: grep - Global Regular Expression Print
 sidebar_label: grep
 ---
 
 > **Command documentation sourced from the linux-command project**
 > _This comprehensive command reference is part of the linux-command documentation project._
 
-# grep - Text Search Utility
+# grep - Global Regular Expression Print
 
-The `grep` command is a powerful text search utility that searches for patterns in files using regular expressions. Its name comes from "global search regular expression and print out the line." Grep is one of the most frequently used commands in Linux for text processing and log analysis.
+The `grep` command is a powerful text search utility that searches for patterns in files using regular expressions. Its name stands for "Global search for Regular Expression and Print." Grep is one of the most fundamental and frequently used commands in Linux/Unix systems for text processing, log analysis, pattern matching, and data extraction. It supports multiple regular expression flavors, various output formats, and efficient searching techniques for both small files and large codebases.
 
-## Syntax
+## Basic Syntax
 
 ```bash
 grep [OPTIONS] PATTERN [FILE...]
 ```
 
-## Key Options
+## Command Variants
+
+- `grep` - Basic grep (uses basic regular expressions by default)
+- `egrep` - Extended grep (equivalent to `grep -E`)
+- `fgrep` - Fixed grep (equivalent to `grep -F`, searches for fixed strings)
+- `zgrep` - Grep for compressed files
+- `bzgrep` - Grep for bzip2 compressed files
+
+## Common Options
 
 ### Output Control
-- `-c`, `--count` - Count matching lines
-- `-n`, `--line-number` - Show line numbers
-- `-o`, `--only-matching` - Show only matched parts
-- `-h`, `--no-filename` - Don't show filenames
-- `-H`, `--with-filename` - Show filenames (default for multiple files)
+
+#### Display Options
+- `-c`, `--count` - Count matching lines instead of displaying them
+- `-n`, `--line-number` - Prefix each line with its line number
+- `-l`, `--files-with-matches` - Only show filenames that contain matches
+- `-L`, `--files-without-match` - Only show filenames that don't contain matches
 - `-m NUM`, `--max-count=NUM` - Stop after NUM matches
-- `-q`, `--quiet`, `--silent` - No output, just exit status
+- `-o`, `--only-matching` - Show only the matched parts of lines
+- `-q`, `--quiet`, `--silent` - No output, only exit status
+- `-s`, `--no-messages` - Suppress error messages
+- `-b`, `--byte-offset` - Show byte offset of each match
+- `-T`, `--initial-tab` - Align tabs properly
+- `-Z`, `--null` - Print NUL byte after filenames
+
+#### Filename Display
+- `-h`, `--no-filename` - Don't show filenames for multiple files
+- `-H`, `--with-filename` - Always show filenames (default for multiple files)
+- `--label=LABEL` - Use LABEL as standard input filename
 
 ### Context Control
-- `-A NUM`, `--after-context=NUM` - Show NUM lines after match
-- `-B NUM`, `--before-context=NUM` - Show NUM lines before match
-- `-C NUM`, `--context=NUM` - Show NUM lines before and after match
+
+#### Context Lines
+- `-A NUM`, `--after-context=NUM` - Show NUM lines after each match
+- `-B NUM`, `--before-context=NUM` - Show NUM lines before each match
+- `-C NUM`, `--context=NUM` - Show NUM lines before and after each match
+- `--group-separator=SEP` - Print SEP instead of '--' between groups
 
 ### Matching Control
+
+#### Pattern Matching
+- `-e PATTERN`, `--regexp=PATTERN` - Use PATTERN as pattern
+- `-f FILE`, `--file=FILE` - Read patterns from FILE
 - `-i`, `--ignore-case` - Case-insensitive matching
-- `-v`, `--invert-match` - Show non-matching lines
-- `-w`, `--word-regexp` - Match whole words only
-- `-x`, `--line-regexp` - Match whole lines only
-- `-e PATTERN`, `--regexp=PATTERN` - Specify pattern
-- `-f FILE`, `--file=FILE` - Read patterns from file
+- `-v`, `--invert-match` - Select non-matching lines
+- `-w`, `--word-regexp` - Match only whole words
+- `-x`, `--line-regexp` - Match only whole lines
+- `-y` - Same as `-i` (case-insensitive)
 
-### File Selection
-- `-r`, `-R`, `--recursive` - Search recursively
-- `--include=PATTERN` - Search files matching pattern
-- `--exclude=PATTERN` - Skip files matching pattern
-- `--exclude-from=FILE` - Skip files listed in file
-- `-L`, `--files-without-match` - Show files with no matches
-- `-l`, `--files-with-matches` - Show files with matches
+#### Regular Expression Types
+- `-E`, `--extended-regexp` - Use extended regular expressions
+- `-G`, `--basic-regexp` - Use basic regular expressions (default)
+- `-F`, `--fixed-strings` - Interpret patterns as fixed strings
+- `-P`, `--perl-regexp` - Use Perl-compatible regular expressions
+- `--posix` - Use POSIX-compatible matching
 
-### Regular Expression Types
-- `-E`, `--extended-regexp` - Extended regular expressions
-- `-G`, `--basic-regexp` - Basic regular expressions (default)
-- `-F`, `--fixed-strings` - Fixed strings (no regex)
-- `-P`, `--perl-regexp` - Perl-compatible regular expressions
+### File Selection and Processing
 
-## Examples
+#### Recursive Search
+- `-r`, `--recursive` - Search recursively in directories
+- `-R`, `--dereference-recursive` - Recursively follow symbolic links
+- `-d ACTION`, `--directories=ACTION` - How to handle directories (read, recurse, skip)
+- `--exclude=PATTERN` - Skip files matching PATTERN
+- `--exclude-from=FILE` - Skip files listed in FILE
+- `--exclude-dir=PATTERN` - Skip directories matching PATTERN
+- `--include=PATTERN` - Search only files matching PATTERN
+
+#### Binary Files
+- `-a`, `--text` - Process binary files as text
+- `--binary-files=TYPE` - How to handle binary files (binary, text, without-match)
+- `-I` - Equivalent to `--binary-files=without-match`
+
+### Performance and Memory
+
+- `--mmap` - Use memory-mapped input for better performance
+- `-D ACTION`, `--devices=ACTION` - How to handle devices (read, skip)
+- `--line-buffered` - Flush output on every line
+- `--color[=WHEN]` - Colorize output (never, always, auto)
+
+## Usage Examples
 
 ### Basic Searching
+
+#### Simple Pattern Searches
 ```bash
-# Search for pattern in a file
+# Search for pattern in a single file
 grep "error" logfile.txt
 
 # Search in multiple files
-grep "function" *.py
+grep "function" *.py *.js
 
 # Case-insensitive search
-grep -i "error" logfile.txt
+grep -i "ERROR" application.log
 
 # Whole word search
 grep -w "test" file.txt
 
-# Show line numbers
-grep -n "error" logfile.txt
+# Exact line match
+grep -x "Error occurred" log.txt
+
+# Search with line numbers
+grep -n "bug" source_code.c
 ```
 
-### Pattern Matching
+#### Multiple Pattern Searches
 ```bash
-# Search using regular expression
-grep -E "error[0-9]+" logfile.txt
+# Search for multiple patterns
+grep -e "error" -e "warning" -e "critical" syslog
 
-# Search for lines starting with "error"
+# Use extended regex for OR pattern
+grep -E "error|warning|critical" syslog
+
+# Search for patterns from a file
+grep -f search_patterns.txt large_file.txt
+
+# Multiple patterns with line numbers and context
+grep -n -e "TODO" -e "FIXME" -e "XXX" *.py
+
+# Negate multiple patterns
+grep -v -e "debug" -e "trace" production.log
+```
+
+### Advanced Pattern Matching
+
+#### Regular Expression Patterns
+```bash
+# Lines starting with error
 grep "^error" logfile.txt
 
-# Search for lines ending with "failed"
+# Lines ending with failed
 grep "failed$" logfile.txt
 
-# Search for email addresses
-grep -E "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" file.txt
+# Lines containing IP addresses
+grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" access.log
 
-# Search for IP addresses
-grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" log.txt
+# Email addresses
+grep -E "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" contacts.txt
+
+# Phone numbers (various formats)
+grep -E "\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" phone_numbers.txt
+
+# URLs
+grep -E "https?://[^\s]+" webpage.html
+
+# Hex color codes
+grep -E "#[0-9A-Fa-f]{6}\b" stylesheet.css
+
+# File extensions in source code
+grep -E "\.(js|css|html|php)$" file_list.txt
 ```
 
-### Recursive Search
+#### Complex Patterns
 ```bash
-# Search recursively in directory
+# Log timestamps (ISO format)
+grep -E "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}" server.log
+
+# Function definitions in various languages
+# C/C++ functions
+grep -E "^\s*[a-zA-Z_][a-zA-Z0-9_]*\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\([^)]*\)\s*{" *.c
+
+# Python functions
+grep -E "^\s*def\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\(" *.py
+
+# JavaScript functions
+grep -E "^\s*function\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\(" *.js
+
+# Class definitions
+grep -E "^\s*class\s+[a-zA-Z_][a-zA-Z0-9_]*" *.py *.js *.java
+
+# Variable assignments
+grep -E "^\s*[a-zA-Z_][a-zA-Z0-9_]*\s*=" *.py *.js
+
+# Import statements
+grep -E "^\s*(import|from)\s+" *.py
+
+# Include statements
+grep -E "^\s*#\s*include\s*[<\"]" *.c *.h
+```
+
+### Context and Output Control
+
+#### Context Display
+```bash
+# Show 3 lines before each match
+grep -B 3 "error" application.log
+
+# Show 3 lines after each match
+grep -A 3 "error" application.log
+
+# Show 3 lines before and after each match
+grep -C 3 "error" application.log
+
+# Show different context for different patterns
+grep -A 5 -B 2 "exception" debug.log
+
+# Show context with line numbers
+grep -n -C 2 "warning" system.log
+
+# Group separator customization
+grep --group-separator="=== MATCH ===" -C 2 "error" log.txt
+```
+
+#### Output Formatting
+```bash
+# Only count matches
+grep -c "error" *.log
+
+# Count total matches (not lines)
+grep -o "error" logfile.txt | wc -l
+
+# Show only filenames with matches
+grep -l "function" *.py
+
+# Show only filenames without matches
+grep -L "test" *.py
+
+# Show byte offsets
+grep -b -o "error" logfile.txt
+
+# Suppress filenames for multiple files
+grep -h "pattern" *.txt
+
+# Show only matched parts
+grep -o "https?://[^\s]+" webpage.html
+
+# Limit number of matches
+grep -m 10 "error" large_logfile.txt
+
+# Quiet mode (useful in scripts)
+grep -q "error" logfile.txt && echo "Errors found"
+```
+
+### File System Operations
+
+#### Recursive Searching
+```bash
+# Recursive search in directory
 grep -r "function" /home/user/code/
 
 # Recursive search with line numbers
 grep -rn "TODO" /home/user/project/
 
+# Recursive search with context
+grep -rC 2 "bug" /var/log/
+
+# Follow symbolic links
+grep -R "config" /etc/
+
+# Recursive case-insensitive search
+grep -ri "password" /home/user/documents/
+```
+
+#### File Type Filtering
+```bash
 # Search only in specific file types
 grep -r "class" --include="*.py" /home/user/project/
 
-# Exclude certain directories
-grep -r "main" --exclude-dir=".git" .
+# Search only in source files
+grep -r "main" --include="*.{c,cpp,h,hpp}" /usr/src/
+
+# Exclude certain file types
+grep -r "debug" --exclude="*.o" --exclude="*.exe" /path/to/project/
+
+# Exclude directories
+grep -r "main" --exclude-dir=".git" --exclude-dir="node_modules" .
+
+# Multiple include patterns
+grep -r "import" --include="*.py" --include="*.js" .
+
+# Complex file filtering
+grep -r "function" --include="*.{c,h}" --exclude-dir="test" /usr/src/
 ```
 
-### Counting and Statistics
+#### File Content Based Searching
 ```bash
-# Count matching lines
-grep -c "error" logfile.txt
+# Search in files containing specific content
+grep -l "database" *.sql
 
-# Count in multiple files
-grep -c "function" *.py
+# Search only in text files (skip binaries)
+grep -I "error" *
 
-# Count total matches (not lines)
-grep -o "error" logfile.txt | wc -l
+# Process binary files as text
+grep -a "exception" binary_log
 
-# Show only matching parts
-grep -o "error[0-9]+" logfile.txt
+# Search compressed files
+zgrep "error" logfile.gz
+bzgrep "warning" logfile.bz2
+
+# Search in archives
+tar -tzf archive.tar.gz | grep -E "\.log$" | xargs zgrep "error"
 ```
 
-### Context Display
-```bash
-# Show lines before match
-grep -B 3 "error" logfile.txt
+### Performance Optimization
 
-# Show lines after match
-grep -A 3 "error" logfile.txt
-
-# Show context before and after
-grep -C 3 "error" logfile.txt
-
-# Show only filenames with matches
-grep -l "function" *.py
-```
-
-### Inverting and Filtering
-```bash
-# Show lines that don't match
-grep -v "error" logfile.txt
-
-# Remove empty lines
-grep -v "^$" file.txt
-
-# Remove comment lines
-grep -v "^#" config.txt
-
-# Show lines without "debug"
-grep -v "debug" logfile.txt
-```
-
-### Multiple Patterns
-```bash
-# Search for multiple patterns
-grep -e "error" -e "warning" logfile.txt
-
-# Using extended regex
-grep -E "error|warning" logfile.txt
-
-# Read patterns from file
-grep -f patterns.txt file.txt
-
-# Search for words starting with 'a' or 'b'
-grep -E "^(a|b)" words.txt
-```
-
-### Advanced Usage
-```bash
-# Show byte offset
-grep -b -o "error" logfile.txt
-
-# Quiet mode (useful in scripts)
-grep -q "error" logfile.txt && echo "Found error"
-
-# Binary file search
-grep -a "text" binary_file
-
-# Stop after 10 matches
-grep -m 10 "error" large_logfile.txt
-
-# Only exact line matches
-grep -x "exact_match" file.txt
-```
-
-### File Filtering
-```bash
-# Search only in specific file types
-grep "function" --include="*.{c,h}" /usr/src/linux/
-
-# Exclude files
-grep "function" --exclude="*.o" /usr/src/linux/
-
-# Exclude multiple patterns
-grep "TODO" --exclude="*.tmp" --exclude-dir=".git" .
-
-# Process only files that exist
-grep "pattern" *.txt 2>/dev/null
-```
-
-## Regular Expressions
-
-### Basic Regex
-```bash
-# Anchor at start of line
-grep "^start" file.txt
-
-# Anchor at end of line
-grep "end$" file.txt
-
-# Single character wildcard
-grep "h.t" file.txt    # matches hat, hot, hit, etc.
-
-# Zero or more repetitions
-grep "ab*c" file.txt   # matches ac, abc, abbc, etc.
-
-# Character class
-grep "[aeiou]" file.txt
-
-# Negated character class
-grep "[^0-9]" file.txt  # matches non-digits
-
-# Range
-grep "[A-Z][a-z]+" file.txt  # words starting with capital
-```
-
-### Extended Regex (with -E)
-```bash
-# Alternation
-grep -E "cat|dog" file.txt
-
-# Grouping
-grep -E "(error|warning)[0-9]+" file.txt
-
-# Quantifiers
-grep -E "a{3}" file.txt     # exactly 3 'a's
-grep -E "a{2,4}" file.txt   # 2 to 4 'a's
-grep -E "a{2,}" file.txt    # 2 or more 'a's
-grep -E "a{,3}" file.txt    # up to 3 'a's
-
-# Word boundaries
-grep -E "\berror\b" file.txt
-
-# Non-word characters
-grep -E "\W+" file.txt
-```
-
-### Practical Patterns
-```bash
-# Email addresses
-grep -E "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" file.txt
-
-# URLs
-grep -E "https?://[^\s]+" file.txt
-
-# Phone numbers (US format)
-grep -E "\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" file.txt
-
-# Dates (YYYY-MM-DD)
-grep -E "\b\d{4}-\d{2}-\d{2}\b" file.txt
-
-# Log levels
-grep -E "\b(DEBUG|INFO|WARN|ERROR|FATAL)\b" log.txt
-
-# Function definitions (Python)
-grep -E "^\s*def\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\(" *.py
-```
-
-## Pipe Integration
-
-### Common Combinations
-```bash
-# Filter command output
-ps aux | grep "nginx"
-
-# Search history
-history | grep "git"
-
-# Find large files
-du -h | grep -E "^[0-9.]+[GT]"
-
-# Network connections
-netstat -tuln | grep ":80\|:443"
-
-# Process management
-ps aux | grep -E "(PID|COMMAND|nginx)"
-
-# Log analysis
-tail -f logfile.txt | grep "ERROR"
-
-# Search environment variables
-env | grep -E "^(PATH|HOME|USER)="
-```
-
-### Chain Operations
-```bash
-# Count unique IP addresses in log
-grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" access.log | sort | uniq | wc -l
-
-# Extract URLs from HTML
-grep -oE 'https?://[^"]+' webpage.html
-
-# Find PHP functions
-grep -ohE "php_[a-zA-Z_]+" *.php | sort | uniq
-
-# Log error count by type
-grep -oE "ERROR: [a-zA-Z]+" app.log | sort | uniq -c
-```
-
-## Performance Tips
-
-### Efficient Searching
+#### Efficient Searching
 ```bash
 # Use fgrep for fixed strings (faster)
 fgrep "exact_string" large_file.txt
 
-# Use grep -F instead of -E for simple patterns
+# Use grep -F for fixed string patterns
 grep -F "simple pattern" file.txt
 
-# Limit search scope
-grep "pattern" /path/to/specific/directory/
+# Limit search scope for better performance
+grep "pattern" /specific/directory/instead/of/filesystem
 
-# Use --mmap for large files
-grep --mmap "pattern" large_file.txt
+# Use memory-mapped files for large files
+grep --mmap "pattern" huge_file.txt
 
 # Parallel search with xargs
 find . -name "*.log" | xargs -P 4 grep "pattern"
+
+# Use line buffering for real-time processing
+tail -f logfile.txt | grep --line-buffered "ERROR"
 ```
 
-### Memory and Speed
+#### Memory Management
 ```bash
-# Exclude binary files
+# Skip binary files to save memory
 grep -I "pattern" *
 
-# Don't search device files
+# Skip device files
 grep -D skip "pattern" /dev/*
 
-# Use grep for memory-mapped files
-grep --mmap "pattern" huge_file.txt
+# Use limited context for large files
+grep -C 1 "pattern" huge_logfile.txt
+
+# Process files in chunks for very large files
+split -l 100000 huge_file.txt chunk_ && grep "pattern" chunk_*
+
+# Use temporary files for complex searches
+grep "pattern1" file.txt > temp1.txt && grep "pattern2" temp1.txt
 ```
 
-## Color Output
+### Pipeline Integration
 
-### Configuration
+#### Command Output Processing
+```bash
+# Filter process list
+ps aux | grep "nginx"
+
+# Search command history
+history | grep "git commit"
+
+# Find large files
+du -h | grep -E "^[0-9.]+[GT]"
+
+# Network connection filtering
+netstat -tuln | grep -E ":(80|443|22)"
+
+# Process filtering with specific users
+ps aux | grep -E "(nginx|apache|httpd)"
+
+# File system usage
+df -h | grep -E "(/$|/home|/var)"
+
+# Memory usage filtering
+free -m | grep -E "(Mem|Swap)"
+
+# Uptime and load
+uptime | grep -E "(load average|up)"
+```
+
+#### Complex Data Processing
+```bash
+# Extract and count unique IP addresses from web log
+grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" access.log | sort | uniq -c | sort -nr
+
+# Extract URLs from HTML file
+grep -oE 'https?://[^"]+' webpage.html | sort | uniq
+
+# Find PHP function calls
+grep -ohE "mysql_[a-zA-Z_]+" *.php | sort | uniq
+
+# Log error analysis
+grep -oE "ERROR: [a-zA-Z0-9_-]+" application.log | sort | uniq -c | sort -nr
+
+# Extract email addresses
+grep -oE "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" emails.txt | sort | uniq
+
+# Analyze HTTP status codes
+grep -oE "HTTP/[0-9.]+\s+[0-9]{3}" access.log | cut -d' ' -f2 | sort | uniq -c
+
+# Find duplicate lines
+grep -f file.txt file2.txt | sort | uniq -d
+
+# Cross-reference two files
+grep -f file1.txt file2.txt | wc -l
+```
+
+#### Real-time Monitoring
+```bash
+# Monitor log file for errors
+tail -f application.log | grep -E "(ERROR|CRITICAL|FATAL)"
+
+# Monitor multiple log files
+tail -f /var/log/*.log | grep --line-buffered "error"
+
+# Monitor network connections
+watch -n 1 'netstat -tuln | grep -E ":(80|443)"'
+
+# Monitor system resources
+watch -n 5 'ps aux | grep -E "(nginx|apache)" | head -10'
+
+# Real-time log filtering with colors
+tail -f server.log | grep --line-buffered --color=always -E "ERROR|WARN|INFO"
+```
+
+### System Administration
+
+#### Log Analysis
+```bash
+# Search for error patterns in system logs
+grep -E "(error|failed|critical)" /var/log/syslog
+
+# Find login attempts
+grep -E "(Accepted|Failed)" /var/log/auth.log
+
+# Search for specific time ranges
+grep -E "2024-01-2[0-9]" application.log
+
+# Find segmentation faults
+grep -i "segmentation fault" /var/log/syslog
+
+# Search for specific processes
+grep -E "(nginx|apache|httpd)" /var/log/syslog
+
+# Monitor disk space issues
+grep -i "no space left" /var/log/syslog
+
+# Find service restarts
+grep -E "(restarting|restarted)" /var/log/syslog
+```
+
+#### Configuration File Analysis
+```bash
+# Find uncommented configuration lines
+grep -v "^[[:space:]]*#" /etc/nginx/nginx.conf | grep -v "^[[:space:]]*$"
+
+# Find IP addresses in configuration
+grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" /etc/hosts
+
+# Find port configurations
+grep -E "port\s*[=:]\s*[0-9]+" /etc/ssh/sshd_config
+
+# Find user configurations
+grep -E "^[^#].*User\s+" /etc/sudoers
+
+# Search for enabled services
+grep -E "^[^#].*enable.*yes" /etc/xinetd.d/*
+
+# Find timezone configurations
+grep -E "timezone|TZ=" /etc/environment
+```
+
+#### Security Auditing
+```bash
+# Find setuid files
+find / -perm -4000 -type f | xargs ls -l
+
+# Find world-writable files
+find / -perm -0002 -type f 2>/dev/null
+
+# Search for suspicious processes
+ps aux | grep -E "(bash.*sh|/tmp/|\.\/)" | grep -v grep
+
+# Find SSH keys
+find /home -name "id_rsa*" -type f 2>/dev/null
+
+# Search for password files
+find / -name "*password*" -type f 2>/dev/null
+
+# Check for open ports
+netstat -tuln | grep -E "LISTEN"
+
+# Find recently modified files in /etc
+find /etc -mtime -7 -type f -exec ls -l {} \;
+```
+
+### Development Workflow
+
+#### Code Search and Analysis
+```bash
+# Find function definitions in Python
+grep -n "^\s*def\s+[a-zA-Z_][a-zA-Z0-9_]*" *.py
+
+# Find class definitions
+grep -n "^\s*class\s+[a-zA-Z_][a-zA-Z0-9_]*" *.py
+
+# Find imports and dependencies
+grep -n "^\s*(import|from)\s+" *.py
+
+# Find TODO/FIXME comments
+grep -rn "TODO\|FIXME\|XXX" --include="*.py" .
+
+# Find debug statements
+grep -rn "print\|console.log" --include="*.{js,py}" .
+
+# Find hard-coded IP addresses
+grep -rn "([0-9]{1,3}\.){3}[0-9]{1,3}" --include="*.{js,py,java,c}" .
+
+# Find SQL injection patterns
+grep -rn -E "(select|insert|update|delete).*\+.*(" --include="*.php" .
+
+# Find API endpoints
+grep -rn -E "(GET|POST|PUT|DELETE|PATCH).*\(" --include="*.js" .
+```
+
+#### Build and Deployment
+```bash
+# Find compilation errors
+grep -E "(error|Error|ERROR)" build.log
+
+# Find warnings in build output
+grep -E "(warning|Warning|WARNING)" build.log
+
+# Check for successful build completion
+grep -q "Build completed successfully" build.log
+
+# Find failed tests
+grep -E "FAIL|FAILED|failure" test_results.log
+
+# Count test cases
+grep -c "test.*:" test_suite.py
+
+# Find performance metrics
+grep -E "[0-9]+\s*ms|[0-9]+\s*seconds" performance.log
+
+# Monitor deployment logs
+tail -f deployment.log | grep -E "(ERROR|WARN|SUCCESS)"
+```
+
+#### Version Control
+```bash
+# Find conflicted files
+grep -l "<<<<<\|=====\|>>>>>" $(git ls-files)
+
+# Find merge conflict markers
+git diff --name-only | xargs grep -l "<<<<<"
+
+# Search git history for specific changes
+git log -p -S "function_name" | grep -A 5 -B 5
+
+# Find files with specific patterns in git
+git grep "password" $(git rev-list --all)
+
+# Search for TODO items tracked by git
+git grep -n "TODO" -- "*.py"
+
+# Find commit messages with specific patterns
+git log --grep="bug.*fix" --oneline
+
+# Search for specific author commits
+git log --author="john.doe" --grep="feature" --oneline
+```
+
+### Text Processing and Data Extraction
+
+#### CSV and Data File Processing
+```bash
+# Extract specific columns from CSV
+cut -d',' -f1,3 data.csv | grep -E "^[^,]*,[^,]*$"
+
+# Find records with specific values
+grep ",Smith," employees.csv
+
+# Extract email addresses from data
+grep -oE "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" data.csv
+
+# Filter numeric data
+grep -E "^[0-9,.]+$" numbers.txt
+
+# Find date patterns
+grep -E "\b\d{4}-\d{2}-\d{2}\b" dates.txt
+
+# Extract phone numbers
+grep -oE "\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" contacts.txt
+```
+
+#### Log File Processing
+```bash
+# Extract HTTP status codes from access log
+grep -oE "HTTP/[0-9.]+\s+[0-9]{3}" access.log | cut -d' ' -f2 | sort | uniq -c
+
+# Find slow requests (>1 second)
+grep -E "[0-9]+\.[0-9]{3,}\s+[0-9]{3}" access.log | awk '$1 > 1.0'
+
+# Extract unique IP addresses
+grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" access.log | sort | uniq
+
+# Find error responses
+grep -E "HTTP/[0-9.]+\s+[45][0-9]{2}" access.log
+
+# Extract user agents
+grep -oE '"[^"]*"$' access.log | cut -d'"' -f2 | sort | uniq -c
+
+# Find POST requests
+grep "POST" access.log | cut -d' ' -f7 | sort | uniq -c
+
+# Search specific time range
+grep -E "25/Dec/2024:[0-2][0-9]:" access.log
+```
+
+### Advanced Regular Expressions
+
+#### Complex Patterns
+```bash
+# Credit card numbers (basic pattern)
+grep -E "\b[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}\b" data.txt
+
+# Social Security Numbers (US format)
+grep -E "\b[0-9]{3}-[0-9]{2}-[0-9]{4}\b" records.txt
+
+# MAC addresses
+grep -E "\b[0-9A-Fa-f]{2}[:-][0-9A-Fa-f]{2}[:-][0-9A-Fa-f]{2}[:-][0-9A-Fa-f]{2}[:-][0-9A-Fa-f]{2}[:-][0-9A-Fa-f]{2}\b" network.log
+
+# File paths (Unix style)
+grep -E "/([a-zA-Z0-9._-]+/)*[a-zA-Z0-9._-]+" config.txt
+
+# XML/HTML tags
+grep -oE "<[a-zA-Z][a-zA-Z0-9]*[^>]*>.*</[a-zA-Z][a-zA-Z0-9]*>" webpage.html
+
+# JSON key-value pairs
+grep -oE "\"[^\"]+\":\s*\"[^\"]*\"" data.json
+
+# SQL queries
+grep -iE "select\s+.*\s+from\s+[a-zA-Z_][a-zA-Z0-9_]*" sql_queries.log
+
+# UUID patterns
+grep -E "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" application.log
+```
+
+#### Backreferences and Groups
+```bash
+# Find duplicate words
+grep -E "\b([a-zA-Z]+)\s+\1\b" text.txt
+
+# Find repeated patterns
+grep -E "([a-z])\1\1\1" file.txt  # Four repeated characters
+
+# Palindrome patterns (simple)
+grep -E "([a-z])[a-z]\1" words.txt
+
+# Balanced parentheses (simplified)
+grep -E "\([^()]*\)" code.txt
+
+# Quoted strings
+grep -E '"([^"\\]|\\.)*"' source.txt
+
+# Markdown links
+grep -E "\[([^\]]*)\]\(([^)]*)\)" readme.md
+
+# HTML attributes
+grep -E "[a-zA-Z-]+=\"([^\"]*)\"" html.html
+```
+
+### Color Output and Customization
+
+#### Color Configuration
 ```bash
 # Enable color output
 grep --color=auto "pattern" file.txt
 
-# Set environment variable
-export GREP_COLOR='1;31'  # Red color
+# Custom color for matches
+export GREP_COLOR='1;31'  # Bold red
+grep --color=auto "error" logfile.txt
+
+# Comprehensive color settings
+export GREP_COLORS='mt=1;31:ms=1;32:mc=1;33:fn=1;35:ln=1;36:bn=1;32:se=1;37'
 grep --color=auto "pattern" file.txt
 
-# Custom color settings
-export GREP_COLORS='mt=1;31:ms=1;32:mc=1;33'
-grep --color=auto "pattern" file.txt
+# Color codes explanation
+# mt=1;31  - Matching text (bold red)
+# ms=1;32  - Separators (bold green)
+# mc=1;33  - Context lines (bold yellow)
+# fn=1;35  - Filenames (bold magenta)
+# ln=1;36  - Line numbers (bold cyan)
+# bn=1;32  - Byte offsets (bold green)
+# se=1;37  - Separators (bold white)
 ```
 
-### Aliases for Common Use
+#### Aliases and Functions
 ```bash
 # Add to ~/.bashrc or ~/.bash_aliases
 alias grep='grep --color=auto'
@@ -370,25 +708,204 @@ alias grepctx='grep -C 3 --color=auto'
 
 # Recursive search
 alias grepdir='grep -r --color=auto'
+
+# Case-insensitive search
+alias grepi='grep -i --color=auto'
+
+# Whole word search
+alias grepw='grep -w --color=auto'
+
+# Function for enhanced search
+search() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: search [options] pattern [files...]"
+        return 1
+    fi
+    grep -rn --color=auto "$@"
+}
+
+# Function to search and count
+count_matches() {
+    local pattern="$1"
+    local file="$2"
+    if [ -z "$file" ]; then
+        echo "Usage: count_matches pattern file"
+        return 1
+    fi
+    echo "Matches for '$pattern' in '$file': $(grep -c "$pattern" "$file")"
+}
+```
+
+### Integration with Modern Tools
+
+#### Alternative Search Tools
+```bash
+# Use ripgrep (faster than grep for large codebases)
+rg "pattern" /path/to/code/
+
+# Use silver searcher
+ag "pattern" /path/to/project/
+
+# Use ack (programmer's grep)
+ack "pattern" /path/to/code/
+
+# Combine grep with find for complex searches
+find . -name "*.py" -exec grep -l "pattern" {} \;
+
+# Use grep with fzf for interactive search
+grep "pattern" large_file.txt | fzf
+
+# Pipe grep results to less with highlighting
+grep "pattern" file.txt | less -R
+```
+
+#### Database and Web Integration
+```bash
+# Search database dumps
+grep -E "INSERT INTO.*VALUES" database_dump.sql
+
+# Extract URLs from web responses
+curl -s https://example.com | grep -oE 'https?://[^"]+' | sort | uniq
+
+# Search API responses
+curl -s https://api.example.com/data | grep -oE '"key":"[^"]*"'
+
+# Extract JSON values
+curl -s api.json | grep -oE '"field":"[^"]*"'
+
+# Parse XML responses
+curl -s api.xml | grep -oE '<tag>[^<]*</tag>'
+
+# Search CSV exports
+grep -E "^[^,]*,error" export.csv
+
+# Extract log entries from JSON logs
+grep -oE '"message":"[^"]*"' application.jsonl
+```
+
+## Shell Scripts and Automation
+
+### Monitoring Scripts
+```bash
+#!/bin/bash
+# Log monitoring script
+
+LOG_FILE="/var/log/application.log"
+PATTERN="ERROR|CRITICAL"
+ALERT_EMAIL="admin@example.com"
+
+# Check for errors in the last hour
+RECENT_ERRORS=$(grep -E "$PATTERN" "$LOG_FILE" | grep "$(date '+%Y-%m-%d %H:')")
+
+if [ -n "$RECENT_ERRORS" ]; then
+    echo "Recent errors found:" | mail -s "Application Alert" "$ALERT_EMAIL"
+    echo "$RECENT_ERRORS" | mail -s "Application Error Details" "$ALERT_EMAIL"
+fi
+```
+
+### File Processing Scripts
+```bash
+#!/bin/bash
+# Process files based on content
+
+SOURCE_DIR="/data"
+TARGET_DIR="/processed"
+
+# Find files containing specific patterns
+find "$SOURCE_DIR" -name "*.txt" -exec grep -l "CONFIDENTIAL" {} \; | while read file; do
+    # Move confidential files to secure directory
+    mv "$file" "$TARGET_DIR/secure/"
+done
+
+# Extract email addresses from all text files
+find "$SOURCE_DIR" -name "*.txt" -exec grep -h -oE "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" {} \; | sort | uniq > "$TARGET_DIR/emails.txt"
+```
+
+## Troubleshooting
+
+### Common Issues
+
+#### Performance Problems
+```bash
+# Slow searching on large files
+# Solution: Use more specific patterns
+grep "specific_pattern" large_file.txt
+
+# Memory issues with huge files
+# Solution: Use --mmap or limit output
+grep --mmap "pattern" huge_file.txt
+grep -m 1000 "pattern" huge_file.txt
+
+# Too many files to search
+# Solution: Limit scope and use find
+find /specific/path -name "*.log" -exec grep "pattern" {} \;
+```
+
+#### Pattern Matching Issues
+```bash
+# Special characters not working
+# Solution: Quote patterns properly
+grep "error\[404\]" access.log
+grep 'error[404]' access.log
+
+# Regex not matching as expected
+# Solution: Use appropriate regex type
+grep -E "error|warning" log.txt  # Extended regex
+grep -F "literal string" file.txt  # Fixed string
+```
+
+#### File Encoding Issues
+```bash
+# UTF-8 encoding problems
+# Solution: Set locale
+export LC_ALL=en_US.UTF-8
+grep "pattern" utf8_file.txt
+
+# Binary file detection
+# Solution: Force text processing
+grep -a "pattern" binary_file
+grep --binary-files=text "pattern" mixed_files/*
 ```
 
 ## Best Practices
 
-1. **Use quotes around patterns** to prevent shell expansion
-2. **Specify exact match** when possible (`-w` for whole words)
-3. **Use appropriate regex type** (`-F` for fixed strings, `-E` for complex patterns)
-4. **Limit search scope** to improve performance
-5. **Combine with other tools** for complex processing
-6. **Use color output** for better readability
-7. **Consider alternatives** like `ag`, `rg` for large codebases
-8. **Quote special characters** in regex patterns
+1. **Quote patterns** to prevent shell interpretation of special characters
+2. **Use specific patterns** instead of generic ones for better performance
+3. **Choose appropriate regex type** (`-F` for literals, `-E` for complex patterns)
+4. **Limit search scope** when possible for faster results
+5. **Use color output** for better readability
+6. **Combine with other tools** for complex data processing
+7. **Consider alternatives** like `rg` or `ag` for large codebases
+8. **Use proper file type filtering** to avoid unnecessary searches
+9. **Optimize for large files** with memory mapping and output limits
+10. **Test patterns first** with small datasets before processing large files
+
+## Performance Tips
+
+1. **Use `grep -F`** for fixed string searches (faster than regex)
+2. **Limit context lines** (`-C`) for large files to reduce output
+3. **Use `--mmap`** for large files to improve memory usage
+4. **Exclude unnecessary files** with `--exclude` and `--exclude-dir`
+5. **Pipe to `head`** when you only need a few results
+6. **Use `fgrep`** for multiple fixed string patterns
+7. **Consider `rg` (ripgrep)** for codebase searches - it's significantly faster
+8. **Use parallel processing** with `xargs -P` for multiple files
+9. **Limit output** with `-m` for large result sets
+10. **Use appropriate locale settings** for better performance
 
 ## Related Commands
 
-- [`sed`](/docs/commands/shell/sed) - Stream editor for text manipulation
-- [`awk`](/docs/commands/shell/awk) - Pattern scanning and processing language
+- [`sed`](/docs/commands/file-management/sed) - Stream editor for text manipulation
+- [`awk`](/docs/commands/file-management/awk) - Pattern scanning and processing language
 - [`find`](/docs/commands/file-management/find) - Search for files and directories
+- [`cut`](/docs/commands/file-management/cut) - Remove sections from lines
+- [`sort`](/docs/commands/file-management/sort) - Sort lines of text files
+- [`uniq`](/docs/commands/file-management/uniq) - Remove duplicate lines
+- [`wc`](/docs/commands/file-management/wc) - Word, line, and byte count
+- [`tail`](/docs/commands/file-management/tail) - Display end of files
+- [`head`](/docs/commands/file-management/head) - Display beginning of files
 - [`cat`](/docs/commands/file-management/cat) - Concatenate and display files
-- [`sort`](/docs/commands/shell/sort) - Sort lines of text files
+- [`rg`](/docs/commands/file-management/rg) - Ripgrep (fast search tool)
+- [`ag`](/docs/commands/file-management/ag) - Silver searcher (code search tool)
 
-The `grep` command is an essential tool for text processing, log analysis, and pattern matching in Linux. Mastering grep significantly improves productivity when working with text files and system administration tasks.
+The `grep` command is an indispensable tool for text processing, log analysis, pattern matching, and system administration. Its versatility, performance, and extensive feature set make it essential for anyone working with text files in Linux environments. Mastering grep's capabilities significantly enhances productivity when dealing with data analysis, system monitoring, and software development tasks.
