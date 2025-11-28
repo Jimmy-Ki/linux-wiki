@@ -3,16 +3,90 @@ import { IconRotate, IconArrowUp, IconArrowDown, IconArrowLeft, IconArrowRight }
 import styles from './styles.module.css';
 
 export default function Game2048() {
-  const [grid, setGrid] = useState(() => initializeGrid());
-  const [score, setScore] = useState(0);
+  const [grid, setGrid] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedGame = localStorage.getItem('2048-game-state');
+      if (savedGame) {
+        try {
+          const parsedGame = JSON.parse(savedGame);
+          return parsedGame.grid || initializeGrid();
+        } catch (e) {
+          console.error('Failed to parse saved game state:', e);
+          return initializeGrid();
+        }
+      }
+    }
+    return initializeGrid();
+  });
+
+  const [score, setScore] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedGame = localStorage.getItem('2048-game-state');
+      if (savedGame) {
+        try {
+          const parsedGame = JSON.parse(savedGame);
+          return parsedGame.score || 0;
+        } catch (e) {
+          console.error('Failed to parse saved score:', e);
+          return 0;
+        }
+      }
+    }
+    return 0;
+  });
+
   const [bestScore, setBestScore] = useState(() => {
     if (typeof window !== 'undefined') {
       return parseInt(localStorage.getItem('2048-best-score') || '0');
     }
     return 0;
   });
-  const [gameOver, setGameOver] = useState(false);
-  const [won, setWon] = useState(false);
+
+  const [gameOver, setGameOver] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedGame = localStorage.getItem('2048-game-state');
+      if (savedGame) {
+        try {
+          const parsedGame = JSON.parse(savedGame);
+          return parsedGame.gameOver || false;
+        } catch (e) {
+          console.error('Failed to parse saved game over state:', e);
+          return false;
+        }
+      }
+    }
+    return false;
+  });
+
+  const [won, setWon] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedGame = localStorage.getItem('2048-game-state');
+      if (savedGame) {
+        try {
+          const parsedGame = JSON.parse(savedGame);
+          return parsedGame.won || false;
+        } catch (e) {
+          console.error('Failed to parse saved won state:', e);
+          return false;
+        }
+      }
+    }
+    return false;
+  });
+
+  // Save game state to localStorage
+  const saveGameState = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      const gameState = {
+        grid,
+        score,
+        gameOver,
+        won,
+        timestamp: Date.now()
+      };
+      localStorage.setItem('2048-game-state', JSON.stringify(gameState));
+    }
+  }, [grid, score, gameOver, won]);
 
   function initializeGrid() {
     const newGrid = Array(4).fill().map(() => Array(4).fill(0));
@@ -170,6 +244,10 @@ export default function Game2048() {
   }
 
   function newGame() {
+    // Clear saved game state
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('2048-game-state');
+    }
     setGrid(initializeGrid());
     setScore(0);
     setGameOver(false);
@@ -209,6 +287,11 @@ export default function Game2048() {
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [handleKeyPress]);
+
+  // Save game state whenever it changes
+  useEffect(() => {
+    saveGameState();
+  }, [grid, score, gameOver, won]);
 
   function getTileColor(value) {
     const colors = {
