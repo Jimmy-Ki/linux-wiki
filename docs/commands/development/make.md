@@ -21,8 +21,8 @@ make [options] [target] ...
 ### Basic Options
 - `-h, --help` - Print help message and exit
 - `-v, --version` - Print version information and exit
-- `-f <makefile>, --file=<makefile>, --makefile=<makefile>` - Use specified file as a makefile
-- `-C <directory>, --directory=<directory>` - Change to directory `<directory>` before reading makefiles
+- `-f \<makefile\>, --file=\<makefile\>, --makefile=\<makefile\>` - Use specified file as a makefile
+- `-C \<directory\>, --directory=\<directory\>` - Change to directory `\<directory\>` before reading makefiles
 - `-j [jobs], --jobs[=jobs]` - Specify number of jobs to run simultaneously
 - `-k, --keep-going` - Continue as much as possible after an error
 - `-n, --just-print, --dry-run, --recon` - Print the commands but don't execute them
@@ -32,8 +32,8 @@ make [options] [target] ...
 - `-S, --no-keep-going, --stop` - Turns off -k
 - `-t, --touch` - Touch targets instead of remaking them
 - `-q, --question` - Run no commands; exit status shows if up to date
-- `-W <file>, --what-if=<file>, --new-file=<file>, --assume-new=<file>` - Consider <file> to be very new
-- `-o <file>, --old-file=<file>, --assume-old=<file>` - Consider <file> to be very old and do not remake it
+- `-W \\ <file\\>, --what-if=\\ <file\\>, --new-file=\\ <file\\>, --assume-new=\\ <file\\>` - Consider \<file\> to be very new
+- `-o \\ <file\\>, --old-file=\\ <file\\>, --assume-old=\\ <file\\>` - Consider \<file\> to be very old and do not remake it
 
 ### Debugging Options
 - `-d, --debug` - Print lots of debugging information

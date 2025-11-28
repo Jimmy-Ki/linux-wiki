@@ -614,7 +614,7 @@ done
 - **Ss** - Sleeping session leader
 - **R+** - Running in foreground
 - **Sl** - Sleeping multi-threaded process
-- **D<** - Uninterruptible high-priority process
+- **D\<** - Uninterruptible high-priority process
 - **Zs** - Zombie session leader
 
 ## Troubleshooting
