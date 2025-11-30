@@ -63,7 +63,7 @@ export default function RegexTester() {
     { name: 'Phone (International)', pattern: '\\+(?:[0-9][\\s-]?){9,15}[0-9]', description: 'Match international phone numbers' },
     { name: 'Currency (General)', pattern: '[€$£¥₹₽]\\s?\\d{1,3}(?:[\\s,]\\d{3})*(?:\\.\\d{2})?', description: 'Match multiple currency symbols' },
     { name: 'Double Words', pattern: '\\b(\\w+)\\s+\\1\\b', description: 'Find repeated words' },
-    { name: 'Leading/Trailing Spaces', pattern('^\\s+|\\s+$', 'g'), description: 'Match leading or trailing whitespace' },
+    { name: 'Leading/Trailing Spaces', pattern: '^\\s+|\\s+$', description: 'Match leading or trailing whitespace' },
     { name: 'Multiple Spaces', pattern: ' {2,}', description: 'Match two or more consecutive spaces' },
     { name: 'Empty Lines', pattern: '^\\s*$', description: 'Match empty lines' },
     { name: 'Lines Starting With', pattern: '^TODO:|^FIXME:|^NOTE:', description: 'Match lines starting with keywords' },
