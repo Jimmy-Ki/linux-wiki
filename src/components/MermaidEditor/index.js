@@ -370,16 +370,16 @@ export default function MermaidEditor() {
                 <li><code>graph TD</code> - Top to Bottom</li>
                 <li><code>graph LR</code> - Left to Right</li>
                 <li><code>A --> B</code> - Arrow</li>
-                <li><code>A -- Text --> B</code> - Arrow with text</li>
+                <li><code>A -- "Text" --> B</code> - Arrow with text</li>
               </ul>
             </div>
             <div className={styles.referenceCategory}>
               <h4>Shapes</h4>
               <ul>
-                <li><code>A[Text]</code> - Rectangle</li>
-                <li><code>A(Text)</code> - Rounded</li>
-                <li><code>A{Text}</code> - Diamond</li>
-                <li><code>A((Text))</code> - Circle</li>
+                <li><code>A["Text"]</code> - Rectangle</li>
+                <li><code>A("Text")</code> - Rounded</li>
+                <li><code>A{"Text"}</code> - Diamond</li>
+                <li><code>A(("Text"))</code> - Circle</li>
               </ul>
             </div>
             <div className={styles.referenceCategory}>
