@@ -22,6 +22,8 @@ const Game2048 = lazy(() => import('../../components/Game2048'));
 const ScientificCalculator = lazy(() => import('../../components/ScientificCalculator'));
 const ColorPicker = lazy(() => import('../../components/ColorPicker'));
 const TimezoneConverter = lazy(() => import('../../components/TimezoneConverter'));
+const MermaidEditor = lazy(() => import('../../components/MermaidEditor'));
+const UMLEditor = lazy(() => import('../../components/UMLEditor'));
 
 const toolsCategories = [
   {
@@ -49,6 +51,8 @@ const toolsCategories = [
     description: 'Coding and development utilities',
     icon: 'code',
     tools: [
+      { title: 'Mermaid Editor', description: 'Create flowcharts, sequence diagrams & charts', path: '/tools/mermaid', status: 'available', icon: 'chart' },
+      { title: 'UML Designer', description: 'Professional UML diagram designer with templates', path: '/tools/uml', status: 'available', icon: 'diagram' },
       { title: 'Regex Tester', description: 'Test regex patterns in real-time', path: '/tools/regex', status: 'available', icon: 'regex' },
       { title: 'JSON Formatter', description: 'Format and validate JSON data', path: '/tools/json', status: 'available', icon: 'json' },
       { title: 'Markdown Editor', description: 'Live preview markdown editor', path: '/tools/markdown', status: 'available', icon: 'markdown' },
@@ -110,6 +114,8 @@ const componentMap = {
   '/tools/calculator': ScientificCalculator,
   '/tools/color': ColorPicker,
   '/tools/timezone': TimezoneConverter,
+  '/tools/mermaid': MermaidEditor,
+  '/tools/uml': UMLEditor,
 };
 
 const getStatusConfig = (status) => {
@@ -273,6 +279,16 @@ function MainContent({ selectedTool, onClearSelection }) {
   }, [selectedTool]);
 
   if (!selectedTool) {
+    // Most popular tools
+    const popularTools = [
+      { title: 'Mermaid Editor', description: 'Create beautiful diagrams', path: '/tools/mermaid', icon: 'chart' },
+      { title: 'UML Designer', description: 'Professional UML diagrams', path: '/tools/uml', icon: 'diagram' },
+      { title: 'Regex Tester', description: 'Test patterns in real-time', path: '/tools/regex', icon: 'regex' },
+      { title: 'Password Generator', description: 'Create strong passwords', path: '/tools/password', icon: 'password' },
+      { title: 'JSON Formatter', description: 'Format & validate JSON', path: '/tools/json', icon: 'json' },
+      { title: 'QR Code Generator', description: 'Generate QR codes', path: '/tools/qrcode', icon: 'qrcode' }
+    ];
+
     return (
       <div className={styles.overviewContent}>
         <div className={styles.overviewHeader}>
@@ -283,7 +299,7 @@ function MainContent({ selectedTool, onClearSelection }) {
           </p>
           <div className={styles.overviewStats}>
             <div className={styles.overviewStat}>
-              <div className={styles.statNumber}>25+</div>
+              <div className={styles.statNumber}>27+</div>
               <div className={styles.statLabel}>Tools</div>
             </div>
             <div className={styles.overviewStat}>
@@ -294,6 +310,27 @@ function MainContent({ selectedTool, onClearSelection }) {
               <div className={styles.statNumber}>100%</div>
               <div className={styles.statLabel}>Private</div>
             </div>
+          </div>
+        </div>
+
+        <div className={styles.popularTools}>
+          <h2 className={styles.sectionTitle}>Most Popular Tools</h2>
+          <div className={styles.popularToolsGrid}>
+            {popularTools.map((tool, index) => (
+              <button
+                key={index}
+                className={styles.popularToolCard}
+                onClick={() => setSelectedTool(tool)}
+              >
+                <div className={styles.popularToolIcon}>
+                  <Icon name={tool.icon} size="large" />
+                </div>
+                <div className={styles.popularToolContent}>
+                  <h3>{tool.title}</h3>
+                  <p>{tool.description}</p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
 

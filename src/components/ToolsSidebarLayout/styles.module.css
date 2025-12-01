@@ -725,3 +725,101 @@
   background: var(--ifm-color-emphasis-100);
   border-color: var(--ifm-color-emphasis-300);
 }
+
+/* Popular Tools Section */
+.popularTools {
+  margin: 2rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.popularToolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.popularToolCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.popularToolCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--ifm-color-primary-rgb), 0.15);
+  background: var(--ifm-color-primary-lightest);
+}
+
+.popularToolIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.3);
+}
+
+.popularToolContent {
+  flex: 1;
+}
+
+.popularToolContent h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-900);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.popularToolContent p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Dark theme for popular tools */
+[data-theme='dark'] .popularToolCard {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .popularToolCard:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Responsive for popular tools */
+@media (max-width: 768px) {
+  .popularToolsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .popularToolCard {
+    padding: 1rem;
+  }
+
+  .popularToolIcon {
+    width: 48px;
+    height: 48px;
+  }
+}

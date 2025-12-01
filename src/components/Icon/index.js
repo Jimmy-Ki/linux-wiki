@@ -13,7 +13,9 @@ import {
   // Additional Icons
   IconSearch, IconLink, IconPhoto, IconDeviceGamepad2, IconClockHour3,
   // UI Icons
-  IconSettings
+  IconSettings,
+  // New Icons for Diagram Tools
+  IconChartDots, IconBox, IconGitBranch, IconGitPullRequest, IconChartPie
 } from '@tabler/icons-react';
 import styles from './styles.module.css';
 
@@ -66,7 +68,11 @@ const icons = {
   settings: IconSettings,
 
   // Additional icons
-  cpu: IconCpu
+  cpu: IconCpu,
+
+  // New diagram icons
+  chart: IconChartDots,
+  diagram: IconBox
 };
 
 export default function Icon({ name, size = 'medium', className = '', style = {} }) {

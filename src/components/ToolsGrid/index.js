@@ -29,6 +29,8 @@ const toolsCategories = [
     description: 'Coding and development utilities',
     icon: 'code',
     tools: [
+      { title: 'Mermaid Editor', description: 'Create flowcharts, sequence diagrams & charts', path: '/tools/mermaid', status: 'available', icon: 'chart' },
+      { title: 'UML Designer', description: 'Professional UML diagram designer with templates', path: '/tools/uml', status: 'available', icon: 'diagram' },
       { title: 'Regex Tester', description: 'Test regex patterns in real-time', path: '/tools/regex', status: 'available', icon: 'regex' },
       { title: 'JSON Formatter', description: 'Format and validate JSON data', path: '/tools/json', status: 'available', icon: 'json' },
       { title: 'Markdown Editor', description: 'Live preview markdown editor', path: '/tools/markdown', status: 'available', icon: 'markdown' },
