@@ -5,18 +5,18 @@ import {
   IconCopy,
   IconDownload,
   IconRefresh,
-  Eye,
-  Code,
-  Box,
-  GitPullRequest,
-  Users,
-  GitBranch,
-  ChartDots,
-  Devices,
-  Calendar,
-  GitMerge,
-  Lifebuoy,
-  Shield
+  IconEye,
+  IconCode,
+  IconCube,
+  IconGitPullRequest,
+  IconUsers,
+  IconGitBranch,
+  IconChartDots3,
+  IconDevices,
+  IconCalendar,
+  IconGitMerge,
+  IconLifebuoy,
+  IconShield
 } from '@tabler/icons-react';
 
 export default function UMLEditor() {
@@ -41,7 +41,7 @@ export default function UMLEditor() {
   const umlTemplates = [
     {
       name: 'Class Diagram',
-      icon: <Box size={20} />,
+      icon: <IconCube size={20} />,
       category: 'Structure',
       code: `classDiagram
     class Animal {
@@ -78,7 +78,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Use Case Diagram',
-      icon: <Users size={20} />,
+      icon: <IconUsers size={20} />,
       category: 'Requirements',
       code: `graph TD
     A[System] --> B[User Management]
@@ -102,7 +102,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Sequence Diagram',
-      icon: <GitPullRequest size={20} />,
+      icon: <IconGitPullRequest size={20} />,
       category: 'Behavior',
       code: `sequenceDiagram
     participant User
@@ -127,7 +127,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Activity Diagram',
-      icon: <ChartDots size={20} />,
+      icon: <IconChartDots3 size={20} />,
       category: 'Behavior',
       code: `graph TD
     A[Start] --> B{User logged in?}
@@ -150,7 +150,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Component Diagram',
-      icon: <Devices size={20} />,
+      icon: <IconDevices size={20} />,
       category: 'Structure',
       code: `graph TB
     subgraph "Frontend"
@@ -185,7 +185,7 @@ export default function UMLEditor() {
     },
     {
       name: 'State Diagram',
-      icon: <GitBranch size={20} />,
+      icon: <IconGitBranch size={20} />,
       category: 'Behavior',
       code: `stateDiagram-v2
     [*] --> Created
@@ -202,7 +202,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Package Diagram',
-      icon: <Calendar size={20} />,
+      icon: <IconCalendar size={20} />,
       category: 'Structure',
       code: `graph TB
     subgraph "com.company"
@@ -242,7 +242,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Deployment Diagram',
-      icon: <Shield size={20} />,
+      icon: <IconShield size={20} />,
       category: 'Deployment',
       code: `graph TB
     subgraph "Cloud Infrastructure"
@@ -275,7 +275,7 @@ export default function UMLEditor() {
     },
     {
       name: 'Object Diagram',
-      icon: <Lifebuoy size={20} />,
+      icon: <IconLifebuoy size={20} />,
       category: 'Structure',
       code: `graph TB
     subgraph "Objects at Runtime"
@@ -453,7 +453,7 @@ export default function UMLEditor() {
           <div className={styles.editorPanel}>
             <div className={styles.panelHeader}>
               <h3>
-                <Code size={18} />
+                <IconCode size={18} />
                 UML Code
               </h3>
               {selectedTemplate && (
@@ -472,7 +472,7 @@ export default function UMLEditor() {
           <div className={styles.previewPanel}>
             <div className={styles.panelHeader}>
               <h3>
-                <Eye size={18} />
+                <IconEye size={18} />
                 Preview
               </h3>
             </div>
