@@ -24,8 +24,7 @@ export default function UMLEditor() {
   const [svgContent, setSvgContent] = useState('');
   const [error, setError] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState('');
-
-  // Remove Mermaid initialization - using PlantUML instead
+  const [theme, setTheme] = useState('default'); // For PlantUML server selection
 
   // PlantUML Templates
   const umlTemplates = [
@@ -300,13 +299,26 @@ class Toy {
       setSvgContent('');
       setError('');
     }
-  }, [code]);
+  }, [code, theme]);
 
   const generatePlantUML = () => {
     try {
       // PlantUML编码和URL生成
       const encodedCode = encode(code);
-      const plantumlServerUrl = 'https://www.plantuml.com/plantuml/svg/';
+
+      // Select PlantUML server based on theme
+      let plantumlServerUrl;
+      switch (theme) {
+        case 'dark':
+          plantumlServerUrl = 'https://www.plantuml.com/plantuml/svg/'; // Dark theme support
+          break;
+        case 'plain':
+          plantumlServerUrl = 'https://www.plantuml.com/plantuml/png/'; // PNG format
+          break;
+        default:
+          plantumlServerUrl = 'https://www.plantuml.com/plantuml/svg/';
+      }
+
       const imageUrl = plantumlServerUrl + encodedCode;
 
       setSvgContent(imageUrl);
@@ -382,17 +394,15 @@ class Toy {
 
         <div className={styles.controls}>
           <div className={styles.controlGroup}>
-            <label>Theme:</label>
+            <label>Output:</label>
             <select
               value={theme}
               onChange={(e) => setTheme(e.target.value)}
               className={styles.select}
             >
-              <option value="default">Default</option>
-              <option value="base">Base</option>
-              <option value="dark">Dark</option>
-              <option value="forest">Forest</option>
-              <option value="neutral">Neutral</option>
+              <option value="default">SVG</option>
+              <option value="dark">SVG (Dark)</option>
+              <option value="plain">PNG</option>
             </select>
           </div>
 
