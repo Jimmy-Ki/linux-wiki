@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import mermaid from 'mermaid';
+import { encode } from 'plantuml-encoder';
 import styles from './styles.module.css';
 import {
   IconCopy,
@@ -23,57 +23,48 @@ export default function UMLEditor() {
   const [code, setCode] = useState('');
   const [svgContent, setSvgContent] = useState('');
   const [error, setError] = useState('');
-  const [theme, setTheme] = useState('default');
   const [selectedTemplate, setSelectedTemplate] = useState('');
 
-  // Initialize Mermaid
-  useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: theme,
-      securityLevel: 'loose',
-      fontFamily: 'monospace',
-      fontSize: 14,
-    });
-  }, [theme]);
+  // Remove Mermaid initialization - using PlantUML instead
 
-  // UML Templates
+  // PlantUML Templates
   const umlTemplates = [
     {
       name: 'Class Diagram',
       icon: <IconCube size={20} />,
       category: 'Structure',
-      code: `classDiagram
-    class Animal {
-        +String name
-        +int age
-        +String species
-        +makeSound()
-        +eat()
-        +sleep()
-    }
-    class Dog {
-        +String breed
-        +String color
-        +bark()
-        +wagTail()
-    }
-    class Cat {
-        +Boolean indoor
-        +meow()
-        +purr()
-    }
+      code: `@startuml
+class Animal {
+  +name: String
+  +age: int
+  +species: String
+  +makeSound()
+  +eat()
+  +sleep()
+}
+class Dog {
+  +breed: String
+  +color: String
+  +bark()
+  +wagTail()
+}
+class Cat {
+  +indoor: boolean
+  +meow()
+  +purr()
+}
 
-    Animal <|-- Dog : inherits
-    Animal <|-- Cat : inherits
-    Dog "1" -- "*" Toy : has
-    Cat "1" -- "*" Toy : has
+Animal <|-- Dog : inherits
+Animal <|-- Cat : inherits
+Dog "1" -- "*" Toy : has
+Cat "1" -- "*" Toy : has
 
-    class Toy {
-        +String name
-        +String type
-        +play()
-    }`,
+class Toy {
+  +name: String
+  +type: String
+  +play()
+}
+@enduml`,
       description: 'Object-oriented class relationships'
     },
     {
@@ -304,21 +295,24 @@ export default function UMLEditor() {
 
   useEffect(() => {
     if (code.trim()) {
-      renderDiagram();
+      generatePlantUML();
     } else {
       setSvgContent('');
       setError('');
     }
-  }, [code, theme]);
+  }, [code]);
 
-  const renderDiagram = async () => {
+  const generatePlantUML = () => {
     try {
-      const id = `mermaid-uml-${Date.now()}`;
-      const { svg } = await mermaid.render(id, code);
-      setSvgContent(svg);
+      // PlantUML编码和URL生成
+      const encodedCode = encode(code);
+      const plantumlServerUrl = 'https://www.plantuml.com/plantuml/svg/';
+      const imageUrl = plantumlServerUrl + encodedCode;
+
+      setSvgContent(imageUrl);
       setError('');
     } catch (err) {
-      setError(`UML rendering error: ${err.message}`);
+      setError(`PlantUML encoding error: ${err.message}`);
       setSvgContent('');
     }
   };
@@ -483,9 +477,14 @@ export default function UMLEditor() {
                   <pre>{error}</pre>
                 </div>
               ) : svgContent ? (
-                <div
+                <img
+                  src={svgContent}
+                  alt="PlantUML Diagram"
                   className={styles.diagram}
-                  dangerouslySetInnerHTML={{ __html: svgContent }}
+                  onError={(e) => {
+                    setError('Failed to load PlantUML diagram. Check your syntax.');
+                    setSvgContent('');
+                  }}
                 />
               ) : (
                 <div className={styles.placeholder}>

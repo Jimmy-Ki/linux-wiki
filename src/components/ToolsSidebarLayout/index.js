@@ -286,7 +286,10 @@ function MainContent({ selectedTool, onClearSelection }) {
       { title: 'Regex Tester', description: 'Test patterns in real-time', path: '/tools/regex', icon: 'regex' },
       { title: 'Password Generator', description: 'Create strong passwords', path: '/tools/password', icon: 'password' },
       { title: 'JSON Formatter', description: 'Format & validate JSON', path: '/tools/json', icon: 'json' },
-      { title: 'QR Code Generator', description: 'Generate QR codes', path: '/tools/qrcode', icon: 'qrcode' }
+      { title: 'QR Code Generator', description: 'Generate QR codes', path: '/tools/qrcode', icon: 'qrcode' },
+      { title: 'Encryption Tools', description: 'Encode & encrypt data', path: '/tools/encryption', icon: 'base64' },
+      { title: 'Hash Generator', description: 'Generate various hashes', path: '/tools/hash', icon: 'hash' },
+      { title: 'Markdown Editor', description: 'Live preview editor', path: '/tools/markdown', icon: 'markdown' }
     ];
 
     return (
