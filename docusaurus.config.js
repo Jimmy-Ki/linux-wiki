@@ -147,6 +147,11 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/tools', label: 'Tools', position: 'left'},
+          {
+            href: 'https://live.linux.wiki',
+            label: 'Live Linux VM',
+            position: 'left',
+          },
           {to: '/credits', label: 'Credits', position: 'right'},
           {
             href: 'https://github.com/Jimmy-Ki',
@@ -176,6 +181,10 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
+              },
+              {
+                label: 'Live Linux VM',
+                href: 'https://live.linux.wiki',
               },
             ],
           },
